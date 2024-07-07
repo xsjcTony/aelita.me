@@ -1,0 +1,15 @@
+<button class="i-carbon:sun dark:i-mdi:weather-night" id="theme-toggler" />
+
+
+<script>
+  function handleClick(): void {
+    const rootEl = document.documentElement
+    rootEl.classList.toggle('dark')
+
+    const isDark = rootEl.classList.contains('dark')
+    localStorage.setItem('theme-appearance', isDark ? 'dark' : 'light')
+  }
+
+  document.querySelector<HTMLButtonElement>('#theme-toggler')
+    ?.addEventListener('click', handleClick)
+</script>

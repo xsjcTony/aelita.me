@@ -1,0 +1,29 @@
+---
+import '@styles/index.scss'
+import AuroraBg from '@components/AuroraBg.astro'
+import DarkModeToggler from '@components/DarkModeToggler.astro'
+---
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content={Astro.generator} name="generator" />
+    <title>Astro</title>
+    <script id="check-dark-mode">
+      (() => {
+        // eslint-disable-next-line one-var,style/space-infix-ops,style/comma-spacing,style/semi-spacing,style/one-var-declaration-per-line,style/semi
+        const e=localStorage.getItem('theme-appearance')||'auto',a=window.matchMedia('(prefers-color-scheme: dark)').matches;(!e||e === 'auto'?a:e==='dark')&&document.documentElement.classList.add('dark');
+        // eslint-disable-next-line style/semi
+      })();
+    </script>
+  </head>
+  <body>
+    <AuroraBg>
+      <DarkModeToggler />
+      <footer>Built with <code>{Astro.generator}</code></footer>
+    </AuroraBg>
+  </body>
+</html>
