@@ -15,7 +15,6 @@ const [
 export default defineConfig(
   {
     typescript: {
-      tsconfigPath: ['./tsconfig.json', './tsconfig.node.js.json'],
       projectType: 'app',
       files: [GLOB_TS, GLOB_TSX, '**/*.astro/*.ts'],
     },
@@ -36,7 +35,6 @@ export default defineConfig(
         parser: parserTypescript,
         extraFileExtensions: ['.astro'],
         sourceType: 'module',
-        tsconfigPath: ['./tsconfig.json', './tsconfig.node.js.json'],
       },
     },
     processor: 'astro/client-side-ts',
@@ -88,6 +86,6 @@ export default defineConfig(
       'ts/prefer-find': 'off',
       'ts/no-unnecessary-template-expression': 'off',
       'ts/only-throw-error': 'off',
-    }
+    },
   },
 )
