@@ -1,6 +1,6 @@
 ---
 import '@styles/index.scss'
-import AuroraBg from '@components/AuroraBg.astro'
+// import AuroraBg from '@components/AuroraBg.astro'
 import DarkModeToggler from '@components/DarkModeToggler.astro'
 import { Content, frontmatter } from '@pages/_index.md'
 ---
@@ -20,11 +20,11 @@ import { Content, frontmatter } from '@pages/_index.md'
     </script>
   </head>
   <body>
-    <AuroraBg>
-      <DarkModeToggler />
-      {frontmatter.title}
-      <Content />
-      <footer>Built with <code>{Astro.generator}</code></footer>
-    </AuroraBg>
+    <!-- <AuroraBg> -->
+    <DarkModeToggler />
+    {frontmatter.title}
+    <Content />
+    <footer>Built with <code>{Astro.generator}</code></footer>
+    <!-- </AuroraBg> -->
   </body>
 </html>

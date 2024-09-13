@@ -1,7 +1,7 @@
 import react from '@astrojs/react'
 import { defineConfig } from 'astro/config'
 import unoCSS from 'unocss/astro'
-import remarkIconLink from './src/plugins/remarkIconLink'
+import remarkMagicLink from './src/plugins/remarkMagicLink'
 
 
 export default defineConfig({
@@ -11,7 +11,7 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      [remarkIconLink, { icons: { '🔗': '🔗' } }],
+      [remarkMagicLink, { icons: { '🔗': '🔗' } }],
     ],
   },
 })
