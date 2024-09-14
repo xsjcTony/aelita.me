@@ -1,3 +1,16 @@
 :root.dark {
   color-scheme: dark;
 }
+
+
+.remark-magic-link {
+  @apply inline-flex items-center translate-y-1 bg-#8882 leading-none gap-x-4 rounded-.25em p-inline-6 p-block-4 media-mouse:hover:bg-#8883 transition-all;
+
+  &.remark-magic-link-with-image {
+    @apply translate-y-3;
+  }
+
+  & > .remark-magic-link-image {
+    @apply inline-block size-1em bg-cover bg-no-repeat bg-center rounded-2;
+  }
+}

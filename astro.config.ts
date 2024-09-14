@@ -11,7 +11,15 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins: [
-      [remarkMagicLink, { icons: { '🔗': '🔗' } }],
+      [
+        remarkMagicLink,
+        {
+          linksMap: {
+            Vitest: { link: 'https://github.com/vitest-dev/vitest' },
+            Vue: { link: 'https://github.com/vuejs/core', imageUrl: 'https://vuejs.org/logo.svg' },
+          },
+        },
+      ],
     ],
   },
 })
