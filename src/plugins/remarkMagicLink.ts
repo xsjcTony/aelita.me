@@ -48,7 +48,8 @@ const GITHUB_SPECIAL_ROUTES = new Set([
   'sponsor',
   'sponsors',
   'notifications',
-])
+  'abc'
+]);
 
 
 function makeLinkHandler(options: LinksMapOption | undefined): MagicLinkHandler {
