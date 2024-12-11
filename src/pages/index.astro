@@ -1,8 +1,6 @@
 ---
 import '@styles/index.scss'
-// import AuroraBg from '@components/AuroraBg.astro'
 import DarkModeToggler from '@components/DarkModeToggler.astro'
-import { Content, frontmatter } from '@pages/_index.md'
 ---
 
 
@@ -13,18 +11,13 @@ import { Content, frontmatter } from '@pages/_index.md'
     <meta content="width=device-width" name="viewport" />
     <meta content={Astro.generator} name="generator" />
     <title>Astro</title>
-    <script id="check-dark-mode">
-      (() => {
-        const e=localStorage.getItem('theme-appearance')||'auto',a=window.matchMedia('(prefers-color-scheme: dark)').matches;(!e||e === 'auto'?a:e==='dark')&&document.documentElement.classList.add('dark')
-      })();
+    <script is:inline id="check-dark-mode">
+      (() => {const e=localStorage.getItem('theme-appearance')||'auto',a=window.matchMedia('(prefers-color-scheme: dark)').matches;(!e||e === 'auto'?a:e==='dark')&&document.documentElement.classList.add('dark')})();
     </script>
   </head>
   <body>
-    <!-- <AuroraBg> -->
     <DarkModeToggler />
-    {frontmatter.title}
-    <Content />
+    <h1 class="text-4xl font-bold">⚠️WIP⚠️ Under Construction</h1>
     <footer>Built with <code>{Astro.generator}</code></footer>
-    <!-- </AuroraBg> -->
   </body>
 </html>

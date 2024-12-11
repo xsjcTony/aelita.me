@@ -1,4 +1,4 @@
-import { GLOB_TS, GLOB_TSX, defineConfig } from '@aelita-dev/eslint-config'
+import { defineConfig } from '@aelita-dev/eslint-config'
 
 
 const [
@@ -12,11 +12,11 @@ const [
 ])
 
 
+// TODO: enable type aware rules for Astro, those rules are sitting in the TS preset, not Astro's
 export default defineConfig(
   {
     typescript: {
       projectType: 'app',
-      files: [GLOB_TS, GLOB_TSX, '**/*.astro/*.ts'],
     },
   },
   {
@@ -49,6 +49,7 @@ export default defineConfig(
     files: ['**/*.astro/*.ts'],
     languageOptions: {
       parserOptions: {
+        sourceType: 'module',
         project: null,
       },
     },
