@@ -1,23 +1,12 @@
 ---
-import '@styles/index.scss'
-import DarkModeToggler from '@components/DarkModeToggler.astro'
+import PageLayout from '@layouts/PageLayout.astro'
+import type { Metadata } from '@layouts/Layout.astro'
+
+
+const metadata: Metadata = { title: false }
 ---
 
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-    <meta content="width=device-width" name="viewport" />
-    <meta content={Astro.generator} name="generator" />
-    <title>Astro</title>
-    <script is:inline id="check-dark-mode">
-      (() => {const e=localStorage.getItem('theme-appearance')||'auto',a=window.matchMedia('(prefers-color-scheme: dark)').matches;(!e||e === 'auto'?a:e==='dark')&&document.documentElement.classList.add('dark')})();
-    </script>
-  </head>
-  <body>
-    <DarkModeToggler />
-    <h1 class="text-4xl font-bold">⚠️WIP⚠️ Under Construction</h1>
-    <footer>Built with <code>{Astro.generator}</code></footer>
-  </body>
-</html>
+<PageLayout metadata={metadata}>
+  <div class="container">123</div>
+</PageLayout>

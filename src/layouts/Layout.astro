@@ -1,0 +1,51 @@
+---
+import '@styles/index.scss'
+
+import { ClientRouter } from 'astro:transitions'
+
+
+export type Metadata = {
+  title: string | false
+  description?: string
+  titleTemplate?: string
+  ignoreTitleTemplate?: boolean
+}
+
+
+type Props = {
+  metadata?: Metadata
+}
+
+
+const {
+  metadata: {
+    title = false,
+    description = `Aelita's Portfolio`,
+    titleTemplate = '%s | Aelita - Full Stack Software Engineer',
+    ignoreTitleTemplate = false,
+  } = {},
+} = Astro.props
+
+
+const parsedTitle = title
+  ? ignoreTitleTemplate
+    ? title
+    : titleTemplate.replace('%s', title)
+  : 'Aelita - Full Stack Software Engineer'
+---
+
+
+<html lang="en">
+  <head>
+    {/* eslint-disable-next-line unicorn/text-encoding-identifier-case */}
+    <meta charset="UTF-8" />
+    <meta content={description} name="description" />
+    <title>{parsedTitle}</title>
+
+    <ClientRouter fallback="swap" />
+  </head>
+
+  <body class="antialiased text-white">
+    <slot />
+  </body>
+</html>
