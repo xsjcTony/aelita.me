@@ -11,16 +11,21 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "astro": "^5.1.7",
+    "@astrojs/react": "^4.1.6",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "astro": "^5.1.9",
     "clsx": "^2.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0",
     "typescript": "^5.7.3"
   },
   "devDependencies": {
-    "@aelita-dev/eslint-config": "^3.12.0",
-    "@tailwindcss/language-server": "^0.12.18",
-    "@tailwindcss/postcss": "^4.0.0-beta.9",
-    "@types/node": "^22.10.7",
+    "@aelita-dev/eslint-config": "^3.12.1",
+    "@tailwindcss/language-server": "^0.14.1",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^22.10.10",
     "astro-eslint-parser": "^1.1.0",
     "bundle-require": "^5.1.0",
     "eslint": "^9.18.0",
@@ -28,7 +33,10 @@
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-import-x": "^4.6.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
     "sass": "^1.83.4",
-    "tailwindcss": "^4.0.0-beta.9"
+    "tailwindcss": "^4.0.0"
   }
 }

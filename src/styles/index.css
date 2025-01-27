@@ -1,7 +1,5 @@
-@import './tailwindConfig.css';
-
-
 :root {
   color-scheme: dark;
   font-optical-sizing: auto;
+  background-color: var(--color-background);
 }

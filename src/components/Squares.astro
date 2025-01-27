@@ -1,0 +1,107 @@
+---
+/**
+ * Inspired by https://turbo.build/
+ */
+---
+
+
+<div class="pointer-events-none -z-1 absolute inset-0 overflow-hidden isolate">
+  <!-- Top fading 1 -->
+  <div class="absolute inset-x-0 top-1/4 h-3/4 bg-gradient-to-b from-background to-transparent" />
+  <!-- Top fading 2 -->
+  <div class="absolute inset-0 bg-gradient-to-t from-transparent to-background to-50%" />
+  <!-- Neon effect -->
+  <div id="left-neon" />
+  <div id="right-neon" />
+  <!-- Bottom fading -->
+  <div class="absolute bottom-0 inset-x-0 h-160 bg-gradient-to-t from-background to-transparent" />
+  <!-- Squares (perspective containers) -->
+  <div class="-z-1 absolute inset-0 perspective-[1000px] isolate">
+    <div class="absolute inset-0 rotate-x-75">
+      <div class="absolute w-[200vw] -inset-y-full" id="squares" />
+    </div>
+  </div>
+</div>
+
+
+<style lang="scss">
+  #squares {
+    margin-left: -50%;
+    background-image: linear-gradient(
+      to right,
+      var(--color-rose-400) 40%,
+      transparent 50%,
+      var(--color-sky-400) 60%
+    );
+    mask-image: linear-gradient(to right, #000 2px, transparent 0),
+    linear-gradient(to bottom, #000 2px, transparent 0);
+    mask-size: 40px 40px;
+    mask-position: 50% 0;
+    animation: move 60s linear infinite;
+
+    @media (min-width: 1024px) {
+      animation-duration: 30s;
+      mask-size: 80px 80px;
+    }
+  }
+
+  #left-neon,
+  #right-neon {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      filter: blur(125px);
+    }
+
+    &::before {
+      width: 25%;
+      height: 900px;
+      top: calc(50% - 900px / 2 + 151px);
+      border-radius: 100% 100% 25% 25%;
+      opacity: .1;
+    }
+
+    &::after {
+      width: 40%;
+      height: 442px;
+      top: calc(50% - 422px / 2 + 298px);
+      opacity: .3;
+    }
+  }
+
+  #left-neon{
+    &::before {
+      left: -12.5%;
+      transform: rotate(-15deg);
+      background: linear-gradient(180deg, var(--color-rose-400), --alpha(var(--color-rose-300) / 50%));
+    }
+
+    &::after {
+      left: 0;
+      background: linear-gradient(180deg, --alpha(var(--color-rose-400) / 20%), --alpha(var(--color-rose-300) / 50%));
+    }
+  }
+
+  #right-neon{
+    &::before {
+      right: -12.5%;
+      transform: rotate(15deg);
+      background: linear-gradient(180deg, var(--color-sky-400), --alpha(var(--color-sky-300) / 50%));
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(180deg, --alpha(var(--color-sky-400) / 20%), --alpha(var(--color-sky-300) / 50%));
+    }
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(calc(50% + 28px));
+    }
+  }
+</style>

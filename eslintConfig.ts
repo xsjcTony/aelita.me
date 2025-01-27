@@ -15,8 +15,28 @@ const [
 // TODO: enable type aware rules for Astro, those rules are sitting in the TS preset, not Astro's
 export default defineConfig(
   {
+    stylistic: {
+      semi: false,
+      commaDangle: 'always-multiline',
+      indent: 2,
+      quotes: 'single',
+    },
+    'import': {
+      ruleOptions: {
+        order: {
+          typeImportsFirst: true,
+        },
+      },
+    },
     typescript: {
       projectType: 'app',
+    },
+    react: {
+      accessibility: {
+        controlHasAssociatedLabel: {
+          ignoreElements: ['canvas'],
+        },
+      },
     },
   },
   {
