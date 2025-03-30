@@ -1,6 +1,7 @@
 ---
 import type { Metadata } from '@layouts/Layout.astro'
 import Squares from '@components/Squares.astro'
+import TextRevealing from '@components/TextRevealing'
 import PageLayout from '@layouts/PageLayout.astro'
 
 
@@ -12,26 +13,10 @@ const metadata: Metadata = { title: false }
   <div class="relative isolate">
     <!-- Squares effect -->
     <Squares />
-    <!-- <SquaresOld client:load className="-z-1" speed={0.5} /> -->
-    <!-- Top fading -->
-    <!-- <div class="absolute pointer-events-none top-0 inset-x-0 h-200 bg-gradient-to-b from-background to-transparent" /> -->
-    <!-- Bottom fading -->
-    <!-- <div class="absolute pointer-events-none bottom-0 inset-x-0 h-200 bg-gradient-to-t from-background to-transparent" /> -->
     <div class="container py-80">
-      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad aliquam amet aperiam, culpa dolore dolorem esse expedita fugit libero mollitia nesciunt nihil provident repellat sunt totam voluptate. Corporis, natus!</div>
-      <div>A aliquid amet commodi eaque enim et exercitationem, expedita facere hic ipsa ipsum iure molestiae mollitia neque nobis, nostrum numquam obcaecati odio officiis quia quidem repellendus rerum totam velit voluptas.</div>
-      <div>Aperiam consectetur dolore doloribus illo iste, mollitia, nulla perferendis placeat quos reiciendis, ullam vitae? At corporis eum id illo modi quod ratione reiciendis repellendus sed! Eaque in iste nihil similique.</div>
-      <div>Amet deleniti iste necessitatibus saepe tempore! Ad distinctio, dolores doloribus eaque eos explicabo labore magnam natus officia quidem quisquam repellat rerum suscipit tempore, vero. Deleniti eligendi hic impedit omnis unde.</div>
-      <div>Aliquid aperiam asperiores cumque, <span class="text-rose-300 underline decoration-dotted">dolor eligendi eos facere ipsam</span> iste labore minus, nihil non qui quo reiciendis sequi suscipit, veniam. Aliquam aliquid aspernatur at illo, nihil perspiciatis. Delectus, fugit, voluptas?</div>
-      <div>Ad error esse fugit impedit ipsa nam necessitatibus quod. Aliquid eveniet maxime natus possimus quisquam repellendus sunt. Ab ad dicta expedita nisi totam. Ducimus nam odio quas quia repellat tempore!</div>
-      <div>Ducimus ea eos fuga illum impedit in inventore iste laborum magnam maiores necessitatibus nemo neque numquam omnis perspiciatis, provident quasi quia repellat rerum sed similique sunt tempore tenetur veniam voluptate?</div>
-      <div>Ducimus ea eos fuga illum impedit in inventore iste laborum magnam maiores necessitatibus nemo neque numquam omnis perspiciatis, provident quasi quia repellat rerum sed similique sunt tempore tenetur veniam voluptate?</div>
-      <div>Ducimus ea eos fuga illum impedit in inventore iste laborum magnam maiores necessitatibus nemo neque numquam omnis perspiciatis, provident quasi quia repellat rerum sed similique sunt tempore tenetur veniam voluptate?</div>
-      <div>Ducimus ea eos fuga illum impedit in inventore iste laborum magnam maiores necessitatibus nemo neque numquam omnis perspiciatis, provident quasi quia repellat rerum sed similique sunt tempore tenetur veniam voluptate?</div>
-      <div>Ducimus ea eos fuga illum impedit in inventore iste laborum magnam maiores necessitatibus nemo neque numquam omnis perspiciatis, provident quasi quia repellat rerum sed similique sunt tempore tenetur veniam voluptate?</div>
-      <div>Ducimus ea eos fuga illum impedit in inventore iste laborum magnam maiores necessitatibus nemo neque numquam omnis perspiciatis, provident quasi quia repellat rerum sed similique sunt tempore tenetur veniam voluptate?</div>
-      <div>Autem consectetur cumque cupiditate delectus exercitationem impedit ipsam, iusto minus molestias nobis porro provident quae, ratione repellat, sint. Culpa cupiditate fugiat nam natus nostrum qui quibusdam repellat soluta tenetur ullam?</div>
-      <div>Assumenda consequuntur dignissimos facilis maxime nihil. Accusamus, corporis fuga harum hic ipsum itaque nam nostrum optio, quibusdam ratione rem sed vitae. Adipisci architecto blanditiis enim natus nisi, provident quaerat soluta!</div>
+      <div class="flex justify-center">
+        <TextRevealing client:load baseText="Aelita" revealedText="Tony Jiang" />
+      </div>
     </div>
   </div>
 </PageLayout>
