@@ -7,7 +7,7 @@ const [
   parserTypescript,
 ] = await Promise.all([
   import('eslint-plugin-astro').then(m => m.default),
-  import('astro-eslint-parser').then(m => m),
+  import('astro-eslint-parser'),
   import('typescript-eslint').then(m => m.parser),
 ])
 

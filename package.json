@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@aelita-dev/eslint-config": "^3.19.0",
+    "@astrojs/language-server": "^2.15.4",
     "@tailwindcss/language-server": "^0.14.17",
     "@tailwindcss/vite": "^4.1.7",
     "@types/node": "^22.15.18",
@@ -37,7 +38,9 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
-    "tailwindcss": "^4.1.7"
+    "sass-embedded": "^1.89.0",
+    "tailwindcss": "^4.1.7",
+    "typescript-eslint": "^8.32.1"
   },
   "pnpm": {
     "neverBuiltDependencies": []

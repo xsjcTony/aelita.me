@@ -1,6 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 
 export function useMount(fn: () => void): void {
-  useEffect(() => void fn(), [])
+  const funcRef = useRef(fn)
+
+  useEffect(() => {
+    funcRef.current()
+  }, [])
 }
