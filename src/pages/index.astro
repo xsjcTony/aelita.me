@@ -1,8 +1,8 @@
 ---
 import type { Metadata } from '@layouts/Layout.astro'
-import Lamp from '@components/Lamp'
 import Squares from '@components/Squares.astro'
 import PageLayout from '@layouts/PageLayout.astro'
+import HeroSection from '@pages/_components/HeroSection'
 
 
 const metadata: Metadata = { title: false }
@@ -10,18 +10,11 @@ const metadata: Metadata = { title: false }
 
 
 <PageLayout metadata={metadata}>
-  <!-- Container with squares background -->
+  <!-- Hero section -->
   <div class="relative isolate">
     <!-- Squares effect -->
     <Squares />
 
-    <!-- The container of title -->
-    <div class="container py-20">
-      <!-- Lamp effect -->
-      <Lamp client:load className="-translate-y-1/4" />
-
-      <!-- Real title -->
-      <h1>Aelita</h1>
-    </div>
+    <HeroSection client:load />
   </div>
 </PageLayout>

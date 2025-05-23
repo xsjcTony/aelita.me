@@ -11,7 +11,7 @@ type LampProps = {
 
 const TRANSITION: Transition = {
   delay: 0.3,
-  duration: 0.8,
+  duration: 0.7,
   ease: 'easeInOut',
 }
 
@@ -19,7 +19,7 @@ const TRANSITION: Transition = {
 const Lamp: FC<LampProps> = ({ className }) => (
   <div
     className={cn(
-      'relative w-full h-240 flex items-center justify-center isolate z-0 pointer-events-none',
+      'relative w-full h-200 flex items-center justify-center isolate z-0 pointer-events-none',
       className,
     )}
   >

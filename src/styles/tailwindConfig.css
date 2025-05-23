@@ -22,4 +22,8 @@
   --color-secondary: #9dffff;
 
   --color-background: #121212;
+
+  --color-foreground: #bbb;
+  --color-foreground-light: #ddd;
+  --color-foreground-lighter: #fff;
 }
