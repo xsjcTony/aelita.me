@@ -19,7 +19,7 @@ const TRANSITION: Transition = {
 const Lamp: FC<LampProps> = ({ className }) => (
   <div
     className={cn(
-      'relative w-full h-200 flex items-center justify-center isolate z-0 pointer-events-none',
+      'relative w-full h-160 flex items-center justify-center isolate z-0 pointer-events-none',
       className,
     )}
   >
