@@ -102,7 +102,7 @@ const HeroSection: FC = () => (
 
     {/* Description section */}
     <motion.section
-      className="bg-gradient-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-xl rounded-lg p-16 flex gap-x-12 text-sm"
+      className="bg-gradient-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-2xl rounded-lg p-16 flex gap-x-12 text-sm"
       id="description"
       initial="hidden"
       variants={{
@@ -112,7 +112,7 @@ const HeroSection: FC = () => (
       viewport={{ once: true }}
       whileInView="visible"
     >
-      <div className="self-stretch w-16 rounded-full bg-gradient-to-b from-primary to-secondary" />
+      <div className="self-stretch shrink-0 w-4 rounded-full bg-gradient-to-b from-primary to-secondary" />
       <p>
         G&apos;day! I&apos;m Aelita, a fanatical software engineer with full-stack capabilities.
         <br />
