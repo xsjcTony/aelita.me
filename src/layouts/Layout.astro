@@ -22,7 +22,7 @@ const {
   metadata: {
     title = false,
     description = `Aelita's Website`,
-    titleTemplate = '%s | Aelita - Full Stack Software Engineer',
+    titleTemplate = '%s | Aelita - Software Engineer',
   } = {},
 } = Astro.props
 
@@ -31,7 +31,7 @@ const parsedTitle = title
   ? titleTemplate
     ? titleTemplate.replace('%s', title)
     : title
-  : 'Aelita - Full Stack Software Engineer'
+  : 'Aelita - Software Engineer'
 ---
 
 

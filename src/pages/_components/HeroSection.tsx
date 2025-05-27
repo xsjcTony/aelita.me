@@ -71,7 +71,7 @@ const HeroSection: FC<HeroSectionProps> = ({
         className="text-foreground-light"
         variants={makeChildVariants()}
       >
-        Full Stack Software Engineer 🧑‍💻
+        Software Engineer 🧑‍💻
       </motion.h2>
     </motion.section>
 

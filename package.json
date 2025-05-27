@@ -44,8 +44,5 @@
     "sass-embedded": "^1.89.0",
     "tailwindcss": "^4.1.7",
     "typescript-eslint": "^8.32.1"
-  },
-  "pnpm": {
-    "neverBuiltDependencies": []
   }
 }
