@@ -1,12 +1,12 @@
 ---
 import type { Metadata } from '@layouts/Layout.astro'
-import { Image } from 'astro:assets'
-import arcaeaLogo from '@assets/images/arcaea-logo.png'
-import astroLogo from '@assets/images/astro-logo.svg'
-import maimaiDxLogo from '@assets/images/maimai-dx-logo.webp'
 import Squares from '@components/Squares.astro'
 import PageLayout from '@layouts/PageLayout.astro'
 import HeroSection from '@pages/_components/HeroSection'
+import ArcaeaLogo from '@pages/_components/icons/ArcaeaLogo.astro'
+import AstroLogo from '@pages/_components/icons/AstroLogo.astro'
+import MaimaiDxLogo from '@pages/_components/icons/MaimaiDxLogo.astro'
+import ViteLogo from '@pages/_components/icons/ViteLogo.astro'
 
 
 const metadata: Metadata = { title: false }
@@ -20,35 +20,10 @@ const metadata: Metadata = { title: false }
     <Squares />
 
     <HeroSection client:load>
-      <Image
-        alt="astro logo"
-        height={14}
-        loading="eager"
-        slot="astro-logo"
-        src={astroLogo}
-      />
-      <Image
-        alt="vite logo"
-        height={14}
-        loading="eager"
-        slot="vite-logo"
-        src="https://vite.dev/logo.svg"
-        width={14.2}
-      />
-      <Image
-        alt="maimai dx logo"
-        height={28}
-        loading="eager"
-        slot="maimai-dx-logo"
-        src={maimaiDxLogo}
-      />
-      <Image
-        alt="arcaea logo"
-        height={28}
-        loading="eager"
-        slot="arcaea-logo"
-        src={arcaeaLogo}
-      />
+      <AstroLogo slot="astro-logo" />
+      <ViteLogo slot="vite-logo" />
+      <ArcaeaLogo slot="arcaea-logo" />
+      <MaimaiDxLogo slot="maimai-dx-logo" />
     </HeroSection>
   </div>
 </PageLayout>

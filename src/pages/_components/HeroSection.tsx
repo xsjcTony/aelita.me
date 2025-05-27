@@ -80,7 +80,7 @@ const HeroSection: FC<HeroSectionProps> = ({
       className="flex flex-col items-center gap-y-8 mb-40 text-sm"
       id="details"
       initial="hidden"
-      variants={makeContainerVariants(2)}
+      variants={makeContainerVariants(1.8)}
       viewport={{ once: true }}
       whileInView="visible"
     >
@@ -129,7 +129,7 @@ const HeroSection: FC<HeroSectionProps> = ({
       className="bg-gradient-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-2xl rounded-lg p-16 flex gap-x-12 border border-foreground-lighter/10"
       id="description"
       initial="hidden"
-      variants={makeChildVariants(3.4)}
+      variants={makeChildVariants(3)}
       viewport={{ once: true }}
       whileInView="visible"
     >

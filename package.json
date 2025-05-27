@@ -13,12 +13,12 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.3.0",
     "@icons-pack/react-simple-icons": "^12.9.0",
-    "@types/react": "^19.1.5",
+    "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "astro": "^5.8.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.511.0",
-    "motion": "^12.14.0",
+    "motion": "^12.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "sharp": "^0.34.2",
@@ -26,7 +26,7 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "@aelita-dev/eslint-config": "^3.20.0",
+    "@aelita-dev/eslint-config": "^3.21.0",
     "@astrojs/language-server": "^2.15.4",
     "@tailwindcss/language-server": "^0.14.19",
     "@tailwindcss/vite": "^4.1.7",
