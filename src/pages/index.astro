@@ -1,5 +1,9 @@
 ---
 import type { Metadata } from '@layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import arcaeaLogo from '@assets/images/arcaea-logo.png'
+import astroLogo from '@assets/images/astro-logo.svg'
+import maimaiDxLogo from '@assets/images/maimai-dx-logo.webp'
 import Squares from '@components/Squares.astro'
 import PageLayout from '@layouts/PageLayout.astro'
 import HeroSection from '@pages/_components/HeroSection'
@@ -15,6 +19,36 @@ const metadata: Metadata = { title: false }
     <!-- Squares effect -->
     <Squares />
 
-    <HeroSection client:load />
+    <HeroSection client:load>
+      <Image
+        alt="astro logo"
+        height={14}
+        loading="eager"
+        slot="astro-logo"
+        src={astroLogo}
+      />
+      <Image
+        alt="vite logo"
+        height={14}
+        loading="eager"
+        slot="vite-logo"
+        src="https://vite.dev/logo.svg"
+        width={14.2}
+      />
+      <Image
+        alt="maimai dx logo"
+        height={28}
+        loading="eager"
+        slot="maimai-dx-logo"
+        src={maimaiDxLogo}
+      />
+      <Image
+        alt="arcaea logo"
+        height={28}
+        loading="eager"
+        slot="arcaea-logo"
+        src={arcaeaLogo}
+      />
+    </HeroSection>
   </div>
 </PageLayout>

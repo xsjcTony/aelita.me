@@ -1,6 +1,7 @@
 ---
 import '@styles/tailwindConfig.css'
-import '@styles/index.css'
+import '@styles/main.css'
+import '@styles/prose.css'
 
 import { ClientRouter } from 'astro:transitions'
 
@@ -8,8 +9,7 @@ import { ClientRouter } from 'astro:transitions'
 export type Metadata = {
   title: string | false
   description?: string
-  titleTemplate?: string
-  ignoreTitleTemplate?: boolean
+  titleTemplate?: string | false
 }
 
 
@@ -21,17 +21,16 @@ type Props = {
 const {
   metadata: {
     title = false,
-    description = `Aelita's Portfolio`,
+    description = `Aelita's Website`,
     titleTemplate = '%s | Aelita - Full Stack Software Engineer',
-    ignoreTitleTemplate = false,
   } = {},
 } = Astro.props
 
 
 const parsedTitle = title
-  ? ignoreTitleTemplate
-    ? title
-    : titleTemplate.replace('%s', title)
+  ? titleTemplate
+    ? titleTemplate.replace('%s', title)
+    : title
   : 'Aelita - Full Stack Software Engineer'
 ---
 
