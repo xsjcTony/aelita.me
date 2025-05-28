@@ -48,12 +48,11 @@ const HeroSection: FC<HeroSectionProps> = ({
 
     {/* Info section */}
     <motion.section
+      animate="visible"
       className="flex flex-col items-center mb-40"
       id="info"
       initial="hidden"
       variants={makeContainerVariants(1)}
-      viewport={{ once: true }}
-      whileInView="visible"
     >
       <motion.h1
         className="text-6xl font-bold text-foreground-lighter"
@@ -77,12 +76,11 @@ const HeroSection: FC<HeroSectionProps> = ({
 
     {/* Detail section */}
     <motion.section
+      animate="visible"
       className="flex flex-col items-center gap-y-8 mb-40 text-sm"
       id="details"
       initial="hidden"
       variants={makeContainerVariants(1.8)}
-      viewport={{ once: true }}
-      whileInView="visible"
     >
       <motion.div
         className="flex items-center gap-x-8"
@@ -126,12 +124,11 @@ const HeroSection: FC<HeroSectionProps> = ({
 
     {/* Description section */}
     <motion.section
+      animate="visible"
       className="bg-gradient-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-2xl rounded-lg p-16 flex gap-x-12 border border-foreground-lighter/10"
       id="description"
       initial="hidden"
       variants={makeChildVariants(3)}
-      viewport={{ once: true }}
-      whileInView="visible"
     >
       <div className="self-stretch shrink-0 w-4 rounded-full bg-gradient-to-b from-primary to-secondary" />
       <div className="prose prose-sm prose-fluid prose-img-inline">
