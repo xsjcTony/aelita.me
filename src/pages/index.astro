@@ -7,6 +7,7 @@ import ArcaeaLogo from '@pages/_components/icons/ArcaeaLogo.astro'
 import AstroLogo from '@pages/_components/icons/AstroLogo.astro'
 import MaimaiDxLogo from '@pages/_components/icons/MaimaiDxLogo.astro'
 import ViteLogo from '@pages/_components/icons/ViteLogo.astro'
+import MyJourney from '@pages/_components/MyJourney'
 
 
 const metadata: Metadata = { title: false }
@@ -26,4 +27,8 @@ const metadata: Metadata = { title: false }
       <MaimaiDxLogo slot="maimai-dx-logo" />
     </HeroSection>
   </div>
+
+
+  <!-- My Journey -->
+  <MyJourney client:load />
 </PageLayout>
