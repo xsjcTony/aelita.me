@@ -60,7 +60,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
 
             {/* Title & content */}
             <div className="flex flex-col gap-y-20">
-              <div className="sticky top-20 z-1 bg-background h-40 flex items-center shadow-[0_-20px_0_var(--color-background)]">
+              <div className="sticky top-20 z-1 bg-background h-40 flex items-center shadow-[0_-40px_0_var(--color-background)]">
                 <h3 className="text-2xl font-bold text-foreground-light">{title}</h3>
                 <div className="absolute inset-x-0 top-full h-20 bg-linear-to-b from-background to-transparent" />
               </div>
@@ -79,7 +79,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
         whileInView={{ opacity: 1 }}
       >
         <motion.div
-          className="absolute inset-x-0 top-0 rounded-full bg-gradient-to-t from-secondary to-primary to-[80px]"
+          className="absolute inset-x-0 top-0 rounded-full bg-gradient-to-t from-secondary to-primary to-[120px]"
           style={{ height: beamHeight }}
         />
       </motion.div>

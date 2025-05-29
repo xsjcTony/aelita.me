@@ -1,8 +1,9 @@
 import type { TimelineItem } from '@components/Timeline'
 import type { FC, ReactNode } from 'react'
 import { CodeIcon, MapPinHouseIcon } from 'lucide-react'
-import MotionFadeInWrapper from '@components/MotionFadeInWrapper.tsx'
+import { motion } from 'motion/react'
 import Timeline from '@components/Timeline'
+import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView.ts'
 
 
 function makeContent({ title, organization, location, content }: {
@@ -119,17 +120,28 @@ const items: TimelineItem[] = [
 ]
 
 
-const MyJourney: FC = () => (
-  <section className="container py-80">
-    <MotionFadeInWrapper>
-      <h2 className="text-3xl text-center font-bold text-foreground-lighter mb-40">
-        My Journey
-      </h2>
-    </MotionFadeInWrapper>
+const MyJourney: FC = () => {
 
-    <Timeline items={items} />
-  </section>
-)
+  const {
+    containerElRef,
+    animateElScope,
+  } = useFadeInWhenParentIsInView<HTMLElement, HTMLHeadingElement>({ margin: '-180px 0px' })
+
+
+  return (
+    <motion.section ref={containerElRef} className="container py-80">
+      <motion.h2
+        ref={animateElScope}
+        className="text-3xl text-center font-bold text-foreground-lighter mb-40"
+        initial={{ opacity: 0, y: 20 }}
+      >
+        My Journey
+      </motion.h2>
+
+      <Timeline items={items} />
+    </motion.section>
+  )
+}
 
 
 export default MyJourney
