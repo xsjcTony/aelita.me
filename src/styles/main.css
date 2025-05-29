@@ -9,7 +9,7 @@
 @layer base {
   a {
     text-decoration: underline;
-    text-decoration-style: dotted;
+    text-decoration-style: dashed;
     text-underline-offset: 2px;
 
     @media (hover: hover) {

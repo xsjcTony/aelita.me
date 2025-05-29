@@ -79,6 +79,31 @@
   }
 
 
+  /* Lists */
+  ul,
+  ol {
+    & > li {
+      position: relative;
+      padding-inline-start: 1.75em;
+    }
+  }
+
+  ul > li::before {
+    content: '';
+    position: absolute;
+    background-color: var(--color-foreground-light);
+    border-radius: calc(infinity * 1px);
+    width: 0.375em;
+    height: 0.375em;
+    top: calc(0.875em - calc(0.375em / 2));
+    left: 0.25em;
+  }
+
+  li {
+    margin-block: 0.5em;
+  }
+
+
   /* small */
   &.prose-sm {
     font-size: 0.875rem;
@@ -87,6 +112,25 @@
 
     p {
       margin-block: calc(16 / 14 * 1em);
+    }
+
+
+    ul,
+    ol {
+      & > li {
+        padding-inline-start: calc(11 / 7 * 1em);
+      }
+    }
+
+    ul > li::before {
+      width: calc(2.5 / 7 * 1em);
+      height: calc(2.5 / 7 * 1em);
+      top: calc(calc(4.5 / 7 * 1em) - calc(2.5 / 7 * 1em / 2));
+      left: calc(1.5 / 7 * 1em);
+    }
+
+    li {
+      margin-block: calc(2 / 7 * 1em);
     }
   }
 }

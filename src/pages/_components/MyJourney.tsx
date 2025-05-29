@@ -1,6 +1,7 @@
 import type { TimelineItem } from '@components/Timeline'
 import type { FC, ReactNode } from 'react'
-import { CodeIcon, MapPinHouseIcon } from 'lucide-react'
+import { SiLaravel, SiReact } from '@icons-pack/react-simple-icons'
+import { Building2, IdCardIcon, MapPinIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import Timeline from '@components/Timeline'
 import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView.ts'
@@ -8,7 +9,7 @@ import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView.
 
 function makeContent({ title, organization, location, content }: {
   title: string
-  organization: string
+  organization?: string
   location: string
   content: ReactNode
 }): ReactNode {
@@ -16,11 +17,24 @@ function makeContent({ title, organization, location, content }: {
     <div>
       <div className="flex flex-col gap-y-8 mb-16 relative isolate p-12">
         <h4 className="flex items-center gap-x-8 text-xs text-foreground-light">
-          <CodeIcon className="size-[1.2em]" />
-          <span>{title} @ {organization}</span>
+          <IdCardIcon className="shrink-0 size-[1.2em]" />
+          <span>{title}</span>
         </h4>
+
+        {organization && (
+          <>
+            <hr className="border-dashed border-foreground/50" />
+            <p className="flex items-center gap-x-8 text-xs text-foreground-light">
+              <Building2 className="shrink-0 size-[1.2em]" />
+              <span>{organization}</span>
+            </p>
+          </>
+        )}
+
+        <hr className="border-dashed border-foreground/50" />
+
         <p className="flex items-center gap-x-8 text-xs text-foreground-light">
-          <MapPinHouseIcon className="size-[1.2em]" />
+          <MapPinIcon className="shrink-0 size-[1.2em]" />
           <span>{location}</span>
         </p>
 
@@ -47,8 +61,19 @@ const items: TimelineItem[] = [
       organization: 'NOW Finance',
       location: 'Melbourne, Australia',
       content: (
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur cum error fuga, fugiat impedit pariatur sapiente sed voluptate voluptatem voluptates! Assumenda commodi, expedita. Assumenda autem id impedit molestiae, nemo quia?
+        <div className="prose prose-sm prose-img-inline">
+          <p>
+            As a front-end leaning software engineer, I was primarily responsible for developing the <SiReact className="-translate-y-px" color="default" size="1em" /> React-based front-end, along with some back-end tasks using <SiLaravel className="-translate-y-px" color="default" size="1em" /> Laravel.
+          </p>
+          <ul>
+            <li>Built a feature-rich form-based website for customers to apply loans.</li>
+            <li>Built an internal admin system to enable other teams to manage loan applications.</li>
+            <li>Collaborated with cross-functional teams in an Agile environment.</li>
+            <li>Introduced unit tests and E2E tests and made it a standard.</li>
+            <li>Contributed to automation of internal workflows and deployment pipelines.</li>
+            <li>Mentored junior team members and established rigorous PR review standards.</li>
+            <li>Introduced TypeScript, Vite and a few more new technologies into the tech stack.</li>
+          </ul>
         </div>
       ),
     }),
