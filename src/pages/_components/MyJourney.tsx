@@ -75,7 +75,7 @@ const MyJourney: FC = () => {
               As a front-end leaning software engineer, I was primarily responsible for developing the <SiReact className="-translate-y-px" color="default" size="1em" /> <strong>React</strong>-based front-end, along with some back-end tasks using <SiLaravel className="-translate-y-px" color="default" size="1em" /> <strong>Laravel</strong>.
             </p>
             <ul>
-              <li>Built a feature-rich form-based website for customers to apply loans.</li>
+              <li>Built a feature-rich form-based accessible website for customers to apply loans.</li>
               <li>Built an internal admin system to enable other teams to manage loan applications.</li>
               <li>Collaborated with cross-functional teams in an <strong>Agile</strong> environment.</li>
               <li>Introduced <img alt="vitest logo" className="size-[1em] -translate-y-px" src="https://vitest.dev/logo.svg" /> <strong>unit tests</strong> and <img alt="playwright logo" className="size-[1.2em] -translate-y-2" src="https://playwright.dev/img/playwright-logo.svg" /> <strong>E2E tests</strong> and made them standards.</li>

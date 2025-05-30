@@ -77,7 +77,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
 
       {/* Gradient tracing beam */}
       <motion.div
-        className="absolute left-15 inset-y-0 -z-1 w-2"
+        className="absolute left-15 inset-y-0 -z-1 w-2 mask-b-from-[calc(100%-80px)]"
         initial={{ opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true, margin: '-100px 0px' }}

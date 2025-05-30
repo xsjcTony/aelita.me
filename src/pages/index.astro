@@ -6,6 +6,7 @@ import Squares from '@components/Squares.astro'
 import PageLayout from '@layouts/PageLayout.astro'
 import HeroSection from '@pages/_components/HeroSection'
 import MyJourney from '@pages/_components/MyJourney'
+import TechStack from '@pages/_components/TechStack'
 
 
 const metadata: Metadata = { title: false }
@@ -27,4 +28,8 @@ const metadata: Metadata = { title: false }
 
   <!-- My Journey -->
   <MyJourney client:load />
+
+
+  <!-- Tech Stack -->
+  <TechStack client:load />
 </PageLayout>
