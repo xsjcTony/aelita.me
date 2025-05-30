@@ -1,10 +1,19 @@
 ---
 import { Image } from 'astro:assets'
+
+
+type Props = {
+  'class'?: string
+}
+
+
+const { 'class': className } = Astro.props
 ---
 
 
 <Image
   alt="vite logo"
+  class={className}
   height={14}
   loading="eager"
   src="https://vite.dev/logo.svg"

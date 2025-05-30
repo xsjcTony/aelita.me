@@ -125,7 +125,7 @@
     ul > li::before {
       width: calc(2.5 / 7 * 1em);
       height: calc(2.5 / 7 * 1em);
-      top: calc(calc(4.5 / 7 * 1em) - calc(2.5 / 7 * 1em / 2));
+      top: calc(calc(5 / 7 * 1em) - calc(2.5 / 7 * 1em / 2));
       left: calc(1.5 / 7 * 1em);
     }
 

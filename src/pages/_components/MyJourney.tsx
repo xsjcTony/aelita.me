@@ -4,7 +4,8 @@ import { SiLaravel, SiReact } from '@icons-pack/react-simple-icons'
 import { Building2, IdCardIcon, MapPinIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import Timeline from '@components/Timeline'
-import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView.ts'
+import WithSparkles from '@components/WithSparkles'
+import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView'
 
 
 function makeContent({ title, organization, location, content }: {
@@ -61,18 +62,18 @@ const items: TimelineItem[] = [
       organization: 'NOW Finance',
       location: 'Melbourne, Australia',
       content: (
-        <div className="prose prose-sm prose-img-inline">
+        <div className="prose prose-sm prose-img-inline prose-fluid">
           <p>
-            As a front-end leaning software engineer, I was primarily responsible for developing the <SiReact className="-translate-y-px" color="default" size="1em" /> React-based front-end, along with some back-end tasks using <SiLaravel className="-translate-y-px" color="default" size="1em" /> Laravel.
+            As a front-end leaning software engineer, I was primarily responsible for developing the <SiReact className="-translate-y-px" color="default" size="1em" /> <strong>React</strong>-based front-end, along with some back-end tasks using <SiLaravel className="-translate-y-px" color="default" size="1em" /> <strong>Laravel</strong>.
           </p>
           <ul>
             <li>Built a feature-rich form-based website for customers to apply loans.</li>
             <li>Built an internal admin system to enable other teams to manage loan applications.</li>
-            <li>Collaborated with cross-functional teams in an Agile environment.</li>
-            <li>Introduced unit tests and E2E tests and made it a standard.</li>
+            <li>Collaborated with cross-functional teams in an <strong>Agile</strong> environment.</li>
+            <li>Introduced <strong>unit tests</strong> and <strong>E2E tests</strong> and made them standards.</li>
             <li>Contributed to automation of internal workflows and deployment pipelines.</li>
             <li>Mentored junior team members and established rigorous PR review standards.</li>
-            <li>Introduced TypeScript, Vite and a few more new technologies into the tech stack.</li>
+            <li>Introduced <strong>TypeScript</strong>, <strong>Vite</strong> and a few more new technologies into the tech stack.</li>
           </ul>
         </div>
       ),
@@ -155,13 +156,11 @@ const MyJourney: FC = () => {
 
   return (
     <motion.section ref={containerElRef} className="container py-80">
-      <motion.h2
-        ref={animateElScope}
-        className="text-3xl text-center font-bold text-foreground-lighter mb-40"
-        initial={{ opacity: 0, y: 20 }}
-      >
-        My Journey
-      </motion.h2>
+      <motion.div ref={animateElScope} className="mb-40" initial={{ opacity: 0, y: 20 }}>
+        <WithSparkles>
+          <h2 className="text-3xl text-center font-bold text-foreground-lighter">My Journey</h2>
+        </WithSparkles>
+      </motion.div>
 
       <Timeline items={items} />
     </motion.section>

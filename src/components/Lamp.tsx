@@ -1,7 +1,7 @@
 import type { Transition } from 'motion/react'
 import type { FC } from 'react'
 import { motion } from 'motion/react'
-import { cn } from '@utils/className.ts'
+import { cn } from '@utils/className'
 
 
 type LampProps = {

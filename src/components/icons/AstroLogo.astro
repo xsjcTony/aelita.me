@@ -1,11 +1,20 @@
 ---
 import { Image } from 'astro:assets'
 import astroLogo from '@assets/images/astro-logo.svg'
+
+
+type Props = {
+  'class'?: string
+}
+
+
+const { 'class': className } = Astro.props
 ---
 
 
 <Image
   alt="astro logo"
+  class={className}
   height={14}
   loading="eager"
   src={astroLogo}

@@ -2,8 +2,8 @@ import type { FC, ReactNode } from 'react'
 import { CalendarRangeIcon } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef, useState } from 'react'
-import MotionFadeInWrapper from '@components/MotionFadeInWrapper.tsx'
-import { useWindowResize } from '@hooks/useWindowResize.ts'
+import MotionFadeInWrapper from '@components/MotionFadeInWrapper'
+import { useWindowResize } from '@hooks/useWindowResize'
 
 
 export type TimelineItem = {
