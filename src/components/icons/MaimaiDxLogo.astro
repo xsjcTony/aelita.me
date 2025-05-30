@@ -5,17 +5,18 @@ import maimaiDxLogo from '@assets/images/maimai-dx-logo.webp'
 
 type Props = {
   'class'?: string
+  height: number
 }
 
 
-const { 'class': className } = Astro.props
+const { 'class': className, height } = Astro.props
 ---
 
 
 <Image
   alt="maimai dx logo"
   class={className}
-  height={28}
+  height={height}
   loading="eager"
   src={maimaiDxLogo}
 />

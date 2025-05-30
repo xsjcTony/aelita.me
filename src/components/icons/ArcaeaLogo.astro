@@ -5,18 +5,18 @@ import arcaeaLogo from '@assets/images/arcaea-logo.png'
 
 type Props = {
   'class'?: string
+  height: number
 }
 
 
-const { 'class': className } = Astro.props
+const { 'class': className, height } = Astro.props
 ---
 
 
 <Image
   alt="arcaea logo"
   class={className}
-  height={28}
+  height={height}
   loading="eager"
-  slot="arcaea-logo"
   src={arcaeaLogo}
 />

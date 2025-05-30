@@ -8,8 +8,6 @@ import { CODEPEN_URL, EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '@constants
 
 
 type HeroSectionProps = {
-  astroLogo?: ReactNode
-  viteLogo?: ReactNode
   arcaeaLogo?: ReactNode
   maimaiDxLogo?: ReactNode
 }
@@ -36,12 +34,7 @@ function makeChildVariants(delay?: number): Variants {
 }
 
 
-const HeroSection: FC<HeroSectionProps> = ({
-  astroLogo,
-  viteLogo,
-  arcaeaLogo,
-  maimaiDxLogo,
-}) => (
+const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
   <section className="container pt-20 pb-80" id="hero">
     {/* Lamp effect */}
     <Lamp className="-translate-y-1/3" />
@@ -140,7 +133,7 @@ const HeroSection: FC<HeroSectionProps> = ({
           I lean towards digging cutting-edge frontend technologies, making fancy effects and delivering delightful user experiences.
         </p>
         <p>
-          I write <a href="/blog">blog posts</a> about technologies (frontend-focused), including {astroLogo} framework tips, <SiCss className="-translate-y-px" color="default" size="1em" /> CSS tricks, <SiTypescript className="-translate-y-px" color="default" size="1em" /> TS / <SiJavascript className="-translate-y-px" color="default" size="1em" /> JS insights, {viteLogo} tooling and more, from the basics to the principles.
+          I write <a href="/blog">blog posts</a> about technologies (frontend-focused), including <img alt="astro logo" className="size-[1em] -translate-y-px" src="/images/astro-logo.svg" /> framework tips, <SiCss className="-translate-y-px" color="default" size="1em" /> CSS tricks, <SiTypescript className="-translate-y-px" color="default" size="1em" /> TS / <SiJavascript className="-translate-y-px" color="default" size="1em" /> JS insights, <img alt="vite logo" className="h-[1em]" src="https://vite.dev/logo.svg" /> tooling and more, from the basics to the principles.
         </p>
         <p>Outside of programming, I enjoy playing piano and listening to musics (<strong>ARTCORE</strong> lover).</p>
         <p>

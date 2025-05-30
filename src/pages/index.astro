@@ -1,9 +1,7 @@
 ---
 import type { Metadata } from '@layouts/Layout.astro'
 import ArcaeaLogo from '@components/icons/ArcaeaLogo.astro'
-import AstroLogo from '@components/icons/AstroLogo.astro'
 import MaimaiDxLogo from '@components/icons/MaimaiDxLogo.astro'
-import ViteLogo from '@components/icons/ViteLogo.astro'
 import Squares from '@components/Squares.astro'
 import PageLayout from '@layouts/PageLayout.astro'
 import HeroSection from '@pages/_components/HeroSection'
@@ -21,10 +19,8 @@ const metadata: Metadata = { title: false }
     <Squares />
 
     <HeroSection client:load>
-      <AstroLogo class="translate-y-2" slot="astro-logo" />
-      <ViteLogo slot="vite-logo" />
-      <ArcaeaLogo slot="arcaea-logo" />
-      <MaimaiDxLogo slot="maimai-dx-logo" />
+      <ArcaeaLogo height={28} slot="arcaea-logo" />
+      <MaimaiDxLogo height={28} slot="maimai-dx-logo" />
     </HeroSection>
   </div>
 
