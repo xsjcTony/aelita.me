@@ -19,11 +19,11 @@ const WithSparkles: FC<PropsWithChildren> = ({ children }) => (
         maxSize={1.2}
         minSize={0.4}
         particleColor="#fff"
-        particleDensity={1200}
+        particleDensity={2500}
       />
 
       {/* Radial Gradient to prevent sharp edges */}
-      <div className="absolute w-full h-40 top-8 bg-background mask-radial-at-top mask-radial-[50%_120%] mask-radial-from-transparent mask-radial-from-20% mask-radial-to-white" />
+      <div className="absolute w-full h-40 top-8 bg-bg mask-radial-at-top mask-radial-[40%_120%] mask-radial-from-transparent mask-radial-from-20% mask-radial-to-white" />
     </div>
   </div>
 )

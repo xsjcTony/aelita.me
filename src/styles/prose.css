@@ -6,7 +6,7 @@
 
 
 .prose {
-  color: var(--color-foreground);
+  color: var(--color-fg);
   max-width: var(--prose-max-width);
   font-size: 1rem;
   line-height: 1.75;
@@ -37,11 +37,11 @@
 
   /* Titles */
   h1 {
-    color: var(--color-foreground-lighter);
+    color: var(--color-fg-lighter);
   }
 
   h2 {
-    color: var(--color-foreground-light);
+    color: var(--color-fg-light);
   }
 
 
@@ -91,7 +91,7 @@
   ul > li::before {
     content: '';
     position: absolute;
-    background-color: var(--color-foreground-light);
+    background-color: var(--color-fg-light);
     border-radius: calc(infinity * 1px);
     width: 0.375em;
     height: 0.375em;

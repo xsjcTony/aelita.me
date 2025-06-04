@@ -1,8 +1,8 @@
 :root {
   color-scheme: dark;
   font-optical-sizing: auto;
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: var(--color-bg);
+  color: var(--color-fg);
 }
 
 
@@ -25,6 +25,6 @@
 
 
   strong {
-    color: var(--color-foreground-light);
+    color: var(--color-fg-light);
   }
 }

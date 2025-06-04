@@ -17,24 +17,24 @@ function makeContent({ title, organization, location, content }: {
   return (
     <div>
       <div className="flex flex-col gap-y-8 mb-16 relative isolate p-12">
-        <h4 className="flex items-center gap-x-8 text-xs text-foreground-light">
+        <h4 className="flex items-center gap-x-8 text-xs text-fg-light">
           <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px" />
           <span>{title}</span>
         </h4>
 
         {organization && (
           <>
-            <hr className="border-dashed border-foreground/50" />
-            <p className="flex items-center gap-x-8 text-xs text-foreground-light">
+            <hr className="border-dashed border-fg/50" />
+            <p className="flex items-center gap-x-8 text-xs text-fg-light">
               <Building2 className="shrink-0 size-[1.2em] -translate-y-px" />
               <span>{organization}</span>
             </p>
           </>
         )}
 
-        <hr className="border-dashed border-foreground/50" />
+        <hr className="border-dashed border-fg/50" />
 
-        <p className="flex items-center gap-x-8 text-xs text-foreground-light">
+        <p className="flex items-center gap-x-8 text-xs text-fg-light">
           <MapPinIcon className="shrink-0 size-[1.2em] -translate-y-px" />
           <span>{location}</span>
         </p>
@@ -118,7 +118,7 @@ const MyJourney: FC = () => {
               As my first job, it not only helped me build technical knowledge, but also taught me the basics of workplace etiquette and how to communicate effectively with colleagues.
             </p>
             <ul>
-              <li>Learnt how <SiDocker className="-translate-y-px" color="default" size="1em" /> Docker and <img alt="kubernetes logo" className="size-[1em] -translate-y-px" src="/images/kubernetes-logo.svg" /> Kubernetes fundamentally works.</li>
+              <li>Learnt how <SiDocker className="-translate-y-px" color="default" size="1em" /> Docker and <img alt="kubernetes logo" className="size-[1em] -translate-y-px" src="/assets/images/kubernetes-logo.svg" /> Kubernetes fundamentally works.</li>
               <li>Set up local Kubernetes environment and deployed to the staging server for testing.</li>
               <li>Documented a few internal bugs of Kubernetes and addressed some workarounds.</li>
               <li>Translated the official English documentation for other team members to consume.</li>
@@ -139,7 +139,7 @@ const MyJourney: FC = () => {
             <p>Graduated with a <strong>Bachelor of Computer Science</strong> degree.</p>
             <ul>
               <li>Achieved <strong>HD (97/100)</strong> in <u>Web Programming</u></li>
-              <li>Achieved <strong>HD (100/100)</strong> in <u>Programming 1</u></li>
+              <li>Achieved <strong>HD 💯 (100/100)</strong> in <u>Programming 1</u></li>
             </ul>
           </div>
         ),
@@ -166,7 +166,7 @@ const MyJourney: FC = () => {
     <motion.section ref={containerElRef} className="container py-80" id="my-journey">
       <motion.div ref={animateElScope} className="mb-40" initial={{ opacity: 0, y: 20 }}>
         <WithSparkles>
-          <h2 className="text-3xl text-center font-bold text-foreground-lighter">My Journey</h2>
+          <h2 className="text-3xl text-center font-bold text-fg-lighter">My Journey</h2>
         </WithSparkles>
       </motion.div>
 

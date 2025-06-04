@@ -6,6 +6,7 @@ import { cn } from '@utils/className'
 
 
 type PointerHighlightProps = {
+  delay?: number
   paddingBlock?: number
   paddingInline?: number
   classNames?: {
@@ -39,6 +40,7 @@ const Pointer: FC<SVGProps<SVGSVGElement>> = ({ ...props }) => (
 
 const PointerHighlight: FC<PropsWithChildren<PointerHighlightProps>> = ({
   children,
+  delay = 0,
   paddingBlock = 0,
   paddingInline = 0,
   classNames = DEFAULT_CLASS_NAMES,
@@ -80,17 +82,17 @@ const PointerHighlight: FC<PropsWithChildren<PointerHighlightProps>> = ({
           animate={{ opacity: 1 }}
           className="pointer-events-none absolute inset-0 z-0"
           initial={{ opacity: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay }}
         >
           <motion.div
             className={cn(
-              'absolute inset-0 border border-primary rounded-md box-content',
+              'absolute inset-0 border border-primary bg-primary/20 rounded-md box-content',
               classNames.rectangle,
             )}
             initial={{ width: 0, height: 0 }}
             // minus 1 more for visual correctness due to border
             style={{ top: -paddingBlock - 1, left: -paddingInline - 1 }}
-            transition={{ duration: 1, ease: 'easeInOut' }}
+            transition={{ duration: 1, ease: 'easeInOut', delay }}
             viewport={{ once: true, margin: '-100px 0px' }}
             whileInView={{
               width: dimensions.width,
@@ -105,11 +107,12 @@ const PointerHighlight: FC<PropsWithChildren<PointerHighlightProps>> = ({
               opacity: { duration: 0.1, ease: 'easeInOut' },
               duration: 1,
               ease: 'easeInOut',
+              delay,
             }}
             viewport={{ once: true, margin: '-100px 0px' }}
             whileInView={{
               opacity: 1,
-              x: dimensions.width,
+              x: dimensions.width - 6,
               y: dimensions.height,
             }}
           >

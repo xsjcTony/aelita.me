@@ -1,9 +1,9 @@
 import type { FC, ReactNode } from 'react'
 import { BriefcaseBusinessIcon, GraduationCapIcon } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'motion/react'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import MotionFadeInWrapper from '@components/MotionFadeInWrapper'
-import { useWindowResize } from '@hooks/useWindowResize'
+import { useResizeObserver } from '@hooks/useResizeObserver'
 
 
 export type TimelineItem = {
@@ -20,13 +20,9 @@ type TimelineProps = {
 const Timeline: FC<TimelineProps> = ({ items }) => {
 
   const containerElRef = useRef<HTMLDivElement>(null)
-  const [containerHeight, setContainerHeight] = useState<number>(0)
 
 
-  useWindowResize(() => {
-    containerElRef.current
-    && setContainerHeight(containerElRef.current.getBoundingClientRect().height)
-  })
+  const { height: containerHeight } = useResizeObserver(containerElRef)
 
 
   const { scrollYProgress } = useScroll({
@@ -59,14 +55,14 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
                 <div className="flex justify-center items-center size-32 rounded-full bg-neutral-800">
                   <Icon className="size-[1em]" />
                 </div>
-                <div className="absolute size-80 -z-1 rounded-full bg-radial from-(--color-background) from-40% to-transparent to-70%" />
+                <div className="absolute size-80 -z-1 rounded-full bg-radial from-(--color-bg) from-40% to-transparent to-70%" />
               </div>
 
               {/* Title & content */}
               <div className="flex flex-col gap-y-20 flex-1">
-                <div className="sticky top-20 z-1 bg-background h-40 flex items-center shadow-[0_-40px_0_var(--color-background)]">
-                  <h3 className="text-2xl font-bold text-foreground-light">{title}</h3>
-                  <div className="absolute inset-x-0 top-full h-20 bg-linear-to-b from-background to-transparent" />
+                <div className="sticky top-20 z-1 bg-bg h-40 flex items-center shadow-[0_-40px_0_var(--color-bg)]">
+                  <h3 className="text-2xl font-bold text-fg-light">{title}</h3>
+                  <div className="absolute inset-x-0 top-full h-20 bg-linear-to-b from-bg to-transparent" />
                 </div>
                 <div>{content}</div>
               </div>
@@ -77,7 +73,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
 
       {/* Gradient tracing beam */}
       <motion.div
-        className="absolute left-15 inset-y-0 -z-1 w-2 mask-b-from-[calc(100%-80px)]"
+        className="absolute left-15 inset-y-0 -z-1 w-2 mask-b-from-[calc(100%-20px)]"
         initial={{ opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true, margin: '-100px 0px' }}

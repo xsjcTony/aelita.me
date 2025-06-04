@@ -48,7 +48,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
       variants={makeContainerVariants(1)}
     >
       <motion.h1
-        className="text-6xl font-bold text-foreground-lighter"
+        className="text-6xl font-bold text-fg-lighter"
         variants={makeChildVariants()}
       >
         Aelita
@@ -60,7 +60,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
         alias of <strong>Tony Jiang</strong>
       </motion.p>
       <motion.h2
-        className="text-foreground-light"
+        className="text-fg-light"
         variants={makeChildVariants()}
       >
         Software Engineer 🧑‍💻
@@ -118,7 +118,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
     {/* Description section */}
     <motion.section
       animate="visible"
-      className="bg-gradient-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-2xl rounded-lg p-16 flex gap-x-12 border border-foreground-lighter/10"
+      className="bg-gradient-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-2xl rounded-lg p-16 flex gap-x-12 border border-fg-lighter/10"
       id="description"
       initial="hidden"
       variants={makeChildVariants(3)}
@@ -133,7 +133,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           I lean towards digging cutting-edge frontend technologies, making fancy effects and delivering delightful user experiences.
         </p>
         <p>
-          I write <a href="/blog">blog posts</a> about technologies (frontend-focused), including <img alt="astro logo" className="size-[1em] -translate-y-px" src="/images/astro-logo.svg" /> framework tips, <SiCss className="-translate-y-px" color="default" size="1em" /> CSS tricks, <SiTypescript className="-translate-y-px" color="default" size="1em" /> TS / <SiJavascript className="-translate-y-px" color="default" size="1em" /> JS insights, <img alt="vite logo" className="h-[1em]" src="https://vite.dev/logo.svg" /> tooling and more, from the basics to the principles.
+          I write <a href="/blog">blog posts</a> about technologies (frontend-focused), including <img alt="astro logo" className="size-[1em] -translate-y-px" src="/assets/images/astro-logo.svg" /> framework tips, <SiCss className="-translate-y-px" color="default" size="1em" /> CSS tricks, <SiTypescript className="-translate-y-px" color="default" size="1em" /> TS / <SiJavascript className="-translate-y-px" color="default" size="1em" /> JS insights, <img alt="vite logo" className="h-[1em]" src="https://vite.dev/logo.svg" /> tooling and more, from the basics to the principles.
         </p>
         <p>Outside of programming, I enjoy playing piano and listening to musics (<strong>ARTCORE</strong> lover).</p>
         <p>
