@@ -1,13 +1,13 @@
 import type { CSSProperties, FC, ReactNode } from 'react'
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import {
   BREAKPOINT_2XL,
   BREAKPOINT_LG,
   BREAKPOINT_XL,
 } from '@constants/breakpoints'
+import { useBodyRef } from '@hooks/useBodyRef'
 import { useMediaQuery } from '@hooks/useMediaQuery'
 import { useResizeObserver } from '@hooks/useResizeObserver'
-import { useMount } from '@hooks/useMount';
 
 
 export type TechStackItem = {
@@ -96,8 +96,7 @@ const TechStackCard: FC<TechStackCardProps> = ({ item }) => {
 
 const TechStackCards: FC<TechStackCardsProps> = ({ items }) => {
 
-  const bodyRef = useRef<HTMLElement>(null)
-  useMount(() => bodyRef.current = document.body)
+  const bodyRef = useBodyRef()
 
   const { width: screenWidth } = useResizeObserver(bodyRef)
 
@@ -110,7 +109,6 @@ const TechStackCards: FC<TechStackCardsProps> = ({ items }) => {
   const {
     rows,
     blocksPerRow,
-    paddedBlocksPerRowSide,
     techStackPerRow,
     centerIndexes,
   } = useMemo(() => {
@@ -129,9 +127,7 @@ const TechStackCards: FC<TechStackCardsProps> = ({ items }) => {
 
 
     // calculated values
-    const blocksPerRow = Math.floor(_containerWidth / (_blockWidth + _blockGap))
-
-    const paddedBlocksPerRowSide = isMD
+    const _paddedBlocksPerRowSide = isMD
       ? 1
       : isLG
         ? 2
@@ -139,46 +135,61 @@ const TechStackCards: FC<TechStackCardsProps> = ({ items }) => {
           ? 3
           : Math.max(Math.floor((_containerWidth - 600) / 250), 0)
 
-    const techStackPerRow = blocksPerRow - (paddedBlocksPerRowSide * 2)
+    const blocksPerRow = Math.floor(_containerWidth / (_blockWidth + _blockGap))
+
+    const techStackPerRow = blocksPerRow - (_paddedBlocksPerRowSide * 2)
 
     const rows = Math.ceil(items.length / techStackPerRow)
 
 
-    // calculate center index of each row (0-based)
-    const _firstRowsStartIndex = paddedBlocksPerRowSide
-    const _techStacksPerFirstRows = techStackPerRow
-    const _lastRowStartIndex = paddedBlocksPerRowSide
-      + Math.floor((_techStacksPerFirstRows - (items.length % _techStacksPerFirstRows)) / 2)
+    // calculate center indexes of each row (0-based)
+    const _lastRowStartIndex = _paddedBlocksPerRowSide
+      + Math.floor((techStackPerRow - (items.length % techStackPerRow)) / 2)
 
     const centerIndexes = new Array(rows)
       .fill(void 0)
       .map((_, index) =>
-        index < rows || (items.length % _techStacksPerFirstRows === 0)
+        (index + 1) < rows || (items.length % techStackPerRow === 0)
           ? {
-            start: _firstRowsStartIndex,
-            end: blocksPerRow - paddedBlocksPerRowSide,
+            start: _paddedBlocksPerRowSide,
+            end: blocksPerRow - _paddedBlocksPerRowSide - 1,
           }
           : {
             start: _lastRowStartIndex,
-            end: _lastRowStartIndex + (items.length % _techStacksPerFirstRows) + 1,
+            end: _lastRowStartIndex + (items.length % techStackPerRow) - 1,
           })
 
 
-    return { rows, blocksPerRow, paddedBlocksPerRowSide, techStackPerRow, centerIndexes }
+    return { rows, blocksPerRow, techStackPerRow, centerIndexes }
   }, [screenWidth, isLG, isMD, isXL, items.length])
 
 
-  console.log('items.length', items.length)
-  console.log('rows', rows)
-  console.log('blocksPerRow', blocksPerRow)
-  console.log('paddedBlocksPerRowSide', paddedBlocksPerRowSide)
-  console.log('techStackPerRow', techStackPerRow)
-  console.log('centerIndexes', centerIndexes)
+  const mapCards = (rowIndex: number) =>
+    // eslint-disable-next-line react/display-name, react/no-unstable-nested-components
+    (_: any, columnIndex: number) => {
+      const emptyTechStackCard = <TechStackCard key={columnIndex} />
+
+      const centerIndex = centerIndexes[rowIndex]
+
+      if (!centerIndex)
+        return emptyTechStackCard
+
+      if (columnIndex < centerIndex.start || columnIndex > centerIndex.end)
+        return emptyTechStackCard
+
+      const techStack = items[
+        (rowIndex * techStackPerRow) + columnIndex - centerIndex.start
+      ]
+
+      return techStack
+        ? <TechStackCard key={techStack.name} item={techStack} />
+        : emptyTechStackCard
+    }
 
 
   return (
     <div
-      className="container-fluid flex flex-col gap-y-(--gap) lg:gap-y-(--gap-lg)"
+      className="container-fluid py-32 flex flex-col gap-y-(--gap) lg:gap-y-(--gap-lg) overflow-x-clip mask-x-from-80% mask-x-to-100%"
       style={{
         '--gap': `${BLOCK_GAP_MD}px`,
         '--gap-lg': `${BLOCK_GAP_LG}px`,
@@ -191,16 +202,9 @@ const TechStackCards: FC<TechStackCardsProps> = ({ items }) => {
         <div
           // eslint-disable-next-line react/no-array-index-key
           key={rowIndex}
-          className="grid auto-cols-(--width) lg:auto-cols-(--width-lg) xl:auto-cols-(--width-xl) grid-flow-col gap-x-(--gap) lg:gap-x-(--gap-lg) overflow-x-clip"
+          className="grid auto-cols-(--width) lg:auto-cols-(--width-lg) xl:auto-cols-(--width-xl) grid-flow-col gap-x-(--gap) lg:gap-x-(--gap-lg) odd:translate-x-[-12px] even:translate-x-[24px]"
         >
-          {new Array(blocksPerRow + 2).fill(void 0).map((__, columnIndex) => {
-            const techStack = items[
-              ((rowIndex - 1) * techStackPerRow)
-              + (columnIndex - 1) - (centerIndexes[rowIndex]?.start ?? 0)
-            ]
-
-            return <TechStackCard key={techStack?.name} item={techStack} />
-          })}
+          {new Array(blocksPerRow + 2).fill(void 0).map(mapCards(rowIndex))}
         </div>
       ))}
     </div>

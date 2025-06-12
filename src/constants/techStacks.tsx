@@ -1,7 +1,6 @@
 import type { TechStackItem } from '@components/TechStackCards'
 import {
   SiAstroHex,
-  SiBunHex,
   SiDrizzle,
   SiDrizzleHex,
   SiJavascript,
@@ -9,7 +8,6 @@ import {
   SiLaravel,
   SiLaravelHex,
   SiMarkdown,
-  SiMarkdownHex,
   SiMysqlHex,
   SiNestjs,
   SiNestjsHex,
@@ -58,7 +56,7 @@ export const TECH_STACK_LANGUAGES: TechStackItem[] = [
   {
     name: 'Markdown',
     logo: <SiMarkdown color="default" size="1em" />,
-    glowColor: SiMarkdownHex,
+    glowColor: '#ffffff',
     url: 'https://www.markdownguide.org/',
   },
 ]
@@ -145,7 +143,7 @@ export const TECH_STACK_BACKEND: TechStackItem[] = [
   {
     name: 'Bun',
     logo: 'https://bun.sh/logo.svg',
-    glowColor: SiBunHex,
+    glowColor: '#fbf0df',
     url: 'https://bun.sh/',
   },
   {

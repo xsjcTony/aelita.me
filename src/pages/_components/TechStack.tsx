@@ -1,10 +1,36 @@
+import type { TechStackItem } from '@components/TechStackCards'
 import type { FC } from 'react'
 import { motion } from 'motion/react'
 import PointerHighlight from '@components/PointerHighlight'
 import TechStackCards from '@components/TechStackCards'
 import WithSparkles from '@components/WithSparkles'
-import { TECH_STACK_FRONTEND } from '@constants/techStacks'
+import { TECH_STACK_BACKEND, TECH_STACK_FRONTEND, TECH_STACK_LANGUAGES } from '@constants/techStacks'
 import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView'
+
+
+type StackProps = {
+  title: string
+  highlighted?: boolean
+  techStacks: TechStackItem[]
+}
+
+
+const Stack: FC<StackProps> = ({
+  title,
+  highlighted = false,
+  techStacks,
+}) => (
+  <div className="flex flex-col">
+    {highlighted
+      ? (
+        <PointerHighlight delay={1} paddingInline={8}>
+          <h4 className="text-2xl font-bold text-fg-light">{title}</h4>
+        </PointerHighlight>
+      )
+      : <h4 className="text-2xl font-bold text-fg-light">{title}</h4>}
+    <TechStackCards items={techStacks} />
+  </div>
+)
 
 
 const TechStack: FC = () => {
@@ -23,13 +49,10 @@ const TechStack: FC = () => {
         </WithSparkles>
       </motion.div>
 
-      <div className="flex flex-col gap-y-40">
-        <div className="flex flex-col gap-y-32">
-          <PointerHighlight delay={1} paddingInline={8}>
-            <h4 className="text-2xl font-bold text-fg-light">Front-End</h4>
-          </PointerHighlight>
-          <TechStackCards items={TECH_STACK_FRONTEND} />
-        </div>
+      <div className="flex flex-col gap-y-20">
+        <Stack techStacks={TECH_STACK_LANGUAGES} title="Languages" />
+        <Stack highlighted techStacks={TECH_STACK_FRONTEND} title="Front-End" />
+        <Stack techStacks={TECH_STACK_BACKEND} title="Back-End" />
       </div>
     </motion.section>
   )
