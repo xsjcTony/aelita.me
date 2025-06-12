@@ -12,10 +12,9 @@ import { useResizeObserver } from '@hooks/useResizeObserver'
 
 export type TechStackItem = {
   name: string
-  logo: ReactNode | string
+  logo: ReactNode
   glowColor: string
   url: string
-  style?: CSSProperties
 }
 
 type TechStackCardProps = {
@@ -60,13 +59,12 @@ const TechStackCard: FC<TechStackCardProps> = ({ item }) => {
   }
 
 
-  const { name, logo, glowColor, url, style } = item
+  const { name, logo, glowColor, url } = item
 
 
   return (
-    // TODO: adjust font size
     <a
-      className="relative size-(--width) lg:size-(--width-lg) xl:size-(--width-xl) rounded-xl border border-(--border-color) bg-(--bg-color) flex justify-center items-center p-16 select-none text-(length:--img-height) lg:text-(length:--img-height-lg) xl:text-(length:--img-height-xl) before:absolute before:inset-1/10 before:bg-(--glow-color) before:blur-lg before:-z-1 before:opacity-0 before:transition-opacity before:duration-3000 before:ease-[ease] before:will-change-[opacity] hover:before:opacity-100 hover:before:duration-200"
+      className="relative size-(--width) lg:size-(--width-lg) xl:size-(--width-xl) rounded-xl border border-(--border-color) bg-(--bg-color) flex justify-center items-center select-none text-(length:--img-height) lg:text-(length:--img-height-lg) xl:text-(length:--img-height-xl) before:absolute before:inset-1/10 before:bg-(--glow-color) before:blur-lg before:-z-1 before:opacity-0 before:transition-opacity before:duration-3000 before:ease-[ease] before:will-change-[opacity] hover:before:opacity-100 hover:before:duration-200"
       href={url}
       rel="noopener noreferrer"
       style={{
@@ -79,16 +77,7 @@ const TechStackCard: FC<TechStackCardProps> = ({ item }) => {
       target="_blank"
       title={name}
     >
-      {typeof logo === 'string'
-        ? (
-          <img
-            alt={`${name} logo`}
-            className="h-[1em] select-none drop-shadow-[0_0_0.8rem_color-mix(in_srgb,_var(--glow-color)_40%,_transparent)]"
-            src={logo}
-            style={style}
-          />
-        )
-        : logo}
+      {logo}
     </a>
   )
 }
