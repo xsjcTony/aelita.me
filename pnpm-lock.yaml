@@ -42,11 +42,11 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       lucide-react:
-        specifier: ^0.514.0
-        version: 0.514.0(react@19.1.0)
+        specifier: ^0.515.0
+        version: 0.515.0(react@19.1.0)
       motion:
-        specifier: ^12.17.0
-        version: 12.17.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^12.18.1
+        version: 12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       radix-ui:
         specifier: ^1.4.2
         version: 1.4.2(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2945,8 +2945,8 @@ packages:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
     engines: {node: '>= 0.4'}
 
-  framer-motion@12.17.0:
-    resolution: {integrity: sha512-2hISKgDk49yCLStwG1wf4Kdy/D6eBw9/eRNaWFIYoI9vMQ/Mqd1Fz+gzVlEtxJmtQ9y4IWnXm19/+UXD3dAYAA==}
+  framer-motion@12.18.1:
+    resolution: {integrity: sha512-6o4EDuRPLk4LSZ1kRnnEOurbQ86MklVk+Y1rFBUKiF+d2pCdvMjWVu0ZkyMVCTwl5UyTH2n/zJEJx+jvTYuxow==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -3451,8 +3451,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-react@0.514.0:
-    resolution: {integrity: sha512-HXD0OAMd+JM2xCjlwG1EGW9Nuab64dhjO3+MvdyD+pSUeOTBaVAPhQblKIYmmX4RyBYbdzW0VWnJpjJmxWGr6w==}
+  lucide-react@0.515.0:
+    resolution: {integrity: sha512-Sy7bY0MeicRm2pzrnoHm2h6C1iVoeHyBU2fjdQDsXGP51fhkhau1/ZV/dzrcxEmAKsxYb6bGaIsMnGHuQ5s0dw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -3634,14 +3634,14 @@ packages:
   mlly@1.7.4:
     resolution: {integrity: sha512-qmdSIPC4bDJXgZTCR7XosJiNKySV7O215tsPtDN9iEO/7q/76b/ijtgRu/+epFXSJhijtTCCGp3DWS549P3xKw==}
 
-  motion-dom@12.17.0:
-    resolution: {integrity: sha512-FA6/c70R9NKs3g41XDVONzmUUrEmyaifLVGCWtAmHP0usDnX9W+RN/tmbC4EUl0w6yLGvMTOwnWCFVgA5luhRg==}
+  motion-dom@12.18.1:
+    resolution: {integrity: sha512-dR/4EYT23Snd+eUSLrde63Ws3oXQtJNw/krgautvTfwrN/2cHfCZMdu6CeTxVfRRWREW3Fy1f5vobRDiBb/q+w==}
 
-  motion-utils@12.12.1:
-    resolution: {integrity: sha512-f9qiqUHm7hWSLlNW8gS9pisnsN7CRFRD58vNjptKdsqFLpkVnX00TNeD6Q0d27V9KzT7ySFyK1TZ/DShfVOv6w==}
+  motion-utils@12.18.1:
+    resolution: {integrity: sha512-az26YDU4WoDP0ueAkUtABLk2BIxe28d8NH1qWT8jPGhPyf44XTdDUh8pDk9OPphaSrR9McgpcJlgwSOIw/sfkA==}
 
-  motion@12.17.0:
-    resolution: {integrity: sha512-04K87lcwuA1vK3CLpKegncbBq6y2dmQjUsp9iPz0SxFACdBtEHB3V120k0G/t1blHATFuoqMrrLELRljUdQCeg==}
+  motion@12.18.1:
+    resolution: {integrity: sha512-w1ns2hWQ4COhOvnZf4rg4mW0Pl36mzcShpgt0fSfI6qJxKUbi3kHho/HSKeJFRoY0TO1m5/7C8lG1+Li0uC9Fw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -8022,10 +8022,10 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  framer-motion@12.17.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  framer-motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      motion-dom: 12.17.0
-      motion-utils: 12.12.1
+      motion-dom: 12.18.1
+      motion-utils: 12.18.1
       tslib: 2.8.1
     optionalDependencies:
       react: 19.1.0
@@ -8531,7 +8531,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.514.0(react@19.1.0):
+  lucide-react@0.515.0(react@19.1.0):
     dependencies:
       react: 19.1.0
 
@@ -8898,15 +8898,15 @@ snapshots:
       pkg-types: 1.3.1
       ufo: 1.6.1
 
-  motion-dom@12.17.0:
+  motion-dom@12.18.1:
     dependencies:
-      motion-utils: 12.12.1
+      motion-utils: 12.18.1
 
-  motion-utils@12.12.1: {}
+  motion-utils@12.18.1: {}
 
-  motion@12.17.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  motion@12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      framer-motion: 12.17.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      framer-motion: 12.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       tslib: 2.8.1
     optionalDependencies:
       react: 19.1.0
