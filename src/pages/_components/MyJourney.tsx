@@ -1,6 +1,15 @@
 import type { TimelineItem } from '@components/Timeline'
 import type { FC, ReactNode } from 'react'
-import { SiDocker, SiLaravel, SiReact, SiTypescript } from '@icons-pack/react-simple-icons'
+import {
+  Docker,
+  Kubernetes,
+  Laravel,
+  Playwright,
+  ReactDark,
+  TypeScript,
+  Vite,
+  Vitest,
+} from '@ridemountainpig/svgl-react'
 import { Building2, IdCardIcon, MapPinIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import Timeline from '@components/Timeline'
@@ -72,16 +81,16 @@ const MyJourney: FC = () => {
         content: (
           <div className="prose prose-sm prose-img-inline prose-fluid">
             <p>
-              As a front-end leaning software engineer, I was primarily responsible for developing the <SiReact className="-translate-y-px" color="default" size="1em" /> <strong>React</strong>-based front-end, along with some back-end tasks using <SiLaravel className="-translate-y-px" color="default" size="1em" /> <strong>Laravel</strong>.
+              As a front-end leaning software engineer, I was primarily responsible for developing the <ReactDark className="size-[1em] -translate-y-px" /> <strong>React</strong>-based front-end, along with some back-end tasks using <Laravel className="size-[1em] -translate-y-px" /> <strong>Laravel</strong>.
             </p>
             <ul>
               <li>Built a feature-rich form-based accessible website for customers to apply loans.</li>
               <li>Built an internal admin system to enable other teams to manage loan applications.</li>
               <li>Collaborated with cross-functional teams in an <strong>Agile</strong> environment.</li>
-              <li>Introduced <img alt="vitest logo" className="size-[1em] -translate-y-px" src="https://vitest.dev/logo.svg" /> <strong>unit tests</strong> and <img alt="playwright logo" className="size-[1.2em] -translate-y-2" src="https://playwright.dev/img/playwright-logo.svg" /> <strong>E2E tests</strong> and made them standards.</li>
+              <li>Introduced <Vitest className="w-[1em] -translate-y-px" /> <strong>unit tests</strong> and <Playwright className="size-[1.3em] -translate-y-2" /> <strong>E2E tests</strong> and made them standards.</li>
               <li>Contributed to automation of internal workflows and deployment pipelines.</li>
               <li>Mentored junior team members and established rigorous PR review standards.</li>
-              <li>Introduced <SiTypescript className="-translate-y-px" color="default" size="1em" /> <strong>TypeScript</strong>, <img alt="vite logo" className="h-[1em] -translate-y-px" src="https://vite.dev/logo.svg" /> <strong>Vite</strong> and a few more new technologies into the tech stack.</li>
+              <li>Introduced <TypeScript className="size-[1em] -translate-y-px" /> <strong>TypeScript</strong>, <Vite className="size-[1em] -translate-y-px" /> <strong>Vite</strong> and a few more new technologies into the tech stack.</li>
             </ul>
           </div>
         ),
@@ -118,7 +127,7 @@ const MyJourney: FC = () => {
               As my first job, it not only helped me build technical knowledge, but also taught me the basics of workplace etiquette and how to communicate effectively with colleagues.
             </p>
             <ul>
-              <li>Learnt how <SiDocker className="-translate-y-px" color="default" size="1em" /> Docker and <img alt="kubernetes logo" className="size-[1em] -translate-y-px" src="/assets/images/kubernetes-logo.svg" /> Kubernetes fundamentally works.</li>
+              <li>Learnt how <Docker className="size-[1em] -translate-y-px" /> Docker and <Kubernetes className="size-[1em] -translate-y-px" /> Kubernetes fundamentally works.</li>
               <li>Set up local Kubernetes environment and deployed to the staging server for testing.</li>
               <li>Documented a few internal bugs of Kubernetes and addressed some workarounds.</li>
               <li>Translated the official English documentation for other team members to consume.</li>

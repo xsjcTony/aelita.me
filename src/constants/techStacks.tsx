@@ -72,12 +72,13 @@ import {
   TypeScriptUrl,
   UnoCSS,
   UnoCSSUrl,
+  Vite,
   ViteUrl,
   Vitest,
   VitestUrl,
   Vue,
 } from '@ridemountainpig/svgl-react'
-import { cn } from '@utils/className.ts'
+import { cn } from '@utils/className'
 
 
 const CLASSNAMES = 'select-none max-h-[1em] max-w-[1em] drop-shadow-[0_0_0.8rem_color-mix(in_srgb,_var(--glow-color)_40%,_transparent)]'
@@ -174,7 +175,7 @@ export const TECH_STACK_FRONTEND: TechStackItem[] = [
   },
   {
     name: 'Vite',
-    logo: <img alt="Vite logo" className={CLASSNAMES} src="https://vite.dev/logo.svg" />,
+    logo: <Vite className={CLASSNAMES} />,
     glowColor: SiViteHex,
     url: ViteUrl,
   },

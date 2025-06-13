@@ -1,6 +1,6 @@
 import type { Variants } from 'motion/react'
 import type { FC, ReactNode } from 'react'
-import { SiCss, SiJavascript, SiTypescript } from '@icons-pack/react-simple-icons'
+import { AstroDark, CSSNew, JavaScript, TypeScript, Vite } from '@ridemountainpig/svgl-react'
 import { CodepenIcon, GithubIcon, LinkedinIcon, MailIcon, MapPinIcon } from 'lucide-react'
 import { motion } from 'motion/react'
 import Lamp from '@components/Lamp'
@@ -133,7 +133,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           I lean towards digging cutting-edge frontend technologies, making fancy effects and delivering delightful user experiences.
         </p>
         <p>
-          I write <a href="/blog">blog posts</a> about technologies (frontend-focused), including <img alt="astro logo" className="size-[1em] -translate-y-px" src="/assets/images/astro-logo.svg" /> framework tips, <SiCss className="-translate-y-px" color="default" size="1em" /> CSS tricks, <SiTypescript className="-translate-y-px" color="default" size="1em" /> TS / <SiJavascript className="-translate-y-px" color="default" size="1em" /> JS insights, <img alt="vite logo" className="h-[1em]" src="https://vite.dev/logo.svg" /> tooling and more, from the basics to the principles.
+          I write <a href="/blog">blog posts</a> about technologies (frontend-focused), including <AstroDark className="size-[1em] -translate-y-px" /> framework tips, <CSSNew className="size-[1em] -translate-y-px" /> CSS tricks, <TypeScript className="size-[1em] -translate-y-px" /> TS / <JavaScript className="size-[1em] -translate-y-px" /> JS insights, <Vite className="size-[1em] -translate-y-px" /> tooling and more, from the basics to the principles.
         </p>
         <p>Outside of programming, I enjoy playing piano and listening to musics (<strong>ARTCORE</strong> lover).</p>
         <p>
