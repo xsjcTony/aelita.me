@@ -1,5 +1,6 @@
 import type { CSSProperties, FC, ReactNode } from 'react'
 import { useMemo } from 'react'
+import Tooltip from '@components/Tooltip'
 import {
   BREAKPOINT_2XL,
   BREAKPOINT_LG,
@@ -52,6 +53,7 @@ const TechStackCard: FC<TechStackCardProps> = ({ item }) => {
   if (!item) {
     return (
       <div
+        aria-label="empty block"
         className="size-(--width) lg:size-(--width-lg) xl:size-(--width-xl) rounded-xl border border-(--border-color) bg-(--bg-color) select-none translate-3d transition-transform duration-3000 ease-[ease] hover:scale-90 hover:duration-200 hover:ease-[ease-in-out]"
         style={BLOCK_CSS_VARIABLES}
       />
@@ -63,22 +65,24 @@ const TechStackCard: FC<TechStackCardProps> = ({ item }) => {
 
 
   return (
-    <a
-      className="relative size-(--width) lg:size-(--width-lg) xl:size-(--width-xl) rounded-xl border border-(--border-color) bg-(--bg-color) flex justify-center items-center select-none text-(length:--img-height) lg:text-(length:--img-height-lg) xl:text-(length:--img-height-xl) before:absolute before:inset-1/10 before:bg-(--glow-color) before:blur-lg before:-z-1 before:opacity-0 before:transition-opacity before:duration-3000 before:ease-[ease] before:will-change-[opacity] hover:before:opacity-100 hover:before:duration-200"
-      href={url}
-      rel="noopener noreferrer"
-      style={{
-        '--glow-color': glowColor,
-        '--img-height': '36px',
-        '--img-height-lg': '42px',
-        '--img-height-xl': '48px',
-        ...BLOCK_CSS_VARIABLES,
-      }}
-      target="_blank"
-      title={name}
-    >
-      {logo}
-    </a>
+    <Tooltip content={name} shadowColor={glowColor}>
+      <a
+        aria-label={name}
+        className="relative size-(--width) lg:size-(--width-lg) xl:size-(--width-xl) rounded-xl border border-(--border-color) bg-(--bg-color) flex justify-center items-center select-none text-(length:--img-height) lg:text-(length:--img-height-lg) xl:text-(length:--img-height-xl) before:absolute before:inset-1/10 before:bg-(--glow-color) before:blur-lg before:-z-1 before:opacity-0 before:transition-opacity before:duration-3000 before:ease-[ease] before:will-change-[opacity] hover:before:opacity-100 hover:before:duration-200"
+        href={url}
+        rel="noopener noreferrer"
+        style={{
+          '--glow-color': glowColor,
+          '--img-height': '36px',
+          '--img-height-lg': '42px',
+          '--img-height-xl': '48px',
+          ...BLOCK_CSS_VARIABLES,
+        }}
+        target="_blank"
+      >
+        {logo}
+      </a>
+    </Tooltip>
   )
 }
 

@@ -18,9 +18,7 @@ export function useMediaQuery(
     : globalThis.matchMedia(query).matches
 
 
-  const [matches, setMatches] = useState<boolean>(
-    () => initializeWithValue ? getMatches(query) : defaultValue,
-  )
+  const [matches, setMatches] = useState(() => initializeWithValue ? getMatches(query) : defaultValue)
 
 
   const handleChange = (): void => {

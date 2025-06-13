@@ -89,7 +89,7 @@ const PointerHighlight: FC<PropsWithChildren<PointerHighlightProps>> = ({
               'absolute inset-0 border border-primary bg-primary/20 rounded-md box-content',
               classNames.rectangle,
             )}
-            initial={{ width: 0, height: 0 }}
+            initial={{ width: 0, height: 0, opacity: 0 }}
             // minus 1 more for visual correctness due to border
             style={{ top: -paddingBlock - 1, left: -paddingInline - 1 }}
             transition={{ duration: 1, ease: 'easeInOut', delay }}
@@ -97,6 +97,7 @@ const PointerHighlight: FC<PropsWithChildren<PointerHighlightProps>> = ({
             whileInView={{
               width: dimensions.width,
               height: dimensions.height,
+              opacity: 1,
             }}
           />
           <motion.div
@@ -104,7 +105,7 @@ const PointerHighlight: FC<PropsWithChildren<PointerHighlightProps>> = ({
             initial={{ opacity: 0 }}
             style={{ rotate: -90 }}
             transition={{
-              opacity: { duration: 0.1, ease: 'easeInOut' },
+              opacity: { duration: 0.5, ease: 'easeInOut' },
               duration: 1,
               ease: 'easeInOut',
               delay,
