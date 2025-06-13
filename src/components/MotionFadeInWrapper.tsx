@@ -3,7 +3,6 @@ import type { FC, PropsWithChildren } from 'react'
 import { motion } from 'motion/react'
 
 
-// ⚠️ Don't pass svg element to `as` prop
 type MotionFadeInWrapperProps = {
   delay?: number
   margin?: string

@@ -11,10 +11,8 @@ import {
   Vitest,
 } from '@ridemountainpig/svgl-react'
 import { Building2, IdCardIcon, MapPinIcon } from 'lucide-react'
-import { motion } from 'motion/react'
 import Timeline from '@components/Timeline'
-import WithSparkles from '@components/WithSparkles'
-import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView'
+import SectionWithTitle from '@pages/_components/SectionWithTitle'
 
 
 function makeContent({ title, organization, location, content }: {
@@ -64,12 +62,6 @@ function makeContent({ title, organization, location, content }: {
 
 
 const MyJourney: FC = () => {
-
-  const {
-    containerElRef,
-    animateElScope,
-  } = useFadeInWhenParentIsInView<HTMLElement, HTMLHeadingElement>({ margin: '-180px 0px' })
-
 
   const items: TimelineItem[] = [
     {
@@ -172,15 +164,9 @@ const MyJourney: FC = () => {
 
 
   return (
-    <motion.section ref={containerElRef} className="container py-80" id="my-journey">
-      <motion.div ref={animateElScope} className="mb-40" initial={{ opacity: 0, y: 20 }}>
-        <WithSparkles>
-          <h2 className="text-3xl text-center font-bold text-fg-lighter">My Journey</h2>
-        </WithSparkles>
-      </motion.div>
-
+    <SectionWithTitle title="My Journey">
       <Timeline items={items} />
-    </motion.section>
+    </SectionWithTitle>
   )
 }
 

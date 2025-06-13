@@ -1,4 +1,4 @@
-import type { TechStackItem } from '@components/TechStackCards'
+import type { TechStackItem } from '@pages/_components/TechStackCards'
 import {
   SiAstroHex,
   SiCssHex,

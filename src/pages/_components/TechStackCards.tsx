@@ -65,7 +65,11 @@ const TechStackCard: FC<TechStackCardProps> = ({ item }) => {
 
 
   return (
-    <Tooltip content={name} shadowColor={glowColor}>
+    <Tooltip
+      content={name}
+      contentWrapperDataAttributes={{ 'data-cursor-zone': 'techStack' }}
+      shadowColor={glowColor}
+    >
       <a
         aria-label={name}
         className="relative size-(--width) lg:size-(--width-lg) xl:size-(--width-xl) rounded-xl border border-(--border-color) bg-(--bg-color) flex justify-center items-center select-none text-(length:--img-height) lg:text-(length:--img-height-lg) xl:text-(length:--img-height-xl) before:absolute before:inset-1/10 before:bg-(--glow-color) before:blur-lg before:-z-1 before:opacity-0 before:transition-opacity before:duration-3000 before:ease-[ease] before:will-change-[opacity] hover:before:opacity-100 hover:before:duration-200"

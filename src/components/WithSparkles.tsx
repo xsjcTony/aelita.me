@@ -3,7 +3,7 @@ import Sparkles from '@components/Sparkles'
 
 
 const WithSparkles: FC<PropsWithChildren> = ({ children }) => (
-  <div className="">
+  <>
     {children}
 
     <div className="w-full h-48 relative">
@@ -25,7 +25,7 @@ const WithSparkles: FC<PropsWithChildren> = ({ children }) => (
       {/* Radial Gradient to prevent sharp edges */}
       <div className="absolute w-full h-40 top-8 bg-bg mask-radial-at-top mask-radial-[40%_120%] mask-radial-from-transparent mask-radial-from-20% mask-radial-to-white" />
     </div>
-  </div>
+  </>
 )
 
 
