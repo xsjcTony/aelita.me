@@ -27,4 +27,13 @@
   strong {
     color: var(--color-fg-light);
   }
+
+
+  h2 {
+    color: var(--color-fg-lighter);
+  }
+
+  h3 {
+    color: var(--color-fg-light);
+  }
 }

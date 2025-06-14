@@ -24,7 +24,7 @@ function makeContent({ title, organization, location, content }: {
   return (
     <div>
       <div className="flex flex-col gap-y-8 mb-16 relative isolate p-12">
-        <h4 className="flex items-center gap-x-8 text-xs text-fg-light">
+        <h4 className="flex items-center gap-x-8 text-xs text-fg-light font-bold">
           <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px" />
           <span>{title}</span>
         </h4>

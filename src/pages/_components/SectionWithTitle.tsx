@@ -22,7 +22,7 @@ const SectionWithTitle: FC<SectionWithTitleProps> = ({ title, children }) => {
     <motion.section ref={containerElRef} className="container py-80" id={title}>
       <motion.div ref={animateElScope} className="mb-40" initial={{ opacity: 0, y: 20 }}>
         <WithSparkles>
-          <h2 className="text-3xl text-center font-bold text-fg-lighter">{title}</h2>
+          <h2 className="text-h2 text-center">{title}</h2>
         </WithSparkles>
       </motion.div>
 

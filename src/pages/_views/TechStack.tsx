@@ -20,7 +20,7 @@ const Stack: FC<StackProps> = ({
   highlighted = false,
   techStacks,
 }) => {
-  const titleEl = <h4 className="text-2xl font-bold text-fg-light">{title}</h4>
+  const titleEl = <h3 className="text-h3">{title}</h3>
 
   return (
     <MotionFadeInWrapper margin="-200px 0px">

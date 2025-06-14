@@ -16,10 +16,7 @@
   --spacing: 1px;
 
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: ui-monospace, "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
-
-
+  /* Colors */
   --color-primary: #ffb7c2;
   --color-primary-2: #ff9eac;
   --color-primary-3: #ff879a;
@@ -30,4 +27,18 @@
   --color-fg: #bbb;
   --color-fg-light: #ddd;
   --color-fg-lighter: #fff;
+
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+
+
+  --text-h2: var(--text-3xl);
+  --text-h2--line-height: var(--text-3xl--line-height);
+  --text-h2--font-weight: 700;
+
+  --text-h3: var(--text-2xl);
+  --text-h3--line-height: var(--text-2xl--line-height);
+  --text-h3--font-weight: 700;
 }

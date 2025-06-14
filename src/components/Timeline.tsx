@@ -61,7 +61,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
               {/* Title & content */}
               <div className="flex flex-col gap-y-20 flex-1">
                 <div className="sticky top-20 z-1 bg-bg h-40 flex items-center shadow-[0_-40px_0_var(--color-bg)]">
-                  <h3 className="text-2xl font-bold text-fg-light">{title}</h3>
+                  <h3 className="text-h3">{title}</h3>
                   <div className="absolute inset-x-0 top-full h-20 bg-linear-to-b from-bg to-transparent" />
                 </div>
                 <div>{content}</div>
