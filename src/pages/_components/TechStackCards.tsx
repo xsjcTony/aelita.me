@@ -1,13 +1,8 @@
 import type { CSSProperties, FC, ReactNode } from 'react'
 import { useMemo } from 'react'
 import Tooltip from '@components/Tooltip'
-import {
-  BREAKPOINT_2XL,
-  BREAKPOINT_LG,
-  BREAKPOINT_XL,
-} from '@constants/breakpoints'
+import { BREAKPOINT_LG, BREAKPOINT_XL } from '@constants/breakpoints'
 import { useBodyRef } from '@hooks/useBodyRef'
-import { useMediaQuery } from '@hooks/useMediaQuery'
 import { useResizeObserver } from '@hooks/useResizeObserver'
 
 
@@ -92,15 +87,15 @@ const TechStackCard: FC<TechStackCardProps> = ({ item }) => {
 
 
 const TechStackCards: FC<TechStackCardsProps> = ({ items }) => {
-
   const bodyRef = useBodyRef()
 
-  const { width: screenWidth } = useResizeObserver(bodyRef)
+  const { width: _screenWidth } = useResizeObserver(bodyRef)
+  const screenWidth = _screenWidth || 1920 // default to 1920 during SSR
 
 
-  const isMD = useMediaQuery(`(width < ${BREAKPOINT_LG}px)`)
-  const isLG = useMediaQuery(`(width < ${BREAKPOINT_XL}px)`)
-  const isXL = useMediaQuery(`(width > ${BREAKPOINT_2XL}px)`)
+  const isMD = screenWidth < BREAKPOINT_LG
+  const isLG = screenWidth < BREAKPOINT_XL
+  const isXL = screenWidth >= BREAKPOINT_XL
 
 
   const {

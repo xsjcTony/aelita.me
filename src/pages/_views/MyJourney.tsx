@@ -10,7 +10,7 @@ import {
   Vite,
   Vitest,
 } from '@ridemountainpig/svgl-react'
-import { Building2, IdCardIcon, MapPinIcon } from 'lucide-react'
+import { Building2, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
 import Timeline from '@components/Timeline'
 import SectionWithTitle from '@pages/_components/SectionWithTitle'
 
@@ -129,7 +129,7 @@ const MyJourney: FC = () => {
       }),
     },
     {
-      type: 'education',
+      icon: <GraduationCapIcon />,
       title: '2018 - 2021',
       content: makeContent({
         title: 'University Student',
@@ -147,7 +147,7 @@ const MyJourney: FC = () => {
       }),
     },
     {
-      type: 'education',
+      icon: <GraduationCapIcon />,
       title: '2015 - 2017',
       content: makeContent({
         title: 'Senior School Student',

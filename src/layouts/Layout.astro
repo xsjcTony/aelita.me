@@ -43,6 +43,9 @@ const parsedTitle = title
     <meta content={description} name="description" />
     <title>{parsedTitle}</title>
 
+    <!-- TODO: remove after development done -->
+    <script is:inline src="https://unpkg.com/react-scan/dist/auto.global.js" />
+
     <ClientRouter fallback="swap" />
   </head>
 

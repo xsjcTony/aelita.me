@@ -20,14 +20,19 @@ const Stack: FC<StackProps> = ({
   highlighted = false,
   techStacks,
 }) => {
-  const titleEl = <h3 className="text-h3">{title}</h3>
+  const titleEl = <h3 className="text-h3 text-center">{title}</h3>
 
   return (
     <MotionFadeInWrapper margin="-200px 0px">
       <div className="flex flex-col">
         {highlighted
-          ? <PointerHighlight delay={1} paddingInline={8}>{titleEl}</PointerHighlight>
+          ? (
+            <div className="flex justify-center">
+              <PointerHighlight delay={1} paddingInline={8}>{titleEl}</PointerHighlight>
+            </div>
+          )
           : titleEl}
+
         <TechStackCards items={techStacks} />
       </div>
     </MotionFadeInWrapper>
