@@ -47,6 +47,7 @@ import {
   MySQLUrl,
   NestJS,
   NestJSUrl,
+  Nextjs,
   NextjsUrl,
   NodejsUrl,
   Nuxt,
@@ -63,6 +64,7 @@ import {
   RedisUrl,
   Sequelize,
   SequelizeUrl,
+  Solidjs,
   SolidjsUrl,
   Svelte,
   SvelteUrl,
@@ -157,7 +159,7 @@ export const TECH_STACK_FRONTEND: TechStackItem[] = [
   },
   {
     name: 'Solid.js',
-    logo: <img alt="Solid.js logo" className={CLASSNAMES} src="/assets/images/solid-js-logo.svg" />,
+    logo: <Solidjs className={CLASSNAMES} />,
     glowColor: SiSolidHex,
     url: SolidjsUrl,
   },
@@ -181,7 +183,7 @@ export const TECH_STACK_FRONTEND: TechStackItem[] = [
   },
   {
     name: 'Next.js',
-    logo: <img alt="Next.js logo" className={CLASSNAMES} src="/assets/images/next-js-logo.svg" />,
+    logo: <Nextjs className={CLASSNAMES} />,
     glowColor: '#ffffff',
     url: NextjsUrl,
   },

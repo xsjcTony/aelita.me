@@ -14,15 +14,15 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.3.0",
     "@icons-pack/react-simple-icons": "^13.1.0",
-    "@ridemountainpig/svgl-react": "^1.0.7",
+    "@ridemountainpig/svgl-react": "^1.0.8",
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "astro": "^5.9.2",
+    "astro": "^5.9.3",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.515.0",
+    "lucide-react": "^0.516.0",
     "motion": "^12.18.1",
     "motion-plus": "^1.2.0",
     "radix-ui": "^1.4.2",
@@ -35,12 +35,12 @@
   "devDependencies": {
     "@aelita-dev/eslint-config": "^3.21.0",
     "@astrojs/language-server": "^2.15.4",
-    "@tailwindcss/language-server": "^0.14.21",
+    "@tailwindcss/language-server": "^0.14.22",
     "@tailwindcss/vite": "^4.1.10",
-    "@types/node": "^22.15.31",
+    "@types/node": "^22.15.32",
     "astro-eslint-parser": "^1.2.2",
     "bundle-require": "^5.1.0",
-    "eslint": "^9.28.0",
+    "eslint": "^9.29.0",
     "eslint-import-resolver-typescript": "^4.4.3",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-import-x": "^4.15.2",
@@ -50,6 +50,6 @@
     "eslint-plugin-react-refresh": "^0.4.20",
     "sass-embedded": "1.89.2",
     "tailwindcss": "^4.1.10",
-    "typescript-eslint": "^8.34.0"
+    "typescript-eslint": "^8.34.1"
   }
 }
