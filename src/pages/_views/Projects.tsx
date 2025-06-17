@@ -1,13 +1,21 @@
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 import MotionFadeInWrapper from '@components/MotionFadeInWrapper'
 import PointerHighlight from '@components/PointerHighlight'
+import { PROJECTS_CONTRIBUTION, PROJECTS_OSS, PROJECTS_WEBSITES_AND_TOOLS } from '@constants/projects'
 import SectionWithTitle from '@pages/_components/SectionWithTitle'
 
+
+export type Project = {
+  logo: ReactNode
+  name: string
+  description: string
+  link: string
+}
 
 type ProjectProps = {
   title: string
   highlighted?: boolean
-  projects: any[] // TODO
+  projects: Project[]
 }
 
 
@@ -29,7 +37,23 @@ const Project: FC<ProjectProps> = ({
           )
           : titleEl}
 
-        {projects.map(proj => JSON.stringify(proj))}
+        <div className="flex flex-col">
+          {projects.map(({ logo, name, link, description }) => (
+            <a
+              key={name}
+              className="flex items-center gap-x-24 no-underline p-16 pointer-fine:opacity-60 hover:opacity-100 transition-opacity duration-300"
+              href={link}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <div className="flex shirnk-0 [&>svg,img]:size-36 [&>svg,img]:max-w-none">{logo}</div>
+              <div className="flex flex-col gap-y-4">
+                <h4 className="text-fg-light font-bold">{name}</h4>
+                <p className="text-sm">{description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </MotionFadeInWrapper>
   )
@@ -38,8 +62,10 @@ const Project: FC<ProjectProps> = ({
 
 const Projects: FC = () => (
   <SectionWithTitle title="Projects">
-    <div className="flex flex-col gap-y-40">
-      123
+    <div className="flex flex-col gap-y-60">
+      <Project highlighted projects={PROJECTS_OSS} title="Open Source" />
+      <Project projects={PROJECTS_WEBSITES_AND_TOOLS} title="Websites and Tools" />
+      <Project projects={PROJECTS_CONTRIBUTION} title="Contribution" />
     </div>
   </SectionWithTitle>
 )
