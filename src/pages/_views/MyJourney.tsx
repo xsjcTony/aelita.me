@@ -10,7 +10,7 @@ import {
   Vite,
   Vitest,
 } from '@ridemountainpig/svgl-react'
-import { Building2, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
+import { Building2Icon, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
 import Timeline from '@components/Timeline'
 import SectionWithTitle from '@pages/_components/SectionWithTitle'
 
@@ -33,7 +33,7 @@ function makeContent({ title, organization, location, content }: {
           <>
             <hr className="border-dashed border-fg/50" />
             <p className="flex items-center gap-x-8 text-xs text-fg-light">
-              <Building2 className="shrink-0 size-[1.2em] -translate-y-px" />
+              <Building2Icon className="shrink-0 size-[1.2em] -translate-y-px" />
               <span>{organization}</span>
             </p>
           </>
