@@ -10,7 +10,7 @@
   a {
     text-decoration: underline;
     text-decoration-style: dashed;
-    text-underline-offset: 2px;
+    text-underline-offset: 4px;
 
     @media (hover: hover) {
       &:hover {
