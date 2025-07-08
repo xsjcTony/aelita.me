@@ -2,7 +2,7 @@ import type { Variants } from 'motion/react'
 import type { FC, ReactNode } from 'react'
 import { AstroDark, CSSNew, JavaScript, TypeScript, Vite } from '@ridemountainpig/svgl-react'
 import { CodepenIcon, GithubIcon, LinkedinIcon, MailIcon, MapPinIcon } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion, stagger } from 'motion/react'
 import { CODEPEN_URL, EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '@constants/info'
 import Lamp from '@pages/_components/Lamp'
 
@@ -18,10 +18,7 @@ function makeContainerVariants(delayChildren: number): Variants {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren,
-      },
+      transition: { delayChildren: stagger(0.2, { startDelay: delayChildren }) },
     },
   }
 }
@@ -133,7 +130,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           I lean towards digging cutting-edge frontend technologies, making fancy effects and delivering delightful user experiences.
         </p>
         <p>
-          I write <a href="/blog">blog posts</a> about technologies (frontend-focused), including <AstroDark className="size-[1em] -translate-y-px" /> framework tips, <CSSNew className="size-[1em] -translate-y-px" /> CSS tricks, <TypeScript className="size-[1em] -translate-y-px" /> TS / <JavaScript className="size-[1em] -translate-y-px" /> JS insights, <Vite className="size-[1em] -translate-y-px" /> tooling and more, from the basics to the principles.
+          I write <a href="/blogs">blog posts</a> about technologies (frontend-focused), including <AstroDark className="size-[1em] -translate-y-px" /> framework tips, <CSSNew className="size-[1em] -translate-y-px" /> CSS tricks, <TypeScript className="size-[1em] -translate-y-px" /> TS / <JavaScript className="size-[1em] -translate-y-px" /> JS insights, <Vite className="size-[1em] -translate-y-px" /> tooling and more, from the basics to the principles.
         </p>
         <p>Outside of programming, I enjoy playing piano and listening to musics (<strong>ARTCORE</strong> lover).</p>
         <p>

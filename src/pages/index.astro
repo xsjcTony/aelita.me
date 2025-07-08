@@ -20,7 +20,7 @@ const metadata: Metadata = { title: false }
     <!-- Squares effect -->
     <Squares />
 
-    <HeroSection client:load>
+    <HeroSection client:load transition:persist>
       <ArcaeaLogo height={28} slot="arcaea-logo" />
       <MaimaiDxLogo height={28} slot="maimai-dx-logo" />
     </HeroSection>
@@ -28,13 +28,13 @@ const metadata: Metadata = { title: false }
 
 
   <!-- My Journey -->
-  <MyJourney client:load />
+  <MyJourney client:load transition:persist />
 
 
   <!-- Tech Stack -->
-  <TechStack client:load />
+  <TechStack client:load transition:persist />
 
 
   <!-- Projects -->
-  <Projects client:load />
+  <Projects client:load transition:persist />
 </PageLayout>
