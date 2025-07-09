@@ -12,6 +12,7 @@ import {
 } from '@ridemountainpig/svgl-react'
 import { Building2Icon, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
 import Timeline from '@components/Timeline'
+import ResponsiveProse from '@pages/_components/ResponsiveProse'
 import SectionWithTitle from '@pages/_components/SectionWithTitle'
 
 
@@ -23,16 +24,16 @@ function makeContent({ title, organization, location, content }: {
 }): ReactNode {
   return (
     <div>
-      <div className="flex flex-col gap-y-8 mb-16 relative isolate p-12">
-        <h4 className="flex items-center gap-x-8 text-xs text-fg-light font-bold">
-          <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px" />
+      <div className="flex flex-col gap-y-8 mb-16 relative isolate p-12 text-xs text-fg-light md:text-sm md:px-14 md:mb-24 lg:text-base lg:px-16 lg:mb-32">
+        <h4 className="flex items-center gap-x-8 font-bold">
+          <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px md:-translate-y-0.5" />
           <span>{title}</span>
         </h4>
 
         {organization && (
           <>
             <hr className="border-dashed border-fg/50" />
-            <p className="flex items-center gap-x-8 text-xs text-fg-light">
+            <p className="flex items-center gap-x-8">
               <Building2Icon className="shrink-0 size-[1.2em] -translate-y-px" />
               <span>{organization}</span>
             </p>
@@ -41,13 +42,13 @@ function makeContent({ title, organization, location, content }: {
 
         <hr className="border-dashed border-fg/50" />
 
-        <p className="flex items-center gap-x-8 text-xs text-fg-light">
+        <p className="flex items-center gap-x-8">
           <MapPinIcon className="shrink-0 size-[1.2em] -translate-y-px" />
           <span>{location}</span>
         </p>
 
         <div
-          className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-secondary p-2 mask-(--mask-image) mask-exclude"
+          className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-secondary p-2 mask-(--mask-image) mask-exclude"
           style={{
             '--mask-image': 'linear-gradient(#000 0 0), linear-gradient(#000 0 0)',
             maskClip: 'content-box, border-box',
@@ -63,6 +64,7 @@ function makeContent({ title, organization, location, content }: {
 
 const MyJourney: FC = () => {
 
+
   const items: TimelineItem[] = [
     {
       title: '2022 - PRESENT',
@@ -71,7 +73,7 @@ const MyJourney: FC = () => {
         organization: 'NOW Finance',
         location: 'Melbourne, Australia',
         content: (
-          <div className="prose prose-sm prose-img-inline prose-fluid">
+          <ResponsiveProse>
             <p>
               As a front-end leaning software engineer, I was primarily responsible for developing the <ReactDark className="size-[1em] -translate-y-px" /> <strong>React</strong>-based front-end, along with some back-end tasks using <Laravel className="size-[1em] -translate-y-px" /> <strong>Laravel</strong>.
             </p>
@@ -84,7 +86,7 @@ const MyJourney: FC = () => {
               <li>Mentored junior team members and established rigorous PR review standards.</li>
               <li>Introduced <TypeScript className="size-[1em] -translate-y-px" /> <strong>TypeScript</strong>, <Vite className="size-[1em] -translate-y-px" /> <strong>Vite</strong> and a few more new technologies into the tech stack.</li>
             </ul>
-          </div>
+          </ResponsiveProse>
         ),
       }),
     },
@@ -94,7 +96,7 @@ const MyJourney: FC = () => {
         title: 'Freelance Software Engineer',
         location: 'Melbourne, Australia',
         content: (
-          <div className="prose prose-sm prose-img-inline prose-fluid">
+          <ResponsiveProse>
             <p>
               As a freelance software engineer, I helped clients build modern, responsive applications from prototype to deployment with high quality and good accessibility.
             </p>
@@ -103,7 +105,7 @@ const MyJourney: FC = () => {
               <li>Provided technical support to clients for various complex issues, which also greatly strengthened my problem-solving skills and broadened my knowledge.</li>
               <li>Contributed to a lot of open-source software, resolved a decent amount of GitHub issues from those projects.</li>
             </ul>
-          </div>
+          </ResponsiveProse>
         ),
       }),
     },
@@ -114,7 +116,7 @@ const MyJourney: FC = () => {
         organization: 'China Unicom',
         location: 'Shanghai, China',
         content: (
-          <div className="prose prose-sm prose-img-inline prose-fluid">
+          <ResponsiveProse>
             <p>
               As my first job, it not only helped me build technical knowledge, but also taught me the basics of workplace etiquette and how to communicate effectively with colleagues.
             </p>
@@ -124,7 +126,7 @@ const MyJourney: FC = () => {
               <li>Documented a few internal bugs of Kubernetes and addressed some workarounds.</li>
               <li>Translated the official English documentation for other team members to consume.</li>
             </ul>
-          </div>
+          </ResponsiveProse>
         ),
       }),
     },

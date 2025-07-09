@@ -9,7 +9,7 @@ type UseMediaQueryOptions = {
 
 export function useMediaQuery(
   query: string,
-  { defaultValue = false, initializeWithValue = true }: UseMediaQueryOptions = {},
+  { defaultValue = false, initializeWithValue = false }: UseMediaQueryOptions = {},
 ): boolean {
 
   // eslint-disable-next-line ts/no-unnecessary-condition

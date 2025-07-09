@@ -41,23 +41,23 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
   return (
     <div
       ref={containerElRef}
-      className="flex flex-col gap-y-40 relative isolate"
+      className="flex flex-col gap-y-40 relative isolate [--header-height:40px] [--top-gap:20px] [--icon-container-size:32px] [--icon-size:1em] lg:[--header-height:60px] lg:[--top-gap:30px] lg:[--icon-container-size:48px] lg:[--icon-size:1.5em]"
     >
       {items.map(({ icon = <BriefcaseBusinessIcon />, title, content }, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <MotionFadeInWrapper key={index}>
           <div className="flex gap-x-20">
             {/* Calendar circle */}
-            <div className="sticky h-40 shrink-0 flex justify-center items-center top-20 isolate">
-              <div className="flex justify-center items-center size-32 rounded-full bg-neutral-800 [&>svg]:size-[1em]">
+            <div className="sticky h-(--header-height) shrink-0 flex justify-center items-center top-(--top-gap) isolate">
+              <div className="flex justify-center items-center size-(--icon-container-size) rounded-full bg-neutral-800 [&>svg]:size-(--icon-size)">
                 {icon}
               </div>
-              <div className="absolute size-80 -z-1 rounded-full bg-radial from-(--color-bg) from-40% to-transparent to-70%" />
+              <div className="absolute w-80 h-80 -z-1 rounded-full bg-radial from-bg from-40% to-transparent to-70% lg:h-120" />
             </div>
 
             {/* Title & content */}
             <div className="flex flex-col gap-y-20 flex-1">
-              <div className="sticky top-20 z-1 bg-bg h-40 flex items-center shadow-[0_-40px_0_var(--color-bg)]">
+              <div className="sticky top-(--top-gap) z-1 bg-bg h-(--header-height) flex items-center shadow-[0_calc(-1*var(--top-gap))_0_var(--color-bg)]">
                 <h3 className="text-h3">{title}</h3>
                 <div className="absolute inset-x-0 top-full h-20 bg-linear-to-b from-bg to-transparent" />
               </div>
@@ -70,7 +70,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
 
       {/* Gradient tracing beam */}
       <motion.div
-        className="absolute left-15 inset-y-0 -z-1 w-2 mask-b-from-[calc(100%-20px)]"
+        className="absolute left-[calc(var(--icon-container-size)/2-1px)] inset-y-0 -z-1 w-2 mask-b-from-[calc(100%-20px)]"
         initial={{ opacity: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true, margin: '-100px 0px' }}

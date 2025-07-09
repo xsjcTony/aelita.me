@@ -41,15 +41,17 @@ const Project: FC<ProjectProps> = ({
           {projects.map(({ logo, name, link, description }) => (
             <a
               key={name}
-              className="flex items-center gap-x-24 no-underline p-16 pointer-fine:opacity-60 hover:opacity-100 transition-opacity duration-300"
+              className="flex items-center gap-x-24 no-underline p-16 group"
               href={link}
               rel="noreferrer"
               target="_blank"
             >
-              <div className="flex shirnk-0 [&>svg,img]:size-36 [&>svg,img]:max-w-none">{logo}</div>
+              <div className="flex shirnk-0 [&>svg,img]:size-36 [&>svg,img]:max-w-none pointer-fine:opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                {logo}
+              </div>
               <div className="flex flex-col gap-y-4">
                 <h4 className="text-fg-light font-bold">{name}</h4>
-                <p className="text-sm">{description}</p>
+                <p className="text-sm pointer-fine:opacity-60 group-hover:opacity-100 transition-opacity duration-300">{description}</p>
               </div>
             </a>
           ))}
