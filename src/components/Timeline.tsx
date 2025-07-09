@@ -46,7 +46,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
       {items.map(({ icon = <BriefcaseBusinessIcon />, title, content }, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <MotionFadeInWrapper key={index}>
-          <div className="grid gap-20 grid-cols-[auto_auto]">
+          <div className="grid gap-(--grid-gap) grid-cols-[min-content_auto] [--grid-gap:20px] lg:[--grid-gap:40px]">
             {/* Icon circle */}
             <div className="sticky h-(--header-height) shrink-0 flex justify-center items-center top-(--top-gap) isolate">
               <div className="flex justify-center items-center size-(--icon-container-size) rounded-full bg-neutral-800 [&>svg]:size-(--icon-size)">
@@ -58,7 +58,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
             {/* Title & content */}
             <div className="sticky top-(--top-gap) z-1 bg-bg h-(--header-height) flex items-center shadow-[0_calc(-1*var(--top-gap))_0_var(--color-bg)]">
               <h3 className="text-h3">{title}</h3>
-              <div className="absolute inset-x-0 top-full h-20 bg-linear-to-b from-bg to-transparent" />
+              <div className="absolute inset-x-0 top-full h-(--grid-gap) bg-linear-to-b from-bg to-transparent" />
             </div>
 
             <div className="col-start-2">{content}</div>
