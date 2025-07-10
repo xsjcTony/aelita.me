@@ -37,11 +37,11 @@ const Project: FC<ProjectProps> = ({
           )
           : titleEl}
 
-        <div className="flex flex-col">
+        <div className="grid xl:grid-cols-2">
           {projects.map(({ logo, name, link, description }) => (
             <a
               key={name}
-              className="flex items-center gap-x-24 no-underline p-16 group"
+              className="flex items-center gap-x-24 no-underline p-16 rounded-lg group hover:bg-fg-lighter/5 transition-[background_color] duration-300"
               href={link}
               rel="noreferrer"
               target="_blank"
