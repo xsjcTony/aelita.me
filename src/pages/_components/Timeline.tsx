@@ -67,7 +67,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
           </div>
 
           {/* Title & content */}
-          <div className="sticky top-(--top-gap) z-1 bg-bg h-(--icon-container-size) flex items-center shadow-[0_calc(-1*var(--top-gap))_0_var(--color-bg)]">
+          <div className="sticky top-(--top-gap) z-1 bg-bg h-(--icon-container-size) flex items-center shadow-[0_calc(-1*var(--top-gap))_0_var(--color-bg)] xl:col-span-2">
             <h3 className="text-h3">{title}</h3>
             <div className="absolute inset-x-0 top-full h-(--grid-gap) bg-linear-to-b from-bg to-transparent" />
           </div>
