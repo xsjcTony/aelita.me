@@ -149,13 +149,13 @@ const MyJourney: FC = () => {
         organization: 'RMIT University',
         location: 'Melbourne, Australia',
         content: (
-          <div className="prose prose-sm prose-img-inline prose-fluid">
+          <ResponsiveProse>
             <p>Graduated with a <strong>Bachelor of Computer Science</strong> degree.</p>
             <ul>
               <li>Achieved <strong>HD (97/100)</strong> in <u>Web Programming</u></li>
               <li>Achieved <strong>HD 💯 (100/100)</strong> in <u>Programming 1</u></li>
             </ul>
-          </div>
+          </ResponsiveProse>
         ),
       }),
     },
@@ -171,9 +171,9 @@ const MyJourney: FC = () => {
         organization: 'Brighton Grammar School',
         location: 'Melbourne, Australia',
         content: (
-          <div className="prose prose-sm prose-img-inline prose-fluid">
+          <ResponsiveProse>
             <p>Graduated with an ATAR of <strong>88.5</strong> in the VCE</p>
-          </div>
+          </ResponsiveProse>
         ),
       }),
     },

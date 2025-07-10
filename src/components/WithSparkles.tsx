@@ -6,7 +6,7 @@ const WithSparkles: FC<PropsWithChildren> = ({ children }) => (
   <>
     {children}
 
-    <div className="w-(--width-ratio) h-[calc(var(--height)+var(--top))] relative [--width-ratio:200%] [--top:8px] [--height:40px] lg:[--width-ratio:250%] lg:[--top:16px] lg:[--height:64px]">
+    <div className="w-[calc(100%+var(--additional-width))] h-[calc(var(--height)+var(--top))] relative [--additional-width:180px] [--top:8px] [--height:40px] lg:[--additional-width:300px] lg:[--top:16px] lg:[--height:64px]">
       {/* Gradients */}
       <div className="absolute left-1/2 -translate-x-1/2 top-(--top) bg-gradient-to-r from-transparent via-primary to-transparent h-2 w-3/4 blur-sm" />
       <div className="absolute left-1/2 -translate-x-1/2 top-(--top) bg-gradient-to-r from-transparent via-primary to-transparent h-px w-3/4" />
