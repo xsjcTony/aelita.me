@@ -27,7 +27,9 @@ function makeContent({ title, organization, location, content }: {
     <>
       <div className="col-start-2 self-start flex flex-col gap-y-8 relative isolate p-12 text-xs text-fg-light md:text-sm md:px-14 lg:text-base lg:px-16">
         <h4 className="flex items-center gap-x-8 font-bold">
-          <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px md:-translate-y-0.5" />
+          <AccessibleIcon.Root label="job title">
+            <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px md:-translate-y-0.5" />
+          </AccessibleIcon.Root>
           <span>{title}</span>
         </h4>
 
@@ -35,7 +37,9 @@ function makeContent({ title, organization, location, content }: {
           <>
             <hr className="border-dashed border-fg/50" />
             <p className="flex items-center gap-x-8">
-              <Building2Icon className="shrink-0 size-[1.2em] -translate-y-px" />
+              <AccessibleIcon.Root label="organization name">
+                <Building2Icon className="shrink-0 size-[1.2em] -translate-y-px" />
+              </AccessibleIcon.Root>
               <span>{organization}</span>
             </p>
           </>
@@ -44,7 +48,9 @@ function makeContent({ title, organization, location, content }: {
         <hr className="border-dashed border-fg/50" />
 
         <p className="flex items-center gap-x-8">
-          <MapPinIcon className="shrink-0 size-[1.2em] -translate-y-px" />
+          <AccessibleIcon.Root label="location">
+            <MapPinIcon className="shrink-0 size-[1.2em] -translate-y-px" />
+          </AccessibleIcon.Root>
           <span>{location}</span>
         </p>
 
