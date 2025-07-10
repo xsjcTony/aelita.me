@@ -1,9 +1,10 @@
 import type { Variants } from 'motion/react'
-import type { FC, PropsWithChildren } from 'react'
+import type { FC, HTMLAttributes, PropsWithChildren, ReactNode } from 'react';
 import { motion } from 'motion/react'
 
 
-type MotionFadeInWrapperProps = {
+type MotionFadeInWrapperProps = Pick<HTMLAttributes<HTMLDivElement>, 'className'> & {
+  children: ReactNode
   delay?: number
   margin?: string
 }

@@ -1,4 +1,4 @@
-import type { TimelineItem } from '@components/Timeline'
+import type { TimelineItem } from '@pages/_components/Timeline'
 import type { FC, ReactNode } from 'react'
 import {
   Docker,
@@ -12,9 +12,9 @@ import {
 } from '@ridemountainpig/svgl-react'
 import { Building2Icon, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
 import { AccessibleIcon } from 'radix-ui'
-import Timeline from '@components/Timeline'
 import ResponsiveProse from '@pages/_components/ResponsiveProse'
 import SectionWithTitle from '@pages/_components/SectionWithTitle'
+import Timeline from '@pages/_components/Timeline'
 
 
 function makeContent({ title, organization, location, content }: {
@@ -24,8 +24,8 @@ function makeContent({ title, organization, location, content }: {
   content: ReactNode
 }): ReactNode {
   return (
-    <div>
-      <div className="flex flex-col gap-y-8 mb-16 relative isolate p-12 text-xs text-fg-light md:text-sm md:px-14 md:mb-24 lg:text-base lg:px-16 lg:mb-32">
+    <>
+      <div className="col-start-2 self-start flex flex-col gap-y-8 relative isolate p-12 text-xs text-fg-light md:text-sm md:px-14 lg:text-base lg:px-16">
         <h4 className="flex items-center gap-x-8 font-bold">
           <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px md:-translate-y-0.5" />
           <span>{title}</span>
@@ -57,8 +57,8 @@ function makeContent({ title, organization, location, content }: {
         />
       </div>
 
-      <div>{content}</div>
-    </div>
+      <div className="col-start-2 xl:col-start-3 xl:row-start-2">{content}</div>
+    </>
   )
 }
 
