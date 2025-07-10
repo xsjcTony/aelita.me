@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import { BriefcaseBusinessIcon } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'motion/react'
+import { AccessibleIcon } from 'radix-ui'
 import { useRef } from 'react'
 import MotionFadeInWrapper from '@components/MotionFadeInWrapper'
 import { useResizeObserver } from '@hooks/useResizeObserver'
@@ -43,7 +44,15 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
       ref={containerElRef}
       className="flex flex-col gap-y-40 relative isolate [--header-height:40px] [--top-gap:20px] [--icon-container-size:32px] [--icon-size:1em] lg:[--header-height:60px] lg:[--top-gap:30px] lg:[--icon-container-size:48px] lg:[--icon-size:1.5em]"
     >
-      {items.map(({ icon = <BriefcaseBusinessIcon />, title, content }, index) => (
+      {items.map(({
+        icon = (
+          <AccessibleIcon.Root label="commercial work">
+            <BriefcaseBusinessIcon />
+          </AccessibleIcon.Root>
+        ),
+        title,
+        content,
+      }, index) => (
         // eslint-disable-next-line react/no-array-index-key
         <MotionFadeInWrapper key={index}>
           <div className="grid gap-(--grid-gap) grid-cols-[min-content_auto] [--grid-gap:20px] lg:[--grid-gap:40px]">

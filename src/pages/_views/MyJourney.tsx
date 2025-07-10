@@ -11,6 +11,7 @@ import {
   Vitest,
 } from '@ridemountainpig/svgl-react'
 import { Building2Icon, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
+import { AccessibleIcon } from 'radix-ui'
 import Timeline from '@components/Timeline'
 import ResponsiveProse from '@pages/_components/ResponsiveProse'
 import SectionWithTitle from '@pages/_components/SectionWithTitle'
@@ -131,7 +132,11 @@ const MyJourney: FC = () => {
       }),
     },
     {
-      icon: <GraduationCapIcon />,
+      icon: (
+        <AccessibleIcon.Root label="school period">
+          <GraduationCapIcon />
+        </AccessibleIcon.Root>
+      ),
       title: '2018 - 2021',
       content: makeContent({
         title: 'University Student',
@@ -149,7 +154,11 @@ const MyJourney: FC = () => {
       }),
     },
     {
-      icon: <GraduationCapIcon />,
+      icon: (
+        <AccessibleIcon.Root label="school period">
+          <GraduationCapIcon />
+        </AccessibleIcon.Root>
+      ),
       title: '2015 - 2017',
       content: makeContent({
         title: 'Senior School Student',
