@@ -28,7 +28,7 @@ function makeContent({ title, organization, location, content }: {
       <div className="col-start-2 self-start flex flex-col gap-y-8 relative isolate p-12 text-xs text-fg-light md:text-sm md:px-14 lg:text-base lg:px-16">
         <h4 className="flex items-center gap-x-8 font-bold">
           <AccessibleIcon.Root label="job title">
-            <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px md:-translate-y-0.5" />
+            <IdCardIcon className="shrink-0 size-[1.2em] -translate-y-px md:-translate-y-0" />
           </AccessibleIcon.Root>
           <span>{title}</span>
         </h4>

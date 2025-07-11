@@ -3,6 +3,7 @@
   font-optical-sizing: auto;
   background-color: var(--color-bg);
   color: var(--color-fg);
+  scrollbar-gutter: stable;
 }
 
 
