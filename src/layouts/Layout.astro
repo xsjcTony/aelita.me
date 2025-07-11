@@ -21,8 +21,8 @@ type Props = {
 const {
   metadata: {
     title = false,
-    description = `Aelita's Website`,
-    titleTemplate = '%s - Aelita',
+    description = `Tony's Website`,
+    titleTemplate = '%s - Tony',
   } = {},
 } = Astro.props
 
@@ -31,7 +31,7 @@ const parsedTitle = title
   ? titleTemplate
     ? titleTemplate.replace('%s', title)
     : title
-  : 'Aelita - Software Engineer'
+  : 'Tony - Software Engineer'
 ---
 
 

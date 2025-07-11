@@ -50,13 +50,13 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
         className="text-6xl font-bold text-fg-lighter tracking-wide lg:text-7xl lg:tracking-wider"
         variants={makeChildVariants()}
       >
-        Aelita
+        Tony
       </motion.h1>
       <motion.p
-        className="text-xs mb-20 lg:text-sm"
+        className="text-sm mb-20 lg:text-base"
         variants={makeChildVariants()}
       >
-        alias of <strong>Tony Jiang</strong>
+        a.k.a. <strong className="text-primary">Aelita</strong>
       </motion.p>
       <motion.h2
         className="text-fg-light sm:text-lg lg:text-xl"
@@ -128,9 +128,9 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
         <div className="self-stretch shrink-0 w-4 rounded-full bg-gradient-to-b from-primary to-secondary" />
         <ResponsiveProse>
           <p>
-            G&apos;day! I&apos;m <strong>Aelita</strong>, a fanatical <strong>software engineer</strong> with full-stack capabilities, as well as an <strong>open sourcer</strong>.
+            G&apos;day! I&apos;m <strong>Tony</strong>, a fanatical <strong>software engineer</strong> with full-stack capabilities, as well as an <strong>open sourcer</strong>.
           </p>
-          <p>You can also call me by my IRL-name <strong>Tony</strong>.</p>
+          <p>You can also call me by my screen name <strong className="text-primary">❤Aelita❤</strong>.</p>
           <p>
             I lean towards digging cutting-edge frontend technologies, making fancy effects and delivering delightful user experiences.
           </p>

@@ -1,5 +1,5 @@
 :root {
-  --prose-max-width: 65ch;
+  --prose-max-width: var(--container-3xl);
   --prose-width: min(var(--prose-max-width), 100%);
   --prose-margin: calc(calc(100vw - var(--prose-width)) / 2);
 }
@@ -14,7 +14,7 @@
 
   /* Variants */
   &.prose-fluid {
-    max-width: none;
+    --prose-max-width: none;
   }
 
   &.prose-img-inline {
@@ -29,7 +29,7 @@
   & > :first-child {
     margin-block-start: 0 !important;
 
-    & *:first-child {
+    *:first-child {
       margin-block-start: 0 !important;
     }
   }
@@ -37,7 +37,7 @@
   & > :last-child {
     margin-block-end: 0 !important;
 
-    & *:last-child {
+    *:last-child {
       margin-block-end: 0 !important;
     }
   }
