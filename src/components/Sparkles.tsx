@@ -4,8 +4,8 @@ import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import { motion, useAnimation } from 'motion/react'
 import { useId, useState } from 'react'
-import { useMount } from '@hooks/useMount'
-import { cn } from '@utils/className'
+import { useMount } from '~hooks/useMount'
+import { cn } from '~utils/className'
 
 
 type SparklesProps = {

@@ -1,9 +1,9 @@
 import type { CSSProperties, FC, ReactNode } from 'react'
 import { useMemo } from 'react'
-import Tooltip from '@components/Tooltip'
-import { BREAKPOINT_LG, BREAKPOINT_XL } from '@constants/breakpoints'
-import { useBodyRef } from '@hooks/useBodyRef'
-import { useResizeObserver } from '@hooks/useResizeObserver'
+import Tooltip from '~components/Tooltip'
+import { BREAKPOINT_LG, BREAKPOINT_XL } from '~constants/breakpoints'
+import { useBodyRef } from '~hooks/useBodyRef'
+import { useResizeObserver } from '~hooks/useResizeObserver'
 
 
 export type TechStackItem = {

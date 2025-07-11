@@ -1,8 +1,8 @@
 import type { FC, PropsWithChildren, SVGProps } from 'react'
 import { motion } from 'motion/react'
 import { useRef, useState } from 'react'
-import { useMount } from '@hooks/useMount'
-import { cn } from '@utils/className'
+import { useMount } from '~hooks/useMount'
+import { cn } from '~utils/className'
 
 
 type PointerHighlightProps = {

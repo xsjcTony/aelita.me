@@ -1,5 +1,6 @@
 import type { FC } from 'react'
-import { NotebookPenIcon } from 'lucide-react'
+import { GithubIcon, NotebookPenIcon } from 'lucide-react'
+import { GITHUB_URL } from '~constants/info'
 
 
 const Header: FC = () => (
@@ -17,6 +18,15 @@ const Header: FC = () => (
         title="Blogs"
       >
         <NotebookPenIcon className="size-[1.2em]" />
+      </a>
+      <a
+        className="pointer-fine:opacity-60 hover:opacity-100 transition-opacity duration-300"
+        href={GITHUB_URL}
+        rel="noreferrer"
+        target="_blank"
+        title="GitHub"
+      >
+        <GithubIcon className="size-[1.2em]" />
       </a>
     </nav>
   </header>

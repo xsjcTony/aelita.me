@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import { AnimatePresence, animate, motion, useMotionValue, useReducedMotion } from 'motion/react'
 import { Cursor, useCursorState } from 'motion-plus/react'
 import { useEffect } from 'react'
-import { cn } from '@utils/className'
+import { cn } from '~utils/className'
 
 
 type RectangleCornerProps = {

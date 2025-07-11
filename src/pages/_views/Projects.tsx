@@ -1,8 +1,8 @@
 import type { FC, ReactNode } from 'react'
-import MotionFadeInWrapper from '@components/MotionFadeInWrapper'
-import PointerHighlight from '@components/PointerHighlight'
-import { PROJECTS_CONTRIBUTION, PROJECTS_OSS, PROJECTS_WEBSITES_AND_TOOLS } from '@constants/projects'
-import SectionWithTitle from '@pages/_components/SectionWithTitle'
+import MotionFadeInWrapper from '~components/MotionFadeInWrapper'
+import PointerHighlight from '~components/PointerHighlight'
+import { PROJECTS_CONTRIBUTION, PROJECTS_OSS, PROJECTS_WEBSITES_AND_TOOLS } from '~constants/projects'
+import SectionWithTitle from '~pages/_components/SectionWithTitle'
 
 
 export type Project = {

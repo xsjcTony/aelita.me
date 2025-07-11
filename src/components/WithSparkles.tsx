@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react'
-import Sparkles from '@components/Sparkles'
+import Sparkles from '~components/Sparkles'
 
 
 const WithSparkles: FC<PropsWithChildren> = ({ children }) => (

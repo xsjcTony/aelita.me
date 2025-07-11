@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import { motion } from 'motion/react'
-import WithSparkles from '@components/WithSparkles'
-import { useFadeInWhenParentIsInView } from '@hooks/useFadeInWhenParentIsInView'
+import WithSparkles from '~components/WithSparkles'
+import { useFadeInWhenParentIsInView } from '~hooks/useFadeInWhenParentIsInView'
 
 
 type SectionWithTitleProps = {

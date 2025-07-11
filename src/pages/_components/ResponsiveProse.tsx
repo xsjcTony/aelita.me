@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react'
-import { BREAKPOINT_LG } from '@constants/breakpoints'
-import { useMediaQuery } from '@hooks/useMediaQuery'
-import { cn } from '@utils/className'
+import { BREAKPOINT_LG } from '~constants/breakpoints'
+import { useMediaQuery } from '~hooks/useMediaQuery'
+import { cn } from '~utils/className'
 
 
 type ResponsiveProseProps = {

@@ -1,4 +1,4 @@
-import type { Project } from '@pages/_views/Projects'
+import type { Project } from '~pages/_views/Projects'
 import { SiEslint } from '@icons-pack/react-simple-icons'
 import {
   AntDesign,

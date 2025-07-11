@@ -1,6 +1,6 @@
 import type { RefObject } from 'react'
 import { useRef } from 'react'
-import { useMount } from '@hooks/useMount'
+import { useMount } from '~hooks/useMount'
 
 
 export function useBodyRef(): RefObject<HTMLElement | null> {

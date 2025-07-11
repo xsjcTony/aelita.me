@@ -1,4 +1,4 @@
-import type { TechStackItem } from '@pages/_components/TechStackCards'
+import type { TechStackItem } from '~pages/_components/TechStackCards'
 import {
   SiAstroHex,
   SiCssHex,
@@ -80,7 +80,7 @@ import {
   VitestUrl,
   Vue,
 } from '@ridemountainpig/svgl-react'
-import { cn } from '@utils/className'
+import { cn } from '~utils/className'
 
 
 const CLASSNAMES = 'select-none max-h-[1em] max-w-[1em] drop-shadow-[0_0_0.8rem_color-mix(in_srgb,_var(--glow-color)_40%,_transparent)]'

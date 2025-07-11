@@ -1,11 +1,11 @@
-import type { TechStackItem } from '@pages/_components/TechStackCards'
 import type { FC } from 'react'
-import MagneticCursor from '@components/MagneticCursor'
-import MotionFadeInWrapper from '@components/MotionFadeInWrapper'
-import PointerHighlight from '@components/PointerHighlight'
-import { TECH_STACK_BACKEND, TECH_STACK_FRONTEND, TECH_STACK_LANGUAGES } from '@constants/techStacks'
-import SectionWithTitle from '@pages/_components/SectionWithTitle'
-import TechStackCards from '@pages/_components/TechStackCards'
+import type { TechStackItem } from '~pages/_components/TechStackCards'
+import MagneticCursor from '~components/MagneticCursor'
+import MotionFadeInWrapper from '~components/MotionFadeInWrapper'
+import PointerHighlight from '~components/PointerHighlight'
+import { TECH_STACK_BACKEND, TECH_STACK_FRONTEND, TECH_STACK_LANGUAGES } from '~constants/techStacks'
+import SectionWithTitle from '~pages/_components/SectionWithTitle'
+import TechStackCards from '~pages/_components/TechStackCards'
 
 
 type StackProps = {

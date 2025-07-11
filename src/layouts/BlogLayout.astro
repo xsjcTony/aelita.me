@@ -3,14 +3,17 @@ import type { Metadata } from '~layouts/Layout.astro'
 import PageLayout from '~layouts/PageLayout.astro'
 
 
-const metadata: Metadata = {
-  title: 'Blogs',
-  description: `Aelita's blog posts`,
+type Props = {
+  metadata: Metadata
 }
+
+
+const { metadata } = Astro.props
 ---
 
 
 <PageLayout metadata={metadata}>
-  This is the blog page.
-  Random number: {Math.random()}
+  <div class="">
+    <slot />
+  </div>
 </PageLayout>

@@ -3,9 +3,9 @@ import type { FC, ReactNode } from 'react'
 import { AstroDark, CSSNew, JavaScript, TypeScript, Vite } from '@ridemountainpig/svgl-react'
 import { CodepenIcon, GithubIcon, LinkedinIcon, MailIcon, MapPinIcon } from 'lucide-react'
 import { motion, stagger } from 'motion/react'
-import { CODEPEN_URL, EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '@constants/info'
-import Lamp from '@pages/_components/Lamp'
-import ResponsiveProse from '@pages/_components/ResponsiveProse'
+import { CODEPEN_URL, EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '~constants/info'
+import Lamp from '~pages/_components/Lamp'
+import ResponsiveProse from '~pages/_components/ResponsiveProse'
 
 
 type HeroSectionProps = {

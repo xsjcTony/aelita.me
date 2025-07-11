@@ -3,8 +3,8 @@ import { BriefcaseBusinessIcon } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { AccessibleIcon } from 'radix-ui'
 import { useRef } from 'react'
-import MotionFadeInWrapper from '@components/MotionFadeInWrapper'
-import { useResizeObserver } from '@hooks/useResizeObserver'
+import MotionFadeInWrapper from '~components/MotionFadeInWrapper'
+import { useResizeObserver } from '~hooks/useResizeObserver'
 
 
 export type TimelineItem = {

@@ -1,5 +1,5 @@
-import type { TimelineItem } from '@pages/_components/Timeline'
 import type { FC, ReactNode } from 'react'
+import type { TimelineItem } from '~pages/_components/Timeline'
 import {
   Docker,
   Kubernetes,
@@ -12,9 +12,9 @@ import {
 } from '@ridemountainpig/svgl-react'
 import { Building2Icon, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
 import { AccessibleIcon } from 'radix-ui'
-import ResponsiveProse from '@pages/_components/ResponsiveProse'
-import SectionWithTitle from '@pages/_components/SectionWithTitle'
-import Timeline from '@pages/_components/Timeline'
+import ResponsiveProse from '~pages/_components/ResponsiveProse'
+import SectionWithTitle from '~pages/_components/SectionWithTitle'
+import Timeline from '~pages/_components/Timeline'
 
 
 function makeContent({ title, organization, location, content }: {
