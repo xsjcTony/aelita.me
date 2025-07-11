@@ -41,7 +41,7 @@ const Stack: FC<StackProps> = ({
 
 
 const TechStack: FC = () => (
-  <SectionWithTitle title="Tech Stack">
+  <SectionWithTitle isContainer={false} title="Tech Stack">
     <div className="flex flex-col gap-y-20" data-cursor-zone="techStack">
       <MagneticCursor activeZone="techStack" />
       <Stack techStacks={TECH_STACK_LANGUAGES} title="Languages" />

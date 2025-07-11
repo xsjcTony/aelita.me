@@ -181,7 +181,7 @@ const TechStackCards: FC<TechStackCardsProps> = ({ items }) => {
 
   return (
     <div
-      className="container-fluid py-32 flex flex-col gap-y-(--gap) lg:gap-y-(--gap-lg) overflow-x-clip mask-x-from-80% mask-x-to-100%"
+      className="py-32 flex flex-col gap-y-(--gap) lg:gap-y-(--gap-lg) overflow-x-clip mask-x-from-80% mask-x-to-100%"
       style={{
         '--gap': `${BLOCK_GAP_MD}px`,
         '--gap-lg': `${BLOCK_GAP_LG}px`,

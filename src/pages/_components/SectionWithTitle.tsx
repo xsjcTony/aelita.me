@@ -2,15 +2,21 @@ import type { FC, ReactNode } from 'react'
 import { motion } from 'motion/react'
 import WithSparkles from '~components/WithSparkles'
 import { useFadeInWhenParentIsInView } from '~hooks/useFadeInWhenParentIsInView'
+import { cn } from '~utils/className'
 
 
 type SectionWithTitleProps = {
-  title: string
   children: ReactNode
+  title: string
+  isContainer?: boolean
 }
 
 
-const SectionWithTitle: FC<SectionWithTitleProps> = ({ title, children }) => {
+const SectionWithTitle: FC<SectionWithTitleProps> = ({
+  children,
+  title,
+  isContainer = true,
+}) => {
 
   const {
     containerElRef,
@@ -19,7 +25,11 @@ const SectionWithTitle: FC<SectionWithTitleProps> = ({ title, children }) => {
 
 
   return (
-    <motion.section ref={containerElRef} className="container py-80" id={title}>
+    <motion.section
+      ref={containerElRef}
+      className={cn('py-80', isContainer && 'container')}
+      id={title}
+    >
       <motion.div
         ref={animateElScope}
         className="mb-40 flex justify-center"
