@@ -108,7 +108,7 @@ const MyJourney: FC = () => {
               As a freelance software engineer, I helped clients build modern, responsive applications from prototype to deployment with high quality and good accessibility.
             </p>
             <ul>
-              <li>Built several various kind of full-stack projects from different clients, including SAAS, e-commerce platform, etc.</li>
+              <li>Built several various kinds of full-stack projects from different clients, including SAAS, e-commerce platform, etc.</li>
               <li>Provided technical support to clients for various complex issues, which also greatly strengthened my problem-solving skills and broadened my knowledge.</li>
               <li>Contributed to a lot of open-source software, resolved a decent amount of GitHub issues from those projects.</li>
             </ul>

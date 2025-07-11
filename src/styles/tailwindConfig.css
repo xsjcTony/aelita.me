@@ -61,4 +61,12 @@
       line-height: var(--text-3xl--line-height);
     }
   }
+
+
+  @variant 2xl {
+    .text-h2 {
+      font-size: var(--text-5xl);
+      line-height: var(--text-5xl--line-height);
+    }
+  }
 }
