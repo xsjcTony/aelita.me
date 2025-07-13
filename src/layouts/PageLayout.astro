@@ -1,5 +1,6 @@
 ---
 import type { Metadata } from '~layouts/Layout.astro'
+import BackToTop from '~/components/BackToTop'
 import Footer from '~components/layout/Footer.astro'
 import Header from '~components/layout/Header'
 import Layout from '~layouts/Layout.astro'
@@ -26,4 +27,6 @@ const { metadata } = Astro.props
       <Footer />
     </slot>
   </div>
+
+  <BackToTop client:load />
 </Layout>
