@@ -7,6 +7,39 @@
 }
 
 
+:root {
+  --category-ts-color: #508ac1;
+  --category-ts-bg: #121922;
+  --category-ts-border: #1b3148;
+  --category-ts-active-color: var(--color-white);
+  --category-ts-active-bg: #3178c6;
+
+  --category-js-color: #e5da71;
+  --category-js-bg: #282415;
+  --category-js-border: #554e24;
+  --category-js-active-color: var(--color-black);
+  --category-js-active-bg: #f0db4f;
+
+  --category-vue-color: #5cb289;
+  --category-vue-bg: #131f1b;
+  --category-vue-border: #204434;
+  --category-vue-active-color: var(--color-white); /* TODO: double check */
+  --category-vue-active-bg: #41b883;
+
+  --category-react-color: #77c5d3;
+  --category-react-bg: #162125;
+  --category-react-border: #27474f;
+  --category-react-active-color: var(--color-white); /* TODO: double check */
+  --category-react-active-bg: #58c4dc;
+
+  --category-astro-color: #e362de;
+  --category-astro-bg: #261327;
+  --category-astro-border: #542054;
+  --category-astro-active-color: var(--color-white); /* TODO: double check */
+  --category-astro-active-bg: #ee40ed;
+}
+
+
 @layer base {
   a {
     text-decoration: underline;

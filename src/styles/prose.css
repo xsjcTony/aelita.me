@@ -1,5 +1,5 @@
 :root {
-  --prose-max-width: var(--container-3xl);
+  --prose-max-width: var(--container-6xl);
   --prose-width: min(var(--prose-max-width), 100%);
   --prose-margin: calc(calc(100vw - var(--prose-width)) / 2);
 }

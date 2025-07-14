@@ -12,6 +12,7 @@
   --color-secondary: #9dffff;
 
   --color-bg: #121212;
+  --color-bg-blog: #000000;
 
   --color-fg: #bbb;
   --color-fg-light: #ddd;
@@ -32,14 +33,10 @@
     padding-inline: 24px;
   }
 
-  .container-fluid {
-    width: calc(100vw - 30px);
-    margin-left: calc(-50vw + 50% + 15px);
-  }
-
   .container-blog {
     margin-inline: auto;
     padding-inline: 24px;
+    max-width: var(--container-6xl);
   }
 
 

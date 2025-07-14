@@ -1,16 +1,19 @@
 ---
 import type { Metadata } from '~layouts/Layout.astro'
-import PageLayout from '~layouts/PageLayout.astro'
+import { getCollection } from 'astro:content'
+import BlogLayout from '~layouts/BlogLayout.astro'
 
 
 const metadata: Metadata = {
   title: 'Blogs',
   description: `Tony's blog posts`,
 }
+
+
+const blogs = await getCollection('blogs')
 ---
 
 
-<PageLayout metadata={metadata}>
-  This is the blog page.
-  Random number: {Math.random()}
-</PageLayout>
+<BlogLayout metadata={metadata}>
+  <pre>{JSON.stringify(blogs, null, 2)}</pre>
+</BlogLayout>
