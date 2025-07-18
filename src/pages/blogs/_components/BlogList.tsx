@@ -106,7 +106,7 @@ const BlogList: FC<BlogListProps> = ({ blogs }) => {
               key={id}
               animate={{ opacity: 1, y: 0 }}
               className="relative py-10 xl:py-12"
-              exit={{ opacity: 0, height: 0, padding: 0 }}
+              exit={{ opacity: 0, y: -10 }}
               href={`/blogs/${id}`}
               initial={{ opacity: 0, y: -10 }}
               layout="position"
@@ -126,11 +126,9 @@ const BlogList: FC<BlogListProps> = ({ blogs }) => {
                 </div>
               </div>
 
-              <motion.div
+              <div
                 aria-hidden
                 className="absolute inset-y-0 -translate-x-[calc(100%+16px)] flex gap-x-8 items-center text-sm max-xl:hidden"
-                exit={{ opacity: 0, y: 12 }}
-                transition={{ duration: 0.4 }}
               >
                 {data.categories.map(category => (
                   <CategoryText
@@ -139,7 +137,7 @@ const BlogList: FC<BlogListProps> = ({ blogs }) => {
                     type={category}
                   />
                 ))}
-              </motion.div>
+              </div>
             </motion.a>
           ))}
 
