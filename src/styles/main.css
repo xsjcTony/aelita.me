@@ -8,35 +8,41 @@
 
 
 :root {
-  --category-ts-color: #508ac1;
-  --category-ts-bg: #121922;
-  --category-ts-border: #1b3148;
-  --category-ts-active-color: var(--color-white);
-  --category-ts-active-bg: #3178c6;
+  --category-all-color: #e69ea7;
+  --category-all-bg: #1b0c0f;
+  --category-all-border: #4d292e;
+  --category-all-color-active: var(--color-black);
+  --category-all-bg-active: #ff879a;
 
-  --category-js-color: #e5da71;
-  --category-js-bg: #282415;
-  --category-js-border: #554e24;
-  --category-js-active-color: var(--color-black);
-  --category-js-active-bg: #f0db4f;
+  --category-ts-color: #4e88bf;
+  --category-ts-bg: #030912;
+  --category-ts-border: #0f243b;
+  --category-ts-color-active: var(--color-white);
+  --category-ts-bg-active: #3178c6;
 
-  --category-vue-color: #5cb289;
-  --category-vue-bg: #131f1b;
-  --category-vue-border: #204434;
-  --category-vue-active-color: var(--color-white); /* TODO: double check */
-  --category-vue-active-bg: #41b883;
+  --category-js-color: #e3d870;
+  --category-js-bg: #181506;
+  --category-js-border: #484218;
+  --category-js-color-active: var(--color-black);
+  --category-js-bg-active: #f0db4f;
 
-  --category-react-color: #77c5d3;
-  --category-react-bg: #162125;
-  --category-react-border: #27474f;
-  --category-react-active-color: var(--color-white); /* TODO: double check */
-  --category-react-active-bg: #58c4dc;
+  --category-vue-color: #5ab087;
+  --category-vue-bg: #04100b;
+  --category-vue-border: #143727;
+  --category-vue-color-active: var(--color-black);
+  --category-vue-bg-active: #41b883;
 
-  --category-astro-color: #e362de;
-  --category-astro-bg: #261327;
-  --category-astro-border: #542054;
-  --category-astro-active-color: var(--color-white); /* TODO: double check */
-  --category-astro-active-bg: #ee40ed;
+  --category-react-color: #75c3d1;
+  --category-react-bg: #061215;
+  --category-react-border: #1a3b42;
+  --category-react-color-active: var(--color-black);
+  --category-react-bg-active: #58c4dc;
+
+  --category-astro-color: #e67125;
+  --category-astro-bg: #1b0800;
+  --category-astro-border: #4d1c00;
+  --category-astro-color-active: var(--color-white);
+  --category-astro-bg-active: #ff5d01;
 }
 
 

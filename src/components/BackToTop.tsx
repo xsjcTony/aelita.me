@@ -30,7 +30,7 @@ const BackToTop: FC = () => {
       type="button"
       onClick={scrollToTop}
     >
-      <ArrowUpIcon className="size-20" />
+      <ArrowUpIcon size={20} />
     </button>
   )
 }

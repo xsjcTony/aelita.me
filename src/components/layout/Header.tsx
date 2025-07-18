@@ -13,20 +13,22 @@ const Header: FC = () => (
 
     <nav className="flex gap-x-24 items-center">
       <a
+        aria-label="Blogs"
         className="pointer-fine:opacity-60 hover:opacity-100 transition-opacity duration-300"
         href="/blogs"
         title="Blogs"
       >
-        <NotebookPenIcon className="size-[1.2em]" />
+        <NotebookPenIcon size="1.2em" />
       </a>
       <a
+        aria-label="GitHub"
         className="pointer-fine:opacity-60 hover:opacity-100 transition-opacity duration-300"
         href={GITHUB_URL}
         rel="noreferrer"
         target="_blank"
         title="GitHub"
       >
-        <GithubIcon className="size-[1.2em]" />
+        <GithubIcon size="1.2em" />
       </a>
     </nav>
   </header>

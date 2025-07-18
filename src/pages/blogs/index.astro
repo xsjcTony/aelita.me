@@ -1,19 +1,28 @@
 ---
 import type { Metadata } from '~layouts/Layout.astro'
 import { getCollection } from 'astro:content'
+import { BLOG_CATEGORIES } from '~constants/blogCategories'
 import BlogLayout from '~layouts/BlogLayout.astro'
+import BlogList from '~pages/blogs/_components/BlogList'
+import { sortByReference } from '~utils/array'
 
 
 const metadata: Metadata = {
-  title: 'Blogs',
+  title: 'Blog',
   description: `Tony's blog posts`,
 }
 
 
 const blogs = await getCollection('blogs')
+
+// sort blog categories
+for (const blog of blogs)
+  blog.data.categories = sortByReference(BLOG_CATEGORIES, blog.data.categories)
 ---
 
 
 <BlogLayout metadata={metadata}>
-  <pre>{JSON.stringify(blogs, null, 2)}</pre>
+  <h1 class="mt-20 mb-60 text-h2 font-bold text-center text-fg-lighter lg:mb-80">Blog</h1>
+
+  <BlogList client:load blogs={blogs} />
 </BlogLayout>

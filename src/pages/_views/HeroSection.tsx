@@ -80,14 +80,14 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           className="flex items-center gap-x-8"
           variants={makeChildVariants()}
         >
-          <MapPinIcon className="size-[1.2em]" />
+          <MapPinIcon size="1.2em" />
           <span>Melbourne, Australia</span>
         </motion.div>
         <motion.div
           className="flex items-center gap-x-8"
           variants={makeChildVariants()}
         >
-          <MailIcon className="size-[1.2em] translate-y-px" />
+          <MailIcon className="translate-y-px" size="1.2em" />
           <a href={`mailto:${EMAIL_ADDRESS}`}>{EMAIL_ADDRESS}</a>
         </motion.div>
         <motion.div
@@ -95,7 +95,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           variants={makeChildVariants()}
         >
           {/* eslint-disable-next-line ts/no-deprecated */}
-          <GithubIcon className="size-[1.2em]" />
+          <GithubIcon size="1.2em" />
           <a href={GITHUB_URL}>GitHub</a>
         </motion.div>
         <motion.div
@@ -103,7 +103,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           variants={makeChildVariants()}
         >
           {/* eslint-disable-next-line ts/no-deprecated */}
-          <LinkedinIcon className="size-[1.2em]" />
+          <LinkedinIcon size="1.2em" />
           <a href={LINKEDIN_URL}>LinkedIn</a>
         </motion.div>
         <motion.div
@@ -111,7 +111,7 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           variants={makeChildVariants()}
         >
           {/* eslint-disable-next-line ts/no-deprecated */}
-          <CodepenIcon className="size-[1.2em]" />
+          <CodepenIcon size="1.2em" />
           <a href={CODEPEN_URL}>CodePen</a>
         </motion.div>
       </motion.section>
