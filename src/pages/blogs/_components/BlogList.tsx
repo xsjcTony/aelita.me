@@ -4,7 +4,8 @@ import type { BlogCategoriesOrAll } from '~constants/blogCategories'
 import { CircleSlash2Icon, MousePointerClickIcon } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Toolbar } from 'radix-ui'
-import { useMemo, useState } from 'react'
+import { Fragment, useMemo, useState } from 'react'
+
 import { BLOG_CATEGORIES } from '~constants/blogCategories'
 import { LOCAL_STORAGE_KEYS } from '~constants/keys'
 import { useMount } from '~hooks/useMount'
@@ -116,26 +117,29 @@ const BlogList: FC<BlogListProps> = ({ blogs }) => {
                 className="flex flex-col gap-y-4 pointer-fine:opacity-60 hover:opacity-100 transition-opacity duration-300 xl:flex-row xl:gap-x-16 xl:items-center"
               >
                 <p className="text-lg">{data.title}</p>
-                <div className="flex gap-x-8 items-center text-sm text-fg-dark">
+                <p className="flex flex-wrap gap-x-8 items-center text-sm text-fg-dark">
                   <span>{formatDate(data.date)}</span>
                   <span role="separator">·</span>
                   <span>{data.duration}min</span>
                   <span className="xl:hidden" role="separator">·</span>
-                  {data.categories.map(category =>
-                    <CategoryText key={category} className="xl:hidden" type={category} />)}
-                </div>
+                  {data.categories.map((category, index, arr) => (
+                    <Fragment key={category}>
+                      <CategoryText className="xl:hidden" type={category} />
+                      {index < arr.length - 1 && <span className="xl:hidden" role="separator">·</span>}
+                    </Fragment>
+                  ))}
+                </p>
               </div>
 
               <div
                 aria-hidden
                 className="absolute inset-y-0 -translate-x-[calc(100%+16px)] flex gap-x-8 items-center text-sm max-xl:hidden"
               >
-                {data.categories.map(category => (
-                  <CategoryText
-                    key={category}
-                    className="hidden xl:block"
-                    type={category}
-                  />
+                {data.categories.map((category, index, arr) => (
+                  <Fragment key={category}>
+                    <CategoryText className="hidden xl:block" type={category} />
+                    {index < arr.length - 1 && <span className="hidden xl:block" role="separator">·</span>}
+                  </Fragment>
                 ))}
               </div>
             </motion.a>

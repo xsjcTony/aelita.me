@@ -1,7 +1,7 @@
 import type { FC } from 'react'
 import type { TechStackItem } from '~pages/_components/TechStackCards'
 import MagneticCursor from '~components/MagneticCursor'
-import MotionFadeInWrapper from '~components/MotionFadeInWrapper'
+import FadeInWrapper from '~components/motion/FadeInWrapper'
 import PointerHighlight from '~components/PointerHighlight'
 import { TECH_STACK_BACKEND, TECH_STACK_FRONTEND, TECH_STACK_LANGUAGES } from '~constants/techStacks'
 import SectionWithTitle from '~pages/_components/SectionWithTitle'
@@ -23,7 +23,7 @@ const Stack: FC<StackProps> = ({
   const titleEl = <h3 className="text-h3 text-center">{title}</h3>
 
   return (
-    <MotionFadeInWrapper margin="-200px 0px">
+    <FadeInWrapper margin="-200px 0px">
       <div className="flex flex-col">
         {highlighted
           ? (
@@ -35,7 +35,7 @@ const Stack: FC<StackProps> = ({
 
         <TechStackCards items={techStacks} />
       </div>
-    </MotionFadeInWrapper>
+    </FadeInWrapper>
   )
 }
 

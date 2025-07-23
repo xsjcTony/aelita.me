@@ -1,13 +1,18 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
-import { getCollection } from 'astro:content'
+import type { Metadata } from '~layouts/Layout.astro'
+import { render } from 'astro:content'
+import BlogLayout from '~layouts/BlogLayout.astro'
+import CategoryText from '~pages/blogs/_components/CategoryText'
+import { getBlogs } from '~utils/content'
+import { formatDate } from '~utils/date'
 
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 
 export const getStaticPaths = (async () => {
-  const blogs = await getCollection('blogs')
+  const blogs = await getBlogs()
 
   return blogs.map(blog => ({
     params: { slug: blog.id },
@@ -17,7 +22,74 @@ export const getStaticPaths = (async () => {
 
 
 const { blog } = Astro.props
+
+
+const metadata: Metadata = {
+  title: blog.data.title,
+  description: blog.data.description,
+}
+
+
+const data = blog.data
+
+const { Content, headings, remarkPluginFrontmatter } = await render(blog)
+
+console.log(headings)
 ---
 
 
-<div>{blog.data.title}</div>
+<BlogLayout metadata={metadata}>
+  <div class="prose mb-32">
+    <h1 class="mb-8!">{data.title}</h1>
+    <p class="mt-0! flex gap-x-8 items-center text-fg-dark">
+      <span>{formatDate(data.date)}</span>
+      <span role="separator">·</span>
+      <span>{data.duration}min</span>
+      <span role="separator">·</span>
+      {data.categories.map((category, index, arr) => (
+        <>
+          <CategoryText longhand className="xl:hidden" type={category} />
+          {index < arr.length - 1 && <span class="xl:hidden" role="separator">·</span>}
+        </>
+      ))}
+    </p>
+  </div>
+
+  <div class="prose my-32">
+    <p>
+      <span class="mr-4">&gt;</span>
+      <a class="tracking-widest" href="/blogs">cd ..</a>
+    </p>
+  </div>
+
+  <div data-blog-content class="prose">
+    <Content />
+  </div>
+
+  <div data-blog-content class="prose my-32">
+    <p>
+      <span class="mr-4">&gt;</span>
+      <a class="tracking-widest" href="/blogs">cd ..</a>
+    </p>
+  </div>
+</BlogLayout>
+
+
+<script>
+  import { animate, stagger, cubicBezier } from 'motion';
+
+
+  function animateContent(): void {
+    animate(
+      '[data-blog-content] > *',
+      { opacity: [0, 1], y: [10, 0] },
+      {
+        duration: 1,
+        ease: cubicBezier(0.25, 0.1, 0.25, 1),
+        delay: stagger(0.08),
+      }
+    )
+  }
+
+  document.addEventListener('astro:page-load', () => void animateContent())
+</script>

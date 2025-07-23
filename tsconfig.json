@@ -13,6 +13,7 @@
       "~constants/*": ["src/constants/*"],
       "~hooks/*": ["src/hooks/*"],
       "~layouts/*": ["src/layouts/*"],
+      "~lib/*": ["src/lib/*"],
       "~pages/*": ["src/pages/*"],
       "~styles/*": ["src/styles/*"],
       "~utils/*": ["src/utils/*"],

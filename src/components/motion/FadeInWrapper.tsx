@@ -1,9 +1,9 @@
 import type { Variants } from 'motion/react'
-import type { FC, HTMLAttributes, PropsWithChildren, ReactNode } from 'react';
+import type { FC, HTMLAttributes, ReactNode } from 'react'
 import { motion } from 'motion/react'
 
 
-type MotionFadeInWrapperProps = Pick<HTMLAttributes<HTMLDivElement>, 'className'> & {
+type FadeInWrapperProps = Pick<HTMLAttributes<HTMLDivElement>, 'className'> & {
   children: ReactNode
   delay?: number
   margin?: string
@@ -20,7 +20,7 @@ const FADE_IN_ANIMATION: Variants = {
 }
 
 
-const MotionFadeInWrapper: FC<PropsWithChildren<MotionFadeInWrapperProps>> = ({
+const FadeInWrapper: FC<FadeInWrapperProps> = ({
   delay = 0,
   margin = '-100px 0px',
   children,
@@ -39,4 +39,4 @@ const MotionFadeInWrapper: FC<PropsWithChildren<MotionFadeInWrapperProps>> = ({
 )
 
 
-export default MotionFadeInWrapper
+export default FadeInWrapper

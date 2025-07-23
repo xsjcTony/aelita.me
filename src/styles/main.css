@@ -11,38 +11,38 @@
   --category-all-color: #e69ea7;
   --category-all-bg: #1b0c0f;
   --category-all-border: #4d292e;
-  --category-all-color-active: var(--color-black);
-  --category-all-bg-active: #ff879a;
+  --category-all-color--active: var(--color-black);
+  --category-all-bg--active: #ff879a;
 
   --category-ts-color: #4e88bf;
   --category-ts-bg: #030912;
   --category-ts-border: #0f243b;
-  --category-ts-color-active: var(--color-white);
-  --category-ts-bg-active: #3178c6;
+  --category-ts-color--active: var(--color-white);
+  --category-ts-bg--active: #3178c6;
 
   --category-js-color: #e3d870;
   --category-js-bg: #181506;
   --category-js-border: #484218;
-  --category-js-color-active: var(--color-black);
-  --category-js-bg-active: #f0db4f;
+  --category-js-color--active: var(--color-black);
+  --category-js-bg--active: #f0db4f;
 
   --category-vue-color: #5ab087;
   --category-vue-bg: #04100b;
   --category-vue-border: #143727;
-  --category-vue-color-active: var(--color-black);
-  --category-vue-bg-active: #41b883;
+  --category-vue-color--active: var(--color-black);
+  --category-vue-bg--active: #41b883;
 
   --category-react-color: #75c3d1;
   --category-react-bg: #061215;
   --category-react-border: #1a3b42;
-  --category-react-color-active: var(--color-black);
-  --category-react-bg-active: #58c4dc;
+  --category-react-color--active: var(--color-black);
+  --category-react-bg--active: #58c4dc;
 
   --category-astro-color: #e67125;
   --category-astro-bg: #1b0800;
   --category-astro-border: #4d1c00;
-  --category-astro-color-active: var(--color-white);
-  --category-astro-bg-active: #ff5d01;
+  --category-astro-color--active: var(--color-white);
+  --category-astro-bg--active: #ff5d01;
 }
 
 

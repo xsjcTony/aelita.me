@@ -8,6 +8,39 @@ duration: 15
 description: Learn how to allow all types except specific ones in TypeScript.
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+> Hey, I have a function and I want to make its parameter accept any types **except** `number`. How can I achieve that?
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Sometimes you might need this, so let's think about it. Generally if we write `arg: number`, it means we only accept the `number` type. But now we want to do the opposite, hence it should be a ternary looks like this:
+
+```ts twoslash
+function foo<T>(arg: T extends number ? never : T) {
+  // ...
+}
+```
+
+We should return `never` if the type is `number`, then the compiler will warn us if we pass a `number` to this function. However, writing it this way have several drawbacks:
+
+- The excluded type is hardcoded to `number`.
+- It's not reusable.
+
+So instead, we can build a utility type that allows us to ban any type we want, and also provide the ability to specify the union type to be excluded from (default to `any`):
+
+```ts twoslash
+type BanType<BannedType, PassedInType> = PassedInType extends BannedType
+  ? never
+  : PassedInType
+
+// use <T extends ...> to limit the passed in type if required
+declare function banNumber<T>(bar: BanType<number, T>): void
+
+banNumber('string') // ✅
+banNumber(true) // ✅
+// @errors: 2345
+banNumber(123) // ❌
+```
+
+:::note
+The built-in utility type
+
+abcd
+:::

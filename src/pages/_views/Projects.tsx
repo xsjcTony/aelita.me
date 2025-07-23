@@ -1,5 +1,5 @@
 import type { FC, ReactNode } from 'react'
-import MotionFadeInWrapper from '~components/MotionFadeInWrapper'
+import FadeInWrapper from '~components/motion/FadeInWrapper'
 import PointerHighlight from '~components/PointerHighlight'
 import { PROJECTS_CONTRIBUTION, PROJECTS_OSS, PROJECTS_WEBSITES_AND_TOOLS } from '~constants/projects'
 import SectionWithTitle from '~pages/_components/SectionWithTitle'
@@ -27,7 +27,7 @@ const Project: FC<ProjectProps> = ({
   const titleEl = <h3 className="text-h3 text-center">{title}</h3>
 
   return (
-    <MotionFadeInWrapper>
+    <FadeInWrapper>
       <div className="flex flex-col gap-y-20">
         {highlighted
           ? (
@@ -57,7 +57,7 @@ const Project: FC<ProjectProps> = ({
           ))}
         </div>
       </div>
-    </MotionFadeInWrapper>
+    </FadeInWrapper>
   )
 }
 

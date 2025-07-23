@@ -3,7 +3,7 @@ import { BriefcaseBusinessIcon } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { AccessibleIcon } from 'radix-ui'
 import { useRef } from 'react'
-import MotionFadeInWrapper from '~components/MotionFadeInWrapper'
+import FadeInWrapper from '~components/motion/FadeInWrapper'
 import { useResizeObserver } from '~hooks/useResizeObserver'
 
 
@@ -53,7 +53,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
         title,
         content,
       }, index) => (
-        <MotionFadeInWrapper
+        <FadeInWrapper
           // eslint-disable-next-line react/no-array-index-key
           key={index}
           className="grid gap-y-(--grid-gap) col-span-full grid-cols-subgrid xl:grid-rows-[min-content_auto]"
@@ -73,7 +73,7 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
           </div>
 
           {content}
-        </MotionFadeInWrapper>
+        </FadeInWrapper>
       ))}
 
       {/* Gradient tracing beam */}
