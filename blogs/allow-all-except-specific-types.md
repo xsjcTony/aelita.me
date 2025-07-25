@@ -89,7 +89,7 @@ banTypes<string, any>('string')
 
 
 :::caution
-In order to take advantage of this, you have to explicitly specify the second generic type when you want to limit the type of the parameter just like in the example above.
+In order to take advantage of this, you have to explicitly pass the second generic type to limit the type of the parameter, unless you give it a default type like `T = SomeType`.
 
-You **CANNOT** use `T = any` to avoid passing the second generic type, because it will resolve to `any` as the argument's type, hence passing anything is acceptable.
+You **CANNOT** use `T = any` because it will resolve to `any` as the parameter's type, hence passing anything as the argument is acceptable.
 :::
