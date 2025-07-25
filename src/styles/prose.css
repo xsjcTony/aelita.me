@@ -35,6 +35,15 @@
   }
 
 
+  /* Separator */
+  hr {
+    margin-block: 3em;
+    margin-inline: auto;
+    border-color: --alpha(var(--color-fg-dark) / 50%);
+    width: 5rem;
+  }
+
+
   /* Titles */
   h1 {
     color: var(--color-fg-lighter);
@@ -173,15 +182,14 @@
       display: flex;
       align-items: center;
       column-gap: 8px;
-      font-size: 1.25rem;
       line-height: 1;
       font-weight: 700;
       padding-block-start: 0.125em;
 
       .blog-container__icon {
         flex-shrink: 0;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.2rem;
+        height: 1.2rem;
       }
     }
 
@@ -198,7 +206,7 @@
     }
 
     &.blog-container--caution {
-      --color__bg: #4d3800;
+      --color__bg: #4e4022;
       --color__border: var(--color-yellow-500);
       --color__title: var(--color-yellow-300);
     }

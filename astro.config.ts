@@ -29,7 +29,7 @@ export default defineConfig({
     expressiveCode({
       themes: ['github-dark-default'],
       defaultProps: {
-        wrap: true,
+        wrap: false,
       },
       styleOverrides: {
         codeFontSize: '0.9rem',

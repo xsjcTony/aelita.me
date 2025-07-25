@@ -8,39 +8,88 @@ duration: 15
 description: Learn how to allow all types except specific ones in TypeScript.
 ---
 
+
 > Hey, I have a function and I want to make its parameter accept any types **except** `number`. How can I achieve that?
 
-Sometimes you might need this, so let's think about it. Generally if we write `arg: number`, it means we only accept the `number` type. But now we want to do the opposite, hence it should be a ternary looks like this:
 
-```ts twoslash
-function foo<T>(arg: T extends number ? never : T) {
-  // ...
-}
+Sometimes you might need this, so let's think about it.
+
+First you may think about the built-in utility type `Exclude`, which allows you to exclude specific types from a union type. However, it doesn't work for this case because it requires a union type to exclude from, but unfortunately `any` is **NOT** a union type.
+
+
+```ts title='bad-example.ts' twoslash
+declare function foo(arg: Exclude<any, number>): void
+
+foo('string') // ✅
+foo(true) // ✅
+foo(123) // ✅ this still works and raises no error 😢
 ```
 
-We should return `never` if the type is `number`, then the compiler will warn us if we pass a `number` to this function. However, writing it this way have several drawbacks:
 
-- The excluded type is hardcoded to `number`.
-- It's not reusable.
+As you can see, passing a `number` to the `foo` function does not raise any error, because `Exclude<any, number>` resolves to `any`. To address this, we need to narrow the type of the parameter to exclude `number` specifically.
 
-So instead, we can build a utility type that allows us to ban any type we want, and also provide the ability to specify the union type to be excluded from (default to `any`):
+We can introduce a generic type which will automatically inferred as the passed in type, and checks if it assignable to `number`. If it is, we can return `never`, which will effectively ban the type from being passed to the function.
+
+The built-in utility type `Exclude` is an alias of what we are trying to do above, so we can write it in both ways:
+
 
 ```ts twoslash
-type BanType<BannedType, PassedInType> = PassedInType extends BannedType
-  ? never
-  : PassedInType
-
-// use <T extends ...> to limit the passed in type if required
-declare function banNumber<T>(bar: BanType<number, T>): void
+// @errors: 2345
+declare function banNumber<T>(arg: T extends number ? never : T): void
 
 banNumber('string') // ✅
 banNumber(true) // ✅
-// @errors: 2345
 banNumber(123) // ❌
+
+// or using `Exclude`
+declare function banNumberWithExclude<T>(arg: Exclude<T, number>): void
+
+banNumberWithExclude('string') // ✅
+banNumberWithExclude(true) // ✅
+banNumberWithExclude(123) // ❌
 ```
 
-:::note
-The built-in utility type
+---
 
-abcd
+
+Because generic type is introduced, we can extend the usage it in a bunch of ways.
+
+- We can limit the type that can be passed in, to only allow certain types except `number`:
+
+
+```ts twoslash
+// @errors: 2345
+type UnionTypeWithNumber = string | number | null
+
+declare function banNumber<
+  T extends UnionTypeWithNumber
+>(arg: Exclude<T, number>): void
+
+banNumber('string') // ✅
+banNumber(null) // ✅
+banNumber(123) // ❌
+banNumber(true) // ❌ because now only `string | null` is allowed
+```
+
+
+- We can also use it to ban other types by introducing another generic type:
+
+
+```ts twoslash
+// @errors: 2558
+// @errors: 2345
+declare function banTypes<BannedTypes, T>(arg: Exclude<T, BannedTypes>): void
+
+banTypes<string, number | boolean | null>(123) // ✅
+banTypes<string, number | boolean | null>('string') // ❌
+
+// ⚠️ Passing `any` as second generic argument won't work
+banTypes<string, any>('string')
+```
+
+
+:::caution
+In order to take advantage of this, you have to explicitly specify the second generic type when you want to limit the type of the parameter just like in the example above.
+
+You **CANNOT** use `T = any` to avoid passing the second generic type, because it will resolve to `any` as the argument's type, hence passing anything is acceptable.
 :::

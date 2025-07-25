@@ -48,14 +48,14 @@ console.log(headings)
       <span role="separator">·</span>
       {data.categories.map((category, index, arr) => (
         <>
-          <CategoryText longhand className="xl:hidden" type={category} />
+          <CategoryText longhand type={category} />
           {index < arr.length - 1 && <span class="xl:hidden" role="separator">·</span>}
         </>
       ))}
     </p>
   </div>
 
-  <div class="prose my-32">
+  <div class="prose my-40">
     <p>
       <span class="mr-4">&gt;</span>
       <a class="tracking-widest" href="/blogs">cd ..</a>
@@ -66,7 +66,7 @@ console.log(headings)
     <Content />
   </div>
 
-  <div data-blog-content class="prose my-32">
+  <div data-blog-content class="prose my-40">
     <p>
       <span class="mr-4">&gt;</span>
       <a class="tracking-widest" href="/blogs">cd ..</a>

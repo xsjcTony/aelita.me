@@ -55,10 +55,10 @@ function makeRehypeReadyChildNodes(children: Result['children']): any[] {
 
 
 const TITLE_MAP: Record<ContainerType, string> = {
-  note: 'NOTE',
-  tip: 'TIP',
-  caution: 'CAUTION',
-  danger: 'DANGER',
+  note: 'Note',
+  tip: 'Tip',
+  caution: 'Caution',
+  danger: 'Danger',
 }
 
 const VARIANTS = new Set<ContainerType>(['note', 'tip', 'caution', 'danger'])
