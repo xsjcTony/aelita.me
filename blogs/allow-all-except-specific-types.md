@@ -76,14 +76,13 @@ banNumber(true) // ❌ because now only `string | null` is allowed
 
 
 ```ts twoslash
-// @errors: 2558
 // @errors: 2345
 declare function banTypes<BannedTypes, T>(arg: Exclude<T, BannedTypes>): void
 
 banTypes<string, number | boolean | null>(123) // ✅
 banTypes<string, number | boolean | null>('string') // ❌
 
-// ⚠️ Passing `any` as second generic argument won't work
+// ⚠️ Passing `any` to the second generic parameter won't work
 banTypes<string, any>('string')
 ```
 

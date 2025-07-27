@@ -1,15 +1,14 @@
 import type { FC } from 'react'
 import { GithubIcon, NotebookPenIcon } from 'lucide-react'
+import Logo from '~components/icons/Logo'
 import { GITHUB_URL } from '~constants/info'
 
 
 const Header: FC = () => (
   <header className="p-32 flex items-center justify-between">
-    <div>
-      <a href="/">
-        Logo
-      </a>
-    </div>
+    <a href="/">
+      <Logo className="size-32" />
+    </a>
 
     <nav className="flex gap-x-24 items-center">
       <a
