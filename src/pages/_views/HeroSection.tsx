@@ -1,7 +1,8 @@
 import type { Variants } from 'motion/react'
 import type { FC, ReactNode } from 'react'
+import { SiGithub } from '@icons-pack/react-simple-icons'
 import { AstroDark, CSSNew, JavaScript, TypeScript, Vite } from '@ridemountainpig/svgl-react'
-import { CodepenIcon, GithubIcon, LinkedinIcon, MailIcon, MapPinIcon } from 'lucide-react'
+import { MailIcon, MapPinIcon } from 'lucide-react'
 import { motion, stagger } from 'motion/react'
 import { CODEPEN_URL, EMAIL_ADDRESS, GITHUB_URL, LINKEDIN_URL } from '~constants/info'
 import Lamp from '~pages/_components/Lamp'
@@ -11,6 +12,8 @@ import ResponsiveProse from '~pages/_components/ResponsiveProse'
 type HeroSectionProps = {
   arcaeaLogo?: ReactNode
   maimaiDxLogo?: ReactNode
+  linkedinLogo?: ReactNode
+  codepenLogo?: ReactNode
 }
 
 
@@ -32,7 +35,12 @@ function makeChildVariants(delay?: number): Variants {
 }
 
 
-const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
+const HeroSection: FC<HeroSectionProps> = ({
+  arcaeaLogo,
+  maimaiDxLogo,
+  linkedinLogo,
+  codepenLogo,
+}) => (
   <section className="container pt-20 pb-80" id="hero">
     {/* Lamp effect */}
     <Lamp className="-translate-y-1/3" />
@@ -94,24 +102,21 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
           className="flex items-center gap-x-8"
           variants={makeChildVariants()}
         >
-          {/* eslint-disable-next-line ts/no-deprecated */}
-          <GithubIcon size="1.2em" />
+          <SiGithub size="1.2em" />
           <a href={GITHUB_URL}>GitHub</a>
         </motion.div>
         <motion.div
           className="flex items-center gap-x-8"
           variants={makeChildVariants()}
         >
-          {/* eslint-disable-next-line ts/no-deprecated */}
-          <LinkedinIcon size="1.2em" />
+          {linkedinLogo}
           <a href={LINKEDIN_URL}>LinkedIn</a>
         </motion.div>
         <motion.div
           className="flex items-center gap-x-8"
           variants={makeChildVariants()}
         >
-          {/* eslint-disable-next-line ts/no-deprecated */}
-          <CodepenIcon size="1.2em" />
+          {codepenLogo}
           <a href={CODEPEN_URL}>CodePen</a>
         </motion.div>
       </motion.section>
@@ -120,12 +125,12 @@ const HeroSection: FC<HeroSectionProps> = ({ arcaeaLogo, maimaiDxLogo }) => (
       {/* Description section */}
       <motion.section
         animate="visible"
-        className="bg-gradient-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-2xl rounded-lg p-16 flex gap-x-12 border border-fg-lighter/10 lg:col-span-2"
+        className="bg-linear-to-r from-rose-900/10 to-sky-900/10 backdrop-blur-2xl rounded-lg p-16 flex gap-x-12 border border-fg-lighter/10 lg:col-span-2"
         id="description"
         initial="hidden"
         variants={makeChildVariants(3)}
       >
-        <div className="self-stretch shrink-0 w-4 rounded-full bg-gradient-to-b from-primary to-secondary" />
+        <div className="self-stretch shrink-0 w-4 rounded-full bg-linear-to-b from-primary to-secondary" />
         <ResponsiveProse>
           <p>
             G&apos;day! I&apos;m <strong>Tony</strong>, a fanatical <strong>software engineer</strong> with full-stack capabilities, as well as an <strong>open sourcer</strong>.

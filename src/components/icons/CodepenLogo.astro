@@ -1,0 +1,16 @@
+---
+import type { ComponentProps, SvgComponent } from 'astro/types'
+import Codepen from '~assets/images/codepen-logo.svg'
+
+
+type Props = ComponentProps<SvgComponent>
+
+
+const { 'class': className, height } = Astro.props
+---
+
+
+<Codepen
+  class={className}
+  height={height}
+/>

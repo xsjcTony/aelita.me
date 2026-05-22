@@ -43,7 +43,7 @@ import {
   LaravelUrl,
   MarkdownDark,
   MarkdownUrl,
-  MySQL,
+  MySQLDark,
   MySQLUrl,
   NestJS,
   NestJSUrl,
@@ -247,7 +247,7 @@ export const TECH_STACK_BACKEND: TechStackItem[] = [
   },
   {
     name: 'MySQL',
-    logo: <MySQL className={CLASSNAMES} />,
+    logo: <MySQLDark className={CLASSNAMES} />,
     glowColor: SiMysqlHex,
     url: MySQLUrl,
   },

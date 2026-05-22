@@ -3,7 +3,7 @@
 import type { RemarkContainerOptions } from './src/libs/remark/container'
 import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'astro/config'
+import { defineConfig, svgoOptimizer } from 'astro/config'
 import { astroExpressiveCode as expressiveCode } from 'astro-expressive-code'
 import expressiveCodeTwoSlash from 'expressive-code-twoslash'
 import remarkDirective from 'remark-directive'
@@ -13,10 +13,9 @@ import remarkContainer from './src/libs/remark/container'
 export default defineConfig({
   trailingSlash: 'never',
   experimental: {
-    preserveScriptOrder: true,
     contentIntellisense: true,
-    headingIdCompat: true,
     clientPrerender: true,
+    svgOptimizer: svgoOptimizer(),
   },
   markdown: {
     remarkPlugins: [

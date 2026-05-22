@@ -1,0 +1,16 @@
+---
+import type { ComponentProps, SvgComponent } from 'astro/types'
+import Linkedin from '~assets/images/linkedin-logo.svg'
+
+
+type Props = ComponentProps<SvgComponent>
+
+
+const { 'class': className, height } = Astro.props
+---
+
+
+<Linkedin
+  class={className}
+  height={height}
+/>

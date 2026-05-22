@@ -1,6 +1,8 @@
 ---
 import type { Metadata } from '~layouts/Layout.astro'
 import ArcaeaLogo from '~components/icons/ArcaeaLogo.astro'
+import CodepenLogo from '~components/icons/CodepenLogo.astro'
+import LinkedinLogo from '~components/icons/LinkedinLogo.astro'
 import MaimaiDxLogo from '~components/icons/MaimaiDxLogo.astro'
 import PageLayout from '~layouts/PageLayout.astro'
 import Squares from '~pages/_components/Squares.astro'
@@ -23,6 +25,8 @@ const metadata: Metadata = { title: false }
     <HeroSection client:load transition:persist>
       <ArcaeaLogo height={28} slot="arcaea-logo" />
       <MaimaiDxLogo height={28} slot="maimai-dx-logo" />
+      <LinkedinLogo height="1.2em" slot="linkedin-logo" />
+      <CodepenLogo height="1.2em" slot="codepen-logo" />
     </HeroSection>
   </div>
 

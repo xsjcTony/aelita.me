@@ -1,5 +1,6 @@
 import type { FC } from 'react'
-import { GithubIcon, NotebookPenIcon } from 'lucide-react'
+import { SiGithub } from '@icons-pack/react-simple-icons'
+import { NotebookPenIcon } from 'lucide-react'
 import Logo from '~components/icons/Logo'
 import { GITHUB_URL } from '~constants/info'
 
@@ -27,7 +28,7 @@ const Header: FC = () => (
         target="_blank"
         title="GitHub"
       >
-        <GithubIcon size="1.2em" />
+        <SiGithub size="1.2em" />
       </a>
     </nav>
   </header>

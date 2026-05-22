@@ -1,10 +1,9 @@
-import type { Container, SingleOrMultiple } from '@tsparticles/engine'
+import type { Container, Engine, SingleOrMultiple } from '@tsparticles/engine'
 import type { FC } from 'react'
-import Particles, { initParticlesEngine } from '@tsparticles/react'
+import Particles, { ParticlesProvider } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import { motion, useAnimation } from 'motion/react'
-import { useId, useState } from 'react'
-import { useMount } from '~hooks/useMount'
+import { useId } from 'react'
 import { cn } from '~utils/className'
 
 
@@ -21,6 +20,11 @@ type SparklesProps = {
 }
 
 
+async function init(engine: Engine): Promise<void> {
+  await loadSlim(engine)
+}
+
+
 const Sparkles: FC<SparklesProps> = ({
   id,
   className,
@@ -32,16 +36,6 @@ const Sparkles: FC<SparklesProps> = ({
   particleColor,
   particleDensity,
 }) => {
-
-  const [engineLoaded, setEngineLoaded] = useState(false)
-
-  useMount(() => {
-    void initParticlesEngine(async (engine) => {
-      await loadSlim(engine)
-    })
-      .then(() => void setEngineLoaded(true))
-  })
-
 
   const controls = useAnimation()
 
@@ -62,7 +56,7 @@ const Sparkles: FC<SparklesProps> = ({
 
   return (
     <motion.div animate={controls} className={cn('opacity-0', className)}>
-      {engineLoaded && (
+      <ParticlesProvider init={init}>
         <Particles
           className="h-full w-full"
           id={id || generatedId}
@@ -165,7 +159,6 @@ const Sparkles: FC<SparklesProps> = ({
               },
               effect: {
                 close: true,
-                fill: true,
                 options: {},
                 type: {} as SingleOrMultiple<string> | undefined,
               },
@@ -174,14 +167,6 @@ const Sparkles: FC<SparklesProps> = ({
                 angle: {
                   offset: 0,
                   value: 90,
-                },
-                attract: {
-                  distance: 200,
-                  enable: false,
-                  rotate: {
-                    x: 3000,
-                    y: 3000,
-                  },
                 },
                 center: {
                   x: 50,
@@ -222,11 +207,6 @@ const Sparkles: FC<SparklesProps> = ({
                   enable: false,
                 },
                 straight: false,
-                trail: {
-                  enable: false,
-                  length: 10,
-                  fill: {},
-                },
                 vibrate: false,
                 warp: false,
               },
@@ -273,7 +253,6 @@ const Sparkles: FC<SparklesProps> = ({
               },
               shape: {
                 close: true,
-                fill: true,
                 options: {},
                 type: 'circle',
               },
@@ -439,7 +418,7 @@ const Sparkles: FC<SparklesProps> = ({
           }}
           particlesLoaded={particlesLoaded}
         />
-      )}
+      </ParticlesProvider>
     </motion.div>
   )
 }
