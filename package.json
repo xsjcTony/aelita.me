@@ -1,7 +1,7 @@
 {
   "name": "aelita.me",
   "type": "module",
-  "packageManager": "pnpm@11.2.2",
+  "packageManager": "pnpm@11.3.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -20,10 +20,10 @@
     "@tsparticles/slim": "^4.0.5",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.3.7",
+    "astro": "^6.3.8",
     "astro-expressive-code": "^0.42.0",
     "clsx": "^2.1.1",
-    "date-fns": "^4.2.1",
+    "date-fns": "^4.3.0",
     "expressive-code-twoslash": "^0.6.1",
     "lucide-react": "^1.16.0",
     "motion": "^12.40.0",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@aelita-dev/eslint-config": "^3.34.0",
-    "@astrojs/language-server": "^2.16.9",
+    "@astrojs/language-server": "^2.16.10",
     "@tailwindcss/language-server": "^0.14.29",
     "@tailwindcss/vite": "^4.3.0",
     "@total-typescript/ts-reset": "^0.6.1",
@@ -62,7 +62,7 @@
     "remark-directive": "^4.0.0",
     "sass-embedded": "1.100.0",
     "tailwindcss": "^4.3.0",
-    "typescript-eslint": "^8.59.4",
+    "typescript-eslint": "^8.60.0",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.1.0"
   }

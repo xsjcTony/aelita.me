@@ -3,7 +3,7 @@ const MINOR_PACKAGES = new Set([
 ])
 
 
-const PATCH_PACKAGES = new Set([])
+const PATCH_PACKAGES = new Set()
 
 
 module.exports = {
