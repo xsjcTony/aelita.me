@@ -7,9 +7,11 @@ import { GITHUB_URL } from '~constants/info'
 
 const Header: FC = () => (
   <header className="p-32 flex items-center justify-between">
-    <a href="/">
+    <a className="fixed z-logo" href="/">
       <Logo className="size-32" />
     </a>
+
+    <div aria-hidden />
 
     <nav className="flex gap-x-24 items-center">
       <a
