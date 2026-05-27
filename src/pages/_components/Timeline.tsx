@@ -1,8 +1,8 @@
 import type { FC, ReactNode } from 'react'
 import { BriefcaseBusinessIcon } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'motion/react'
-import { AccessibleIcon } from 'radix-ui'
 import { useRef } from 'react'
+import AccessibleIcon from '~components/AccessibleIcon'
 import FadeInWrapper from '~components/motion/FadeInWrapper'
 import { useResizeObserver } from '~hooks/useResizeObserver'
 
@@ -46,9 +46,9 @@ const Timeline: FC<TimelineProps> = ({ items }) => {
     >
       {items.map(({
         icon = (
-          <AccessibleIcon.Root label="commercial work">
+          <AccessibleIcon label="commercial work">
             <BriefcaseBusinessIcon />
-          </AccessibleIcon.Root>
+          </AccessibleIcon>
         ),
         title,
         content,

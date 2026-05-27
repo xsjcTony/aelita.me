@@ -29,7 +29,6 @@
     "lucide-react": "^1.16.0",
     "motion": "^12.40.0",
     "motion-plus": "https://api.motion.dev/registry.tgz?package=motion-plus&version=latest&token=93b244e2e1232ccb3caebea70e34b020e1faa3636415ead8e2f8a5b7ba058722",
-    "radix-ui": "^1.4.3",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "sharp": "^0.34.5",

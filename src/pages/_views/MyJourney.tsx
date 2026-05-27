@@ -11,7 +11,7 @@ import {
   Vitest,
 } from '@ridemountainpig/svgl-react'
 import { Building2Icon, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
-import { AccessibleIcon } from 'radix-ui'
+import AccessibleIcon from '~components/AccessibleIcon'
 import ResponsiveProse from '~pages/_components/ResponsiveProse'
 import SectionWithTitle from '~pages/_components/SectionWithTitle'
 import Timeline from '~pages/_components/Timeline'
@@ -27,9 +27,9 @@ function makeContent({ title, organization, location, content }: {
     <>
       <div className="col-start-2 self-start flex flex-col gap-y-8 relative isolate p-12 text-xs text-fg-light md:text-sm md:px-14 lg:text-base lg:px-16">
         <h4 className="flex items-center gap-x-8 font-bold">
-          <AccessibleIcon.Root label="job title">
+          <AccessibleIcon label="job title">
             <IdCardIcon className="shrink-0 -translate-y-px md:-translate-y-0" size="1.2em" />
-          </AccessibleIcon.Root>
+          </AccessibleIcon>
           <span>{title}</span>
         </h4>
 
@@ -37,9 +37,9 @@ function makeContent({ title, organization, location, content }: {
           <>
             <hr className="border-dashed border-fg/50" />
             <p className="flex items-center gap-x-8">
-              <AccessibleIcon.Root label="organization name">
+              <AccessibleIcon label="organization name">
                 <Building2Icon className="shrink-0 -translate-y-px" size="1.2em" />
-              </AccessibleIcon.Root>
+              </AccessibleIcon>
               <span>{organization}</span>
             </p>
           </>
@@ -48,9 +48,9 @@ function makeContent({ title, organization, location, content }: {
         <hr className="border-dashed border-fg/50" />
 
         <p className="flex items-center gap-x-8">
-          <AccessibleIcon.Root label="location">
+          <AccessibleIcon label="location">
             <MapPinIcon className="shrink-0 -translate-y-px" size="1.2em" />
-          </AccessibleIcon.Root>
+          </AccessibleIcon>
           <span>{location}</span>
         </p>
 
@@ -139,9 +139,9 @@ const MyJourney: FC = () => {
     },
     {
       icon: (
-        <AccessibleIcon.Root label="school period">
+        <AccessibleIcon label="school period">
           <GraduationCapIcon />
-        </AccessibleIcon.Root>
+        </AccessibleIcon>
       ),
       title: '2018 - 2021',
       content: makeContent({
@@ -161,9 +161,9 @@ const MyJourney: FC = () => {
     },
     {
       icon: (
-        <AccessibleIcon.Root label="school period">
+        <AccessibleIcon label="school period">
           <GraduationCapIcon />
-        </AccessibleIcon.Root>
+        </AccessibleIcon>
       ),
       title: '2015 - 2017',
       content: makeContent({
