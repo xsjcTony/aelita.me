@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/react": "^5.0.5",
+    "@base-ui/react": "^1.5.0",
     "@icons-pack/react-simple-icons": "^13.13.0",
     "@ridemountainpig/svgl-react": "^1.0.17",
     "@tsparticles/engine": "^4.0.5",

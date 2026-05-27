@@ -1,11 +1,10 @@
 import type { CollectionEntry } from 'astro:content'
 import type { FC } from 'react'
 import type { BlogCategoriesOrAll } from '~constants/blogCategories'
+import { ToggleGroup, Toolbar } from '@base-ui/react'
 import { CircleSlash2Icon, MousePointerClickIcon } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
-import { Toolbar } from 'radix-ui'
 import { Fragment, useMemo, useState } from 'react'
-
 import { BLOG_CATEGORIES } from '~constants/blogCategories'
 import { LOCAL_STORAGE_KEYS } from '~constants/keys'
 import { useMount } from '~hooks/useMount'
@@ -72,19 +71,18 @@ const BlogList: FC<BlogListProps> = ({ blogs }) => {
     // gap-y: 60 - 10 = 50
     <div className="flex flex-col gap-y-50 lg:gap-y-70">
       <Toolbar.Root className="flex flex-col items-center gap-y-20 lg:gap-y-24" orientation="vertical">
-        <Toolbar.ToggleGroup
-          type="single"
-          value={selectedCategories === 'all' ? selectedCategories : ''}
+        <ToggleGroup
+          value={selectedCategories === 'all' ? [selectedCategories] : []}
           onValueChange={() => void setSelectedCategories(DEFAULT_SELECTED_CATEGORIES)}
         >
           <CategoryTag type="all" />
-        </Toolbar.ToggleGroup>
+        </ToggleGroup>
 
         <Toolbar.Separator className="w-40 h-1 bg-fg/50" />
 
-        <Toolbar.ToggleGroup
+        <ToggleGroup
+          multiple
           className="flex flex-wrap gap-8 justify-center lg:gap-12"
-          type="multiple"
           value={selectedCategories === 'all' || selectedCategories == null ? [] : selectedCategories}
           onValueChange={(categories) => {
             const value = categories.length > 0
@@ -96,7 +94,7 @@ const BlogList: FC<BlogListProps> = ({ blogs }) => {
         >
           {BLOG_CATEGORIES.map(category =>
             <CategoryTag key={category} type={category} />)}
-        </Toolbar.ToggleGroup>
+        </ToggleGroup>
       </Toolbar.Root>
 
 
