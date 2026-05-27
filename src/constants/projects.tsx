@@ -3,6 +3,7 @@ import { SiEslint } from '@icons-pack/react-simple-icons'
 import {
   AntDesign,
   AntDesignUrl,
+  Oxc,
   ReactDark,
   UnoCSS,
   UnoCSSUrl,
@@ -46,6 +47,12 @@ export const PROJECTS_OSS: Project[] = [
     name: 'ESLint Config',
     description: '⚙️ Progressive ESLint config made easy',
     link: 'https://github.com/xsjcTony/eslint-config',
+  },
+  {
+    logo: <Oxc />,
+    name: 'Oxlint Config',
+    description: '⚙️ Opinionated Oxlint config with flexibility',
+    link: 'https://github.com/xsjcTony/oxlint-config',
   },
 ]
 
