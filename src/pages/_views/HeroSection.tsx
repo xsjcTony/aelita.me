@@ -70,7 +70,7 @@ const HeroSection: FC<HeroSectionProps> = ({
         className="text-fg-light sm:text-lg lg:text-xl"
         variants={makeChildVariants()}
       >
-        Software Engineer 🧑‍💻
+        AI-augmented Software Engineer 🧑‍💻
       </motion.h2>
     </motion.section>
 
@@ -133,16 +133,21 @@ const HeroSection: FC<HeroSectionProps> = ({
         <div className="self-stretch shrink-0 w-4 rounded-full bg-linear-to-b from-primary to-secondary" />
         <ResponsiveProse>
           <p>
-            G&apos;day! I&apos;m <strong>Tony</strong>, a fanatical <strong>software engineer</strong> with full-stack capabilities, as well as an <strong>open sourcer</strong>.
+            G&apos;day! I&apos;m <strong>Tony</strong>, a passionate <strong>AI-augmented software engineer</strong> with full-stack capabilities, as well as an <strong>open sourcer</strong>.
           </p>
-          <p>You can also call me by my screen name <strong className="text-primary">❤Aelita❤</strong>.</p>
+          <p>I also go by <strong className="text-primary">❤Aelita❤</strong> online.</p>
           <p>
             I lean towards digging cutting-edge frontend technologies, making fancy effects and delivering delightful user experiences.
           </p>
           <p>
+            I&apos;m also skilled at leveraging AI tools to improve coding efficiency, streamline development workflows, and turn ideas into polished implementations faster.
+          </p>
+          <p>
             I write <a href="/blogs">blog posts</a> about technologies (frontend-focused), including <AstroDark className="size-[1em] -translate-y-px" /> framework tips, <CSSNew className="size-[1em] -translate-y-px" /> CSS tricks, <TypeScript className="size-[1em] -translate-y-px" /> TS / <JavaScript className="size-[1em] -translate-y-px" /> JS insights, <Vite className="size-[1em] -translate-y-px" /> tooling and more, from the basics to the principles.
           </p>
-          <p>Outside of programming, I enjoy playing piano and listening to musics (<strong>ARTCORE</strong> lover).</p>
+          <p>
+            Outside of programming, I play a lot of piano, listen to music as an <strong>ARTCORE</strong> lover, participate in competitive <strong>Riichi Mahjong</strong>, and work out regularly.
+          </p>
           <p>
             Gaming wise, I mainly play competitive music games:
             <a
