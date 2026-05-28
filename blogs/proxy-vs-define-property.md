@@ -1,7 +1,7 @@
 ---
 slug: proxy-vs-define-property
 title: '`Proxy` vs `Object.defineProperty`'
-date: 2025-07-16
+date: 2026-05-28
 categories: ['js']
 lang: en
 duration: 15

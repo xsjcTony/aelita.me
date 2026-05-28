@@ -8,6 +8,9 @@ import { GITHUB_URL } from '~constants/info'
 const Header: FC = () => (
   <header className="p-32 flex items-center justify-between">
     <a className="fixed z-logo" href="/">
+      <div
+        className="bg-bg absolute -inset-12 rounded-full -z-1 blur-xs"
+      />
       <Logo className="size-32" />
     </a>
 
