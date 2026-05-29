@@ -20,8 +20,15 @@ const sparklesId = `sparkles-${title.toLowerCase()
 ---
 
 
-<section class={cn('py-80', isContainer && 'container')} id={title}>
-  <div class="mb-40 flex justify-center">
+<section
+  data-section-with-title
+  class={cn('py-80', isContainer && 'container')}
+  id={title}
+>
+  <div
+    data-section-title-animation
+    class="mb-40 flex justify-center opacity-0 translate-y-20"
+  >
     <div class="flex flex-col items-center">
       <WithSparkles id={sparklesId}>
         <h2 class="text-h2 text-center">{title}</h2>
@@ -31,3 +38,44 @@ const sparklesId = `sparkles-${title.toLowerCase()
 
   <slot />
 </section>
+
+
+<script>
+  import { animate, inView } from 'motion'
+
+
+  function initSectionTitleAnimations(): void {
+    const sectionEls = document.querySelectorAll<HTMLElement>('[data-section-with-title]')
+
+    for (const sectionEl of sectionEls) {
+      const titleEl = sectionEl.querySelector<HTMLElement>('[data-section-title-animation]')
+
+      if (!titleEl || titleEl.dataset.sectionTitleAnimationReady)
+        continue
+
+      titleEl.dataset.sectionTitleAnimationReady = 'true'
+
+      const stopWatching = inView(
+        sectionEl,
+        () => {
+          if (titleEl.dataset.sectionTitleAnimationDone)
+            return
+
+          titleEl.dataset.sectionTitleAnimationDone = 'true'
+
+          animate(
+            titleEl,
+            { opacity: [0, 1], y: [20, 0] },
+            { duration: 0.5 },
+          )
+
+          stopWatching()
+        },
+        { margin: '-180px 0px' },
+      )
+    }
+  }
+
+
+  document.addEventListener('astro:page-load', initSectionTitleAnimations)
+</script>
