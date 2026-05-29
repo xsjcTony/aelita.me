@@ -13,7 +13,6 @@ import {
 import { Building2Icon, GraduationCapIcon, IdCardIcon, MapPinIcon } from 'lucide-react'
 import AccessibleIcon from '~components/AccessibleIcon'
 import ResponsiveProse from '~pages/_components/ResponsiveProse'
-import SectionWithTitle from '~pages/_components/SectionWithTitle'
 import Timeline from '~pages/_components/Timeline'
 
 
@@ -180,11 +179,7 @@ const MyJourney: FC = () => {
   ]
 
 
-  return (
-    <SectionWithTitle title="My Journey">
-      <Timeline items={items} />
-    </SectionWithTitle>
-  )
+  return <Timeline items={items} />
 }
 
 

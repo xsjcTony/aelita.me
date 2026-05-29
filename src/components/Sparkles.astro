@@ -1,0 +1,81 @@
+---
+import Particles from '@tsparticles/astro'
+import { createSparklesOptions } from '~utils/sparkles'
+
+
+type Props = {
+  id: string
+  'class'?: string
+  backgroundColor?: string
+  particleSize?: number
+  minSize?: number
+  maxSize?: number
+  speed?: number
+  particleColor?: string
+  particleDensity?: number
+}
+
+
+const {
+  id,
+  'class': className,
+  backgroundColor,
+  particleSize,
+  minSize,
+  maxSize,
+  speed,
+  particleColor,
+  particleDensity,
+} = Astro.props
+
+
+const options = createSparklesOptions({
+  backgroundColor,
+  particleSize,
+  minSize,
+  maxSize,
+  speed,
+  particleColor,
+  particleDensity,
+})
+---
+
+
+<script>
+  import { initParticlesEngine } from '@tsparticles/astro'
+  import { loadSlim } from '@tsparticles/slim'
+
+  window.sparklesEngineLoaded ??= false
+
+  if (!window.sparklesEngineLoaded) {
+    await initParticlesEngine(async (engine) => {
+      await loadSlim(engine)
+    })
+    window.sparklesEngineLoaded = true
+  }
+</script>
+
+
+<div data-sparkles-root class:list={['sparkles-root', className]} id={id}>
+  <Particles id={id} options={options} />
+</div>
+
+
+<style>
+  .sparkles-root {
+    opacity: 0;
+    animation: sparkles-fade-in 2s cubic-bezier(1, 0, 1, 1) forwards;
+  }
+
+  .sparkles-root :global(canvas) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes sparkles-fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+</style>

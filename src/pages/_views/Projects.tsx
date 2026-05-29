@@ -2,7 +2,6 @@ import type { FC, ReactNode } from 'react'
 import FadeInWrapper from '~components/motion/FadeInWrapper'
 import PointerHighlight from '~components/PointerHighlight'
 import { PROJECTS_CONTRIBUTION, PROJECTS_OSS, PROJECTS_WEBSITES_AND_TOOLS } from '~constants/projects'
-import SectionWithTitle from '~pages/_components/SectionWithTitle'
 
 
 export type Project = {
@@ -63,13 +62,11 @@ const Project: FC<ProjectProps> = ({
 
 
 const Projects: FC = () => (
-  <SectionWithTitle title="Projects">
-    <div className="flex flex-col gap-y-60">
-      <Project highlighted projects={PROJECTS_OSS} title="Open Source" />
-      <Project projects={PROJECTS_WEBSITES_AND_TOOLS} title="Websites and Tools" />
-      <Project projects={PROJECTS_CONTRIBUTION} title="Contribution" />
-    </div>
-  </SectionWithTitle>
+  <div className="flex flex-col gap-y-60">
+    <Project highlighted projects={PROJECTS_OSS} title="Open Source" />
+    <Project projects={PROJECTS_WEBSITES_AND_TOOLS} title="Websites and Tools" />
+    <Project projects={PROJECTS_CONTRIBUTION} title="Contribution" />
+  </div>
 )
 
 

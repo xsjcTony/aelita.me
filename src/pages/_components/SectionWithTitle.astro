@@ -1,0 +1,33 @@
+---
+import WithSparkles from '~components/WithSparkles.astro'
+import { cn } from '~utils/className'
+
+
+type Props = {
+  title: string
+  isContainer?: boolean
+}
+
+
+const {
+  title,
+  isContainer = true,
+} = Astro.props
+
+const sparklesId = `sparkles-${title.toLowerCase()
+  .replaceAll(/[^a-z0-9]+/g, '-')
+  .replaceAll(/^-|-$/g, '')}`
+---
+
+
+<section class={cn('py-80', isContainer && 'container')} id={title}>
+  <div class="mb-40 flex justify-center">
+    <div class="flex flex-col items-center">
+      <WithSparkles id={sparklesId}>
+        <h2 class="text-h2 text-center">{title}</h2>
+      </WithSparkles>
+    </div>
+  </div>
+
+  <slot />
+</section>

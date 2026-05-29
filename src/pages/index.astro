@@ -5,6 +5,7 @@ import CodepenLogo from '~components/icons/CodepenLogo.astro'
 import LinkedinLogo from '~components/icons/LinkedinLogo.astro'
 import MaimaiDxLogo from '~components/icons/MaimaiDxLogo.astro'
 import PageLayout from '~layouts/PageLayout.astro'
+import SectionWithTitle from '~pages/_components/SectionWithTitle.astro'
 import Squares from '~pages/_components/Squares.astro'
 import HeroSection from '~pages/_views/HeroSection'
 import MyJourney from '~pages/_views/MyJourney'
@@ -32,13 +33,19 @@ const metadata: Metadata = { title: false }
 
 
   <!-- My Journey -->
-  <MyJourney client:load transition:persist />
+  <SectionWithTitle title="My Journey">
+    <MyJourney client:load transition:persist />
+  </SectionWithTitle>
 
 
   <!-- Tech Stack -->
-  <TechStack client:load transition:persist />
+  <SectionWithTitle isContainer={false} title="Tech Stack">
+    <TechStack client:load transition:persist />
+  </SectionWithTitle>
 
 
   <!-- Projects -->
-  <Projects client:load transition:persist />
+  <SectionWithTitle title="Projects">
+    <Projects client:load transition:persist />
+  </SectionWithTitle>
 </PageLayout>

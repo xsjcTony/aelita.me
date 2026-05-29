@@ -4,7 +4,6 @@ import MagneticCursor from '~components/MagneticCursor'
 import FadeInWrapper from '~components/motion/FadeInWrapper'
 import PointerHighlight from '~components/PointerHighlight'
 import { TECH_STACK_BACKEND, TECH_STACK_FRONTEND, TECH_STACK_LANGUAGES } from '~constants/techStacks'
-import SectionWithTitle from '~pages/_components/SectionWithTitle'
 import TechStackCards from '~pages/_components/TechStackCards'
 
 
@@ -41,14 +40,12 @@ const Stack: FC<StackProps> = ({
 
 
 const TechStack: FC = () => (
-  <SectionWithTitle isContainer={false} title="Tech Stack">
-    <div className="flex flex-col gap-y-20" data-cursor-zone="techStack">
-      <MagneticCursor activeZone="techStack" />
-      <Stack techStacks={TECH_STACK_LANGUAGES} title="Languages" />
-      <Stack highlighted techStacks={TECH_STACK_FRONTEND} title="Front-End" />
-      <Stack techStacks={TECH_STACK_BACKEND} title="Back-End" />
-    </div>
-  </SectionWithTitle>
+  <div className="flex flex-col gap-y-20" data-cursor-zone="techStack">
+    <MagneticCursor activeZone="techStack" />
+    <Stack techStacks={TECH_STACK_LANGUAGES} title="Languages" />
+    <Stack highlighted techStacks={TECH_STACK_FRONTEND} title="Front-End" />
+    <Stack techStacks={TECH_STACK_BACKEND} title="Back-End" />
+  </div>
 )
 
 
