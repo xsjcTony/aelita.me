@@ -1,6 +1,7 @@
 // noinspection ES6PreferShortImport
 
 import type { RemarkContainerOptions } from './src/libs/remark/container'
+import { unified } from '@astrojs/markdown-remark'
 import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, svgoOptimizer } from 'astro/config'
@@ -18,10 +19,12 @@ export default defineConfig({
     svgOptimizer: svgoOptimizer(),
   },
   markdown: {
-    remarkPlugins: [
-      remarkDirective,
-      [remarkContainer, { prefixClassName: 'blog' } satisfies RemarkContainerOptions],
-    ],
+    processor: unified({
+      remarkPlugins: [
+        remarkDirective,
+        [remarkContainer, { prefixClassName: 'blog' } satisfies RemarkContainerOptions],
+      ],
+    }),
   },
   integrations: [
     react(),
