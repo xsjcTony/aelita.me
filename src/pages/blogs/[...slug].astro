@@ -77,11 +77,24 @@ const {
 </BlogLayout>
 
 
+<style>
+  @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+    [data-blog-content] > * {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+</style>
+
+
 <script>
   import { animate, stagger, cubicBezier } from 'motion';
 
 
   function animateContent(): void {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+      return
+
     animate(
       '[data-blog-content] > *',
       { opacity: [0, 1], y: [10, 0] },
