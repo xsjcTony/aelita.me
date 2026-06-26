@@ -8,4 +8,10 @@ duration: 15
 description: 'Learn the underlying difference between `Proxy` and `Object.defineProperty`.'
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Today we will explore the differences between `Proxy` and `Object.defineProperty` in JavaScript.
+
+:::tip[In a nutshell]
+`Proxy` enables you to create a proxy for another object, which can intercept and redefine [**fundamental operations**](https://262.ecma-international.org/index.html#table-essential-internal-methods) for that object, where `Object.defineProperty` is invoking one of the fundamental operations `[[DefineOwnProperty]]`, to create or alter the object's own property.
+:::
+
+> ⚠️WIP
