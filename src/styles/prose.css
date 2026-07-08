@@ -93,8 +93,7 @@
     &.external-link {
       & .external-link-indicator {
         display: inline-flex;
-        margin-inline-start: 0.25em;
-        vertical-align: -0.2em;
+        vertical-align: -0.25em;
       }
 
       & .external-link-icon {

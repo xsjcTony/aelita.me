@@ -64,7 +64,7 @@ const TITLE_MAP: Record<ContainerType, string> = {
 const VARIANTS = new Set<ContainerType>(['note', 'tip', 'caution', 'danger'])
 
 function isContainerVariant(variant: string): variant is ContainerType {
-  return VARIANTS.has(variant as ContainerType)
+  return VARIANTS.has(variant)
 }
 
 
